@@ -1,23 +1,21 @@
+<h1 align="center">
+  🕵️ PortScout Parody Stack
+</h1>
+
+<p align="center">
+  <strong>11 fake apps. Real frameworks. Zero business models.</strong>
+</p>
+
+<p align="center">
+  <em>"We couldn't afford the real apps, so we built knockoffs."</em>
+</p>
+
+<p align="center">
+  🍕 Snack &nbsp;·&nbsp; 📺 TubeYou &nbsp;·&nbsp; 🎵 SpotiPie &nbsp;·&nbsp; 💳 Strife &nbsp;·&nbsp; 🎬 Nestflix &nbsp;·&nbsp; 🏠 AirBeanBean<br/>
+  🍺 GitPub &nbsp;·&nbsp; 🐷 DocuSwine &nbsp;·&nbsp; 🌽 CornHub &nbsp;·&nbsp; 📦 DropBlox &nbsp;·&nbsp; 📝 Lotion
+</p>
+
 ---
-
-| \_ \ **\_ \_ **| |\_/ **_| _** **\_ \_ _| |_
-| |_) / _ \| '**| **\_** \ / **/ \_ \| | | | **|
-| **/ (_) | | | |_ \_**) | (_| (_) | |_| | |_
-|_| \_\_\_/|_| \_\_|\_**\_/ \_**\_\_\_/ \__,_|\_\_|
-
----
-
-| _ \ \_\_ _ \_ ** \_** **| |\_ _ / _**|| |_ \_\_ _ **\_| | **
-| |_) / _` | '__/ _ \ / _` | | | | \_** \| **/ _` |/ **| |/ /
-| **/ (_| | | | (_) | (_| | |\_| | **_) | || (_| | (**| <
-|\_| \__,_|\_| \_**/ \__,_|\_\_, | |\_\_**/ \_\_\__,_|\_**|_|\_\
- |_**/
-
-```
-
-# 🕵️ PortScout Parody Stack
-
-> *"We couldn't afford the real apps, so we built knockoffs."*
 
 Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 11 fake-but-functional web apps that parody the tech giants you know and ~~love~~ tolerate. Each project is a real, runnable application built with real frameworks, real tooling, and absolutely zero real business models.
 
@@ -27,62 +25,60 @@ Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 1
 
 ## 🎭 The Lineup
 
-*Eleven apps walk into a port range...*
+_Eleven apps walk into a port range..._
 
-| #   | Project         | Parodies     | Stack                       | Port(s)       | Dev Command       | Personality Traits                         |
-| --- | --------------- | ------------ | --------------------------- | ------------- | ----------------- | ------------------------------------------ |
-| 1   | **Lotion**      | Notion       | Vue 3 + Vite                | 5301          | `npm run dev`     | ⚠️ Picks fights with SpotiPie over ports   |
-| 2   | **Snack**       | Slack         | React + Vite                | 5302          | `npm run dev`     | 🍕 Less productive than the original       |
-| 3   | **TubeYou**     | YouTube      | Angular CLI                 | 5303          | `npm start`       | 📺 All the boilerplate, none of the ads    |
-| 4   | **SpotiPie**    | Spotify      | SvelteKit + WS              | 5301, WS:5311 | `npm run dev:all` | ⚠️ Also wants port 5301. Drama ensues. 🔌  |
-| 5   | **Strife**      | Stripe       | Next.js                     | 5305          | `npm run dev`     | 💳 Charges nothing, delivers nothing       |
-| 6   | **Nestflix**    | Netflix      | Vue + Express (monorepo)    | 5306, 5312    | `pnpm dev`        | 📦 Monorepo. Still buffering.              |
-| 7   | **AirBeanBean** | Airbnb       | React + Fastify (monorepo)  | 5307, 5313    | `pnpm dev`        | 📦 Monorepo. $200/night cleaning fee.      |
-| 8   | **GitPub**      | GitHub       | Next.js + Prisma (monorepo) | 5308          | `pnpm dev`        | 📦 Monorepo. Where code goes to drink.     |
-| 9   | **DocuSwine**   | DocuSign     | SolidJS + Vite              | 5309          | `npm run dev`     | 🐷 Sign here, here, and here. Oink.        |
-| 10  | **CornHub**     | 🌽            | React + Express             | 5310, 5314    | `npm run dev`     | 🐌 Suspiciously slow backend               |
-| 11  | **DropBlox**    | Dropbox      | Node + Docker               | 5315          | `npm start`       | 🐳 Containerized. Fancy.                   |
+| #   | Project         | Parodies | Stack                       | Port(s)       | Dev Command       | Personality Traits                        |
+| --- | --------------- | -------- | --------------------------- | ------------- | ----------------- | ----------------------------------------- |
+| 1   | **Lotion**      | Notion   | Vue 3 + Vite                | 5301          | `npm run dev`     | ⚠️ Picks fights with SpotiPie over ports  |
+| 2   | **Snack**       | Slack    | React + Vite                | 5302          | `npm run dev`     | 🍕 Less productive than the original      |
+| 3   | **TubeYou**     | YouTube  | Angular CLI                 | 5303          | `npm start`       | 📺 All the boilerplate, none of the ads   |
+| 4   | **SpotiPie**    | Spotify  | SvelteKit + WS              | 5301, WS:5311 | `npm run dev:all` | ⚠️ Also wants port 5301. Drama ensues. 🔌 |
+| 5   | **Strife**      | Stripe   | Next.js                     | 5305          | `npm run dev`     | 💳 Charges nothing, delivers nothing      |
+| 6   | **Nestflix**    | Netflix  | Vue + Express (monorepo)    | 5306, 5312    | `pnpm dev`        | 📦 Monorepo. Still buffering.             |
+| 7   | **AirBeanBean** | Airbnb   | React + Fastify (monorepo)  | 5307, 5313    | `pnpm dev`        | 📦 Monorepo. $200/night cleaning fee.     |
+| 8   | **GitPub**      | GitHub   | Next.js + Prisma (monorepo) | 5308          | `pnpm dev`        | 📦 Monorepo. Where code goes to drink.    |
+| 9   | **DocuSwine**   | DocuSign | SolidJS + Vite              | 5309          | `npm run dev`     | 🐷 Sign here, here, and here. Oink.       |
+| 10  | **CornHub**     | 🌽       | React + Express             | 5310, 5314    | `npm run dev`     | 🐌 Suspiciously slow backend              |
+| 11  | **DropBlox**    | Dropbox  | Node + Docker               | 5315          | `npm start`       | 🐳 Containerized. Fancy.                  |
 
 ---
 
 ## 💥 Special Scenarios
 
-*Because well-behaved apps don't test anything interesting.*
+_Because well-behaved apps don't test anything interesting._
 
-| Scenario          | Project(s)                    | What Goes Wrong                                                |
-| ----------------- | ----------------------------- | -------------------------------------------------------------- |
+| Scenario          | Project(s)                    | What Goes Wrong                                                            |
+| ----------------- | ----------------------------- | -------------------------------------------------------------------------- |
 | **Port Conflict** | Lotion + SpotiPie             | Both want port 5301. Neither will compromise. It's like a parking dispute. |
-| **WebSocket**     | SpotiPie                      | WS server on 5311. Because HTTP was too mainstream.            |
-| **Slow Start**    | CornHub                       | 2.5s startup delay + slow endpoint. Simulates "works on my machine." |
-| **Docker**        | DropBlox                      | Includes Dockerfile. For when you want problems in a container. |
-| **Monorepos**     | Nestflix, AirBeanBean, GitPub | pnpm workspaces. Three times the `node_modules`, three times the fun. |
+| **WebSocket**     | SpotiPie                      | WS server on 5311. Because HTTP was too mainstream.                        |
+| **Slow Start**    | CornHub                       | 2.5s startup delay + slow endpoint. Simulates "works on my machine."       |
+| **Docker**        | DropBlox                      | Includes Dockerfile. For when you want problems in a container.            |
+| **Monorepos**     | Nestflix, AirBeanBean, GitPub | pnpm workspaces. Three times the `node_modules`, three times the fun.      |
 
 ---
 
 ## 🗺️ Port Map (5301–5315)
 
-*A carefully curated range of ports, lovingly assigned and immediately fought over.*
+_A carefully curated range of ports, lovingly assigned and immediately fought over._
 
 ```
-
-5301 - Lotion (Vue) ⚠️ CONFLICT — "I was here first!"
-5301 - SpotiPie (SvelteKit) ⚠️ CONFLICT — "No, I was here first!"
-5302 - Snack (React) 🍕 Peacefully snacking
-5303 - TubeYou (Angular) 📺 Buffering...
-5304 - (reserved) 🪑 Saving this seat
-5305 - Strife (Next.js) 💳 Processing...
-5306 - Nestflix Web (Vue) 🎬 Now streaming
-5307 - AirBeanBean Web 🏠 Superhost™
-5308 - GitPub Web (Next.js) 🍺 Open source, open bar
-5309 - DocuSwine (SolidJS) 🐷 Please sign the oinkument
-5310 - CornHub Frontend 🌽 Family friendly, we promise
-5311 - SpotiPie WS Server 🔌 WebSocket vibes
-5312 - Nestflix API (Express) 🎬 The backend nobody asked for
-5313 - AirBeanBean API ⚡ Fastify goes brrr
-5314 - CornHub Backend 🐌 Taking its sweet time
-5315 - DropBlox API (Express) 🐳 Dockerized and dignified
-
-````
+5301  Lotion (Vue)            ⚠️ CONFLICT — "I was here first!"
+5301  SpotiPie (SvelteKit)    ⚠️ CONFLICT — "No, I was here first!"
+5302  Snack (React)           🍕 Peacefully snacking
+5303  TubeYou (Angular)       📺 Buffering...
+5304  (reserved)              🪑 Saving this seat
+5305  Strife (Next.js)        💳 Processing...
+5306  Nestflix Web (Vue)      🎬 Now streaming
+5307  AirBeanBean Web         🏠 Superhost™
+5308  GitPub Web (Next.js)    🍺 Open source, open bar
+5309  DocuSwine (SolidJS)     🐷 Please sign the oinkument
+5310  CornHub Frontend        🌽 Family friendly, we promise
+5311  SpotiPie WS Server      🔌 WebSocket vibes
+5312  Nestflix API (Express)   🎬 The backend nobody asked for
+5313  AirBeanBean API         ⚡ Fastify goes brrr
+5314  CornHub Backend         🐌 Taking its sweet time
+5315  DropBlox API (Express)   🐳 Dockerized and dignified
+```
 
 ---
 
@@ -94,7 +90,7 @@ Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 1
 cd projects/<project-name>
 npm install   # or pnpm install for monorepos
 npm run dev   # or pnpm dev for monorepos
-````
+```
 
 ### All Projects at Once (Chaos Mode)
 
