@@ -19,7 +19,7 @@
 
 Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 11 fake-but-functional web apps that parody the tech giants you know and ~~love~~ tolerate. Each project is a real, runnable application built with real frameworks, real tooling, and absolutely zero real business models.
 
-**Why does this exist?** Because [PortScout](https://github.com/your-org/portscout) needed a playground full of misbehaving dev servers, port conflicts, slow backends, and monorepo madness. Think of it as a petting zoo, but instead of goats, it's full of `node_modules`.
+**Why does this exist?** Because [PortScout](https://portscout.app) needed a playground full of misbehaving dev servers, port conflicts, slow backends, and monorepo madness. Think of it as a petting zoo, but instead of goats, it's full of `node_modules`.
 
 ---
 

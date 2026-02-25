@@ -143,7 +143,7 @@
 				<span class="portscout-footer-text">
 					Built with
 					<a
-						href="https://github.com/your-org/portscout-parody-stack"
+						href="https://github.com/superhero-codes/portscout-parody-stack"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -151,7 +151,7 @@
 					</a>
 					— created for testing
 					<a
-						href="https://github.com/your-org/portscout"
+						href="https://portscout.app"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

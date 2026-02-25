@@ -25,7 +25,7 @@ If you use this repository or any of its demo projects, you must maintain attrib
 If you fork, clone, or redistribute this repository, the README must retain a visible link back to the original repository:
 
 ```
-https://github.com/your-org/portscout-parody-stack
+https://github.com/superhero-codes/portscout-parody-stack
 ```
 
 ### 2. UI Footer Attribution
@@ -34,7 +34,7 @@ Each demo project includes a footer attribution block. This footer (or an equiva
 
 **Required text:**
 
-> Built with [PortScout Parody Stack](https://github.com/your-org/portscout-parody-stack) — created for testing [PortScout](https://github.com/your-org/portscout)
+> Built with [PortScout Parody Stack](https://github.com/superhero-codes/portscout-parody-stack) — created for testing [PortScout](https://portscout.app)
 
 **Footer location:** `/branding/footer.html`
 
@@ -53,7 +53,7 @@ The credit must be easily discoverable by users.
 All attributions should link to:
 
 ```
-https://github.com/your-org/portscout-parody-stack
+https://github.com/superhero-codes/portscout-parody-stack
 ```
 
 ## Questions?

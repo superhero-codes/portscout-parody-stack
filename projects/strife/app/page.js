@@ -152,7 +152,7 @@ export default function Home() {
 					<span className={styles.portscoutFooterText}>
 						Built with{' '}
 						<a
-							href="https://github.com/your-org/portscout-parody-stack"
+							href="https://github.com/superhero-codes/portscout-parody-stack"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
@@ -160,7 +160,7 @@ export default function Home() {
 						</a>{' '}
 						— created for testing{' '}
 						<a
-							href="https://github.com/your-org/portscout"
+							href="https://portscout.app"
 							target="_blank"
 							rel="noopener noreferrer"
 						>

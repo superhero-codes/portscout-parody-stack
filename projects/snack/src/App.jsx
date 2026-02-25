@@ -116,11 +116,11 @@ function App() {
         <div className="portscout-footer-content">
           <span className="portscout-footer-text">
             Built with{' '}
-            <a href="https://github.com/your-org/portscout-parody-stack" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/superhero-codes/portscout-parody-stack" target="_blank" rel="noopener noreferrer">
               PortScout Parody Stack
             </a>
             {' '}— created for testing{' '}
-            <a href="https://github.com/your-org/portscout" target="_blank" rel="noopener noreferrer">
+            <a href="https://portscout.app" target="_blank" rel="noopener noreferrer">
               PortScout
             </a>
           </span>

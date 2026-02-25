@@ -25,7 +25,7 @@ Each demo project **must** include the footer attribution in its UI. Copy the co
 		<span className="portscout-footer-text">
 			Built with{' '}
 			<a
-				href="https://github.com/your-org/portscout-parody-stack"
+				href="https://github.com/superhero-codes/portscout-parody-stack"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -33,7 +33,7 @@ Each demo project **must** include the footer attribution in its UI. Copy the co
 			</a>
 			— created for testing{' '}
 			<a
-				href="https://github.com/your-org/portscout"
+				href="https://portscout.app"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -53,7 +53,7 @@ Each demo project **must** include the footer attribution in its UI. Copy the co
 			<span class="portscout-footer-text">
 				Built with
 				<a
-					href="https://github.com/your-org/portscout-parody-stack"
+					href="https://github.com/superhero-codes/portscout-parody-stack"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -61,7 +61,7 @@ Each demo project **must** include the footer attribution in its UI. Copy the co
 				</a>
 				— created for testing
 				<a
-					href="https://github.com/your-org/portscout"
+					href="https://portscout.app"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
