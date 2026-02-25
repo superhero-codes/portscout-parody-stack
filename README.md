@@ -92,6 +92,15 @@ npm install   # or pnpm install for monorepos
 npm run dev   # or pnpm dev for monorepos
 ```
 
+### Install Everything (Go Make Coffee)
+
+```bash
+# Install dependencies for all 11 projects in one go
+./scripts/install-all.sh
+```
+
+> **Heads up:** This installs npm + pnpm dependencies across 11 projects. Your internet connection will be tested. Your patience will be tested more.
+
 ### All Projects at Once (Chaos Mode)
 
 ```bash
