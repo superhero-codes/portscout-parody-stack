@@ -40,7 +40,7 @@ const items = [
     views: '4.2M',
     rating: '98%',
     duration: '12:34',
-    cover: '🌽',
+    image: 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=640&h=360&fit=crop',
     channel: 'CornStar69',
     description: 'Watch this innocent ear get completely shucked for the very first time...',
   },
@@ -50,7 +50,7 @@ const items = [
     views: '2.1M',
     rating: '95%',
     duration: '8:15',
-    cover: '🌾',
+    image: 'https://images.unsplash.com/photo-1601284702796-a27ffd3eff3c?w=640&h=360&fit=crop',
     channel: 'CreamyCornQueen',
     description: 'The creamiest corn chowder recipe that will make you moan with pleasure.',
   },
@@ -60,7 +60,7 @@ const items = [
     views: '1.8M',
     rating: '92%',
     duration: '15:42',
-    cover: '🍿',
+    image: 'https://images.unsplash.com/photo-1629570583322-73b0481961a2?w=640&h=360&fit=crop',
     channel: 'CobGobbler',
     description: 'Can you eat an entire cob in one go? These brave souls try...',
   },
@@ -70,7 +70,7 @@ const items = [
     views: '890K',
     rating: '89%',
     duration: '20:01',
-    cover: '🥣',
+    image: 'https://images.unsplash.com/photo-1531171000775-75f0213ca8a0?w=640&h=360&fit=crop',
     channel: 'ThiccChowder',
     description: 'This chowder is so thick you could stand a spoon in it. Absolutely filthy.',
   },
@@ -80,7 +80,7 @@ const items = [
     views: '3.4M',
     rating: '97%',
     duration: '10:10',
-    cover: '🔥',
+    image: 'https://images.unsplash.com/photo-1708077810069-0e082d9558dd?w=640&h=360&fit=crop',
     channel: 'GrillDaddy',
     description: 'Aggressive seasoning technique that will leave your corn begging for more.',
   },
@@ -90,7 +90,7 @@ const items = [
     views: '567K',
     rating: '85%',
     duration: '25:33',
-    cover: '🌿',
+    image: 'https://images.unsplash.com/photo-1548365329-6adbd5e89128?w=640&h=360&fit=crop',
     channel: 'MazeRunner420',
     description: 'Things get out of hand when these friends enter a corn maze at night...',
   },
@@ -100,7 +100,7 @@ const items = [
     views: '6.9M',
     rating: '99%',
     duration: '4:20',
-    cover: '🧈',
+    image: 'https://images.unsplash.com/photo-1649251037566-6881b4956615?w=640&h=360&fit=crop',
     channel: 'ButterFingers',
     description: 'The most buttery corn experience you will ever witness. Not for the faint of heart.',
   },
@@ -110,7 +110,7 @@ const items = [
     views: '1.2M',
     rating: '91%',
     duration: '7:45',
-    cover: '👨‍🌾',
+    image: 'https://images.unsplash.com/photo-1651667343153-6dc318e27e41?w=640&h=360&fit=crop',
     channel: 'BigCobEnergy',
     description: 'This farmer grew the biggest cob in the county. The neighbors are jealous.',
   },
@@ -120,7 +120,7 @@ const items = [
     views: '5.5M',
     rating: '94%',
     duration: '11:11',
-    cover: '🍿',
+    image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=640&h=360&fit=crop',
     channel: 'PopOffKing',
     description: 'Kernels popping off left and right. Turn your volume UP.',
   },
@@ -130,55 +130,9 @@ const items = [
     views: '780K',
     rating: '88%',
     duration: '18:30',
-    cover: '🍞',
+    image: 'https://images.unsplash.com/photo-1697779142534-04681116133a?w=640&h=360&fit=crop',
     channel: 'MoistMaker',
     description: 'The moistest cornbread you have ever seen. Dripping with honey butter.',
-  },
-]
-
-// Real corn-related YouTube videos
-const cornVideos = [
-  {
-    id: 'v1',
-    youtubeId: '_caMQpiwiaU',
-    title: 'It\'s Corn! — A Big Lump with Knobs',
-    meta: '50M+ views • Schmoyoho / Recess Therapy',
-    pun: 'It has the juice! I can tell you all about it! 🌽💦',
-  },
-  {
-    id: 'v2',
-    youtubeId: '1VbZE6YhjKk',
-    title: 'How Corn Took Over The World',
-    meta: '4.2M views • Vox',
-    pun: 'A-maize-ing documentary about our favorite grain 🎬',
-  },
-  {
-    id: 'v3',
-    youtubeId: 'bGYs4KS_djg',
-    title: 'Mexican Street Corn (Elote) — The Best Recipe',
-    meta: '5.1M views • Joshua Weissman',
-    pun: 'This elote will make you say "oh my cob!" 🌮',
-  },
-  {
-    id: 'v4',
-    youtubeId: 'ADlGkXAz1D0',
-    title: 'How It\'s Made — Popcorn',
-    meta: '6.1M views • How It\'s Made',
-    pun: 'Kernel knowledge that will blow your mind 🍿💥',
-  },
-  {
-    id: 'v5',
-    youtubeId: 'hvoagWSOw_Y',
-    title: 'World\'s Largest Corn Maze',
-    meta: '1.5M views • Dude Perfect',
-    pun: 'Getting lost has never been so a-maize-ing 🌾',
-  },
-  {
-    id: 'v6',
-    youtubeId: 'svEuG_ekNT0',
-    title: 'Why Corn Is In Everything We Eat',
-    meta: '3.3M views • Business Insider',
-    pun: 'You can\'t escape the cob. It\'s everywhere. 👀',
   },
 ]
 
@@ -294,7 +248,8 @@ function App() {
           {items.map(item => (
             <div key={item.id} className="content-card">
               <div className="card-cover">
-                <span className="card-emoji">{item.cover}</span>
+                <img className="card-image" src={item.image} alt={item.title} loading="lazy" />
+                <div className="card-play-btn">▶</div>
                 <span className="card-duration">{item.duration}</span>
               </div>
               <div className="card-info">
@@ -308,30 +263,6 @@ function App() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Real Corn Videos */}
-        <div className="video-section">
-          <h2 className="section-title">🎬 Real Corn Cinema — Premium Content</h2>
-          <div className="video-grid">
-            {cornVideos.map(video => (
-              <div key={video.id} className="video-card">
-                <div className="video-embed">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-                <div className="video-info">
-                  <div className="video-title">{video.title}</div>
-                  <div className="video-meta">{video.meta}</div>
-                  <div className="video-pun">{video.pun}</div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Slow Endpoint Demo */}
