@@ -1,0 +1,10 @@
+{
+    "name": "gitpub",
+    "private": true,
+    "version": "1.0.0",
+    "description": "GitPub - GitHub Parody Monorepo",
+    "scripts": {
+        "dev": "pnpm --filter @gitpub/web dev",
+        "dev:web": "pnpm --filter @gitpub/web dev"
+    }
+}

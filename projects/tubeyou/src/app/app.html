@@ -1,0 +1,68 @@
+<div class="app">
+  <header class="header">
+    <div class="header-left">
+      <button class="menu-btn">☰</button>
+      <div class="logo">
+        <span class="logo-icon">▶️</span>
+        <span class="logo-text">TubeYou</span>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="search-box">
+        <input type="text" placeholder="Search (results not guaranteed)" />
+        <button class="search-btn">🔍</button>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="tagline">Broadcast Yourself (we dare you)</span>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      @for (item of sidebarItems; track item.label) {
+        <div class="sidebar-item">
+          <span class="sidebar-icon">{{ item.icon }}</span>
+          <span class="sidebar-label">{{ item.label }}</span>
+        </div>
+      }
+    </aside>
+
+    <main class="content">
+      <div class="video-grid">
+        @for (video of videos; track video.id) {
+          <div class="video-card">
+            <div class="thumbnail">
+              <span class="thumbnail-icon">{{ video.thumbnail }}</span>
+              <span class="duration">{{ video.duration }}</span>
+            </div>
+            <div class="video-info">
+              <div class="video-title">{{ video.title }}</div>
+              <div class="video-meta">
+                <span class="channel">{{ video.channel }}</span>
+                <span class="stats">{{ video.views }} views • {{ video.time }}</span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </main>
+  </div>
+
+  <footer class="portscout-footer">
+    <div class="portscout-footer-content">
+      <span class="portscout-footer-text">
+        Built with
+        <a href="https://github.com/your-org/portscout-parody-stack" target="_blank" rel="noopener noreferrer">
+          PortScout Parody Stack
+        </a>
+        — created for testing
+        <a href="https://github.com/your-org/portscout" target="_blank" rel="noopener noreferrer">
+          PortScout
+        </a>
+      </span>
+    </div>
+  </footer>
+</div>
+
+<router-outlet />

@@ -1,0 +1,11 @@
+{
+    "name": "airbeanbean",
+    "private": true,
+    "version": "1.0.0",
+    "description": "AirBeanBean - Airbnb Parody Monorepo",
+    "scripts": {
+        "dev": "pnpm -r dev",
+        "dev:web": "pnpm --filter @airbeanbean/web dev",
+        "dev:api": "pnpm --filter @airbeanbean/api dev"
+    }
+}

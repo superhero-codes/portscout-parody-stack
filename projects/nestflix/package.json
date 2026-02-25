@@ -1,0 +1,11 @@
+{
+    "name": "nestflix",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Nestflix - Netflix Parody Monorepo",
+    "scripts": {
+        "dev": "pnpm -r dev",
+        "dev:web": "pnpm --filter @nestflix/web dev",
+        "dev:api": "pnpm --filter @nestflix/api dev"
+    }
+}

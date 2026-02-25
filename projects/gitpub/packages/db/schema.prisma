@@ -1,0 +1,27 @@
+// GitPub Prisma Schema (mock)
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  username String   @unique
+  email    String   @unique
+  bio      String?
+  repos    Repo[]
+}
+
+model Repo {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  stars       Int      @default(0)
+  language    String?
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+}
