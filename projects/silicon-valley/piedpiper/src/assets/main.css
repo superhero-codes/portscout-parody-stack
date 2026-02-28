@@ -1,0 +1,80 @@
+/* ===== RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== APP TRANSITIONS ===== */
+.app {
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.app.classic {
+  background: #ffffff;
+}
+
+.app.modern {
+  background: #0a0a0a;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.classic ::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.modern ::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+/* ===== SELECTION ===== */
+.classic ::selection {
+  background: #2d9b6e;
+  color: #ffffff;
+}
+
+.modern ::selection {
+  background: #b4ff00;
+  color: #0a0a0a;
+}
