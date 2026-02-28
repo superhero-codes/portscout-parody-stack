@@ -48,23 +48,23 @@ _Twenty-six apps walk into a port range..._
 
 ### New Additions
 
-| #   | Project            | Parodies     | Stack                    | Port(s)            | Dev Command              | Personality Traits                              |
-| --- | ------------------ | ------------ | ------------------------ | ------------------ | ------------------------ | ----------------------------------------------- |
-| 12  | **OnlyFarms**      | OnlyFans     | Node/Express (3 processes) | 5320, 5321, 5322 | `npm start`              | 🌾 3 processes, 3 ports, maximum confusion      |
-| 13  | **SubSnack**       | Substack     | Node/Express             | 5323               | `npm run dev`            | 📁 Server buried 6 directories deep             |
-| 14  | **Finder**         | Tinder       | Svelte + Vite            | 5173               | `npm run dev`            | 🔥 Swipe right on frameworks                    |
-| 15  | **BeerFinder**     | Beer apps    | Node/Express             | 4321               | `npm run dev`            | 🍺 Non-standard port, like beer itself          |
-| 16  | **CatTranslator**  | —            | Static HTML/CSS/JS       | None               | `open index.html`        | 🐱 No build step. No dependencies. Like a cat.  |
-| 17  | **RockNRoll**      | Rick Roll    | Node/Express             | 5324               | `npm start`              | 🎸 Never gonna give you uptime                  |
-| 18  | **Faceplant**      | Facebook     | Node/Express             | 5325               | `npm start`              | 💀 50% crash rate on startup                     |
-| 19  | **Locker**         | Docker       | Docker Compose           | 5326–5329          | `docker compose up`      | 🐳 Broken compose file. Claims it works.        |
-| 20  | **MemEater**       | —            | Node/Express             | 5330               | `npm start`              | 🍽️ Intentional memory leak. ~1MB/5s             |
-| 21  | **CPUStorm**       | —            | Node/Express             | 5331               | `npm start`              | ⚡ CPU spikes every 5 seconds                    |
-| 22  | **Waiter.com**     | Weather.com  | Node/Express             | 5332               | `npm start`              | 🌤️ 30-second response delay (not documented)    |
-| 23  | **HidenSeek**      | —            | Node/Express             | 5333               | `npm start`              | 🎲 Random HTTP status codes (200/404/500/418)   |
-| 24  | **MySpice**        | MySpace      | PHP                      | 5334               | `php -S localhost:5334`  | 🌶️ It's 2005 forever. Marquee tags included.    |
-| 25  | **AltaVistaBaby**  | AltaVista    | COBOL + HTML             | None               | `open index.html`        | 🔍 COBOL backend. Searching since 1998.         |
-| 26  | **Napper**         | Napster      | Ruby (Rack)              | 5335               | `rackup -p 5335`         | 🎵 Fake file sharing. ∞ lawsuits pending.       |
+| #   | Project           | Parodies    | Stack                      | Port(s)          | Dev Command             | Personality Traits                             |
+| --- | ----------------- | ----------- | -------------------------- | ---------------- | ----------------------- | ---------------------------------------------- |
+| 12  | **OnlyFarms**     | OnlyFans    | Node/Express (3 processes) | 5320, 5321, 5322 | `npm start`             | 🌾 3 processes, 3 ports, maximum confusion     |
+| 13  | **SubSnack**      | Substack    | Node/Express               | 5323             | `npm run dev`           | 📁 Server buried 6 directories deep            |
+| 14  | **Finder**        | Tinder      | Svelte + Vite              | 5173             | `npm run dev`           | 🔥 Swipe right on frameworks                   |
+| 15  | **BeerFinder**    | Beer apps   | Node/Express               | 5325             | `npm run dev`           | 🍺 ⚠️ Conflicts with Faceplant                 |
+| 16  | **CatTranslator** | —           | Static HTML/CSS/JS         | None             | `open index.html`       | 🐱 No build step. No dependencies. Like a cat. |
+| 17  | **RockNRoll**     | Rick Roll   | Node/Express               | 5324             | `npm start`             | 🎸 Never gonna give you uptime                 |
+| 18  | **Faceplant**     | Facebook    | Node/Express               | 5325             | `npm start`             | 💀 50% crash rate on startup                   |
+| 19  | **Locker**        | Docker      | Docker Compose             | 5326–5329        | `docker compose up`     | 🐳 Broken compose file. Claims it works.       |
+| 20  | **MemEater**      | —           | Node/Express               | 5330             | `npm start`             | 🍽️ Intentional memory leak. ~1MB/5s            |
+| 21  | **CPUStorm**      | —           | Node/Express               | 5331             | `npm start`             | ⚡ CPU spikes every 5 seconds                  |
+| 22  | **Waiter.com**    | Weather.com | Node/Express               | 5332             | `npm start`             | 🌤️ 30-second response delay (not documented)   |
+| 23  | **HidenSeek**     | —           | Node/Express               | 5333             | `npm start`             | 🎲 Random HTTP status codes (200/404/500/418)  |
+| 24  | **MySpice**       | MySpace     | PHP                        | 5323             | `php -S localhost:5323` | 🌶️ ⚠️ Conflicts with SubSnack                  |
+| 25  | **AltaVistaBaby** | AltaVista   | COBOL + HTML               | None             | `open index.html`       | 🔍 COBOL backend. Searching since 1998.        |
+| 26  | **Napper**        | Napster     | Ruby (Rack)                | 5331             | `rackup -p 5331`        | 🎵 ⚠️ Conflicts with CPUStorm                  |
 
 ---
 
@@ -72,22 +72,22 @@ _Twenty-six apps walk into a port range..._
 
 _Because well-behaved apps don't test anything interesting._
 
-| Scenario               | Project(s)                    | What Goes Wrong                                                            |
-| ---------------------- | ----------------------------- | -------------------------------------------------------------------------- |
-| **Port Conflict**      | Lotion + SpotiPie             | Both want port 5301. Neither will compromise. It's like a parking dispute. |
-| **WebSocket**          | SpotiPie                      | WS server on 5311. Because HTTP was too mainstream.                        |
-| **Slow Start**         | CornHub                       | 2.5s startup delay + slow endpoint. Simulates "works on my machine."       |
-| **Docker**             | DropBlox                      | Includes Dockerfile. For when you want problems in a container.            |
-| **Monorepos**          | Nestflix, AirBeanBean, GitPub | pnpm workspaces. Three times the `node_modules`, three times the fun.      |
-| **Multi-Process**      | OnlyFarms                     | 3 processes on 3 ports. Which one is the main server? Nobody knows.        |
-| **Deep Nesting**       | SubSnack                      | Server is 6 directories deep. README points to the wrong one.              |
-| **Random Crash**       | Faceplant                     | 50% chance of crashing on startup. Just run it again.                      |
-| **Broken Compose**     | Locker                        | docker-compose.yml has circular deps and missing services. "Works fine."   |
-| **Memory Leak**        | MemEater                      | Grows heap by ~1MB every 5 seconds. Will eat all your RAM.                 |
-| **CPU Spike**          | CPUStorm                      | 2-second busy loop every 5 seconds. Your fans will thank you.              |
-| **Slow Response**      | Waiter.com                    | 30-second delay on every response. README doesn't mention it.              |
-| **Random Status**      | HidenSeek                     | Returns 200, 404, 500, or 418 randomly. Every request is a surprise.       |
-| **Autoplay**           | RockNRoll                     | Autoplays a certain video. All routes redirect home. No escape.            |
+| Scenario           | Project(s)                                                                       | What Goes Wrong                                                                                                                         |
+| ------------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Port Conflict**  | Lotion + SpotiPie, BeerFinder + Faceplant, MySpice + SubSnack, Napper + CPUStorm | 4 conflicts: 5301 (Vue vs SvelteKit), 5325 (intermittent — Faceplant crashes 50%), 5323 (PHP vs Node), 5331 (Ruby vs Node + CPU spikes) |
+| **WebSocket**      | SpotiPie                                                                         | WS server on 5311. Because HTTP was too mainstream.                                                                                     |
+| **Slow Start**     | CornHub                                                                          | 2.5s startup delay + slow endpoint. Simulates "works on my machine."                                                                    |
+| **Docker**         | DropBlox                                                                         | Includes Dockerfile. For when you want problems in a container.                                                                         |
+| **Monorepos**      | Nestflix, AirBeanBean, GitPub                                                    | pnpm workspaces. Three times the `node_modules`, three times the fun.                                                                   |
+| **Multi-Process**  | OnlyFarms                                                                        | 3 processes on 3 ports. Which one is the main server? Nobody knows.                                                                     |
+| **Deep Nesting**   | SubSnack                                                                         | Server is 6 directories deep. README points to the wrong one.                                                                           |
+| **Random Crash**   | Faceplant                                                                        | 50% chance of crashing on startup. Just run it again.                                                                                   |
+| **Broken Compose** | Locker                                                                           | docker-compose.yml has circular deps and missing services. "Works fine."                                                                |
+| **Memory Leak**    | MemEater                                                                         | Grows heap by ~1MB every 5 seconds. Will eat all your RAM.                                                                              |
+| **CPU Spike**      | CPUStorm                                                                         | 2-second busy loop every 5 seconds. Your fans will thank you.                                                                           |
+| **Slow Response**  | Waiter.com                                                                       | 30-second delay on every response. README doesn't mention it.                                                                           |
+| **Random Status**  | HidenSeek                                                                        | Returns 200, 404, 500, or 418 randomly. Every request is a surprise.                                                                    |
+| **Autoplay**       | RockNRoll                                                                        | Autoplays a certain video. All routes redirect home. No escape.                                                                         |
 
 ---
 
@@ -121,17 +121,17 @@ _A carefully curated range of ports, lovingly assigned and immediately fought ov
 5320  OnlyFarms Server        🌾 Premium farm content
 5321  OnlyFarms Worker        🐄 Processing subscriptions
 5322  OnlyFarms Analytics     📊 Fake metrics engine
-5323  SubSnack (Express)      🥨 Buried 6 levels deep
+5323  SubSnack (Express)      🥨 ⚠️ CONFLICT with MySpice
+5323  MySpice (PHP)           🌶️ ⚠️ CONFLICT with SubSnack
 5324  RockNRoll (Express)     🎸 Never gonna give you up
-5325  Faceplant (Express)     💀 50% chance of being here
+5325  Faceplant (Express)     💀 ⚠️ CONFLICT with BeerFinder (crashes 50%)
+5325  BeerFinder (Express)    🍺 ⚠️ CONFLICT with Faceplant
 5326  Locker Frontend         🐳 Broken but confident
 5330  MemEater (Express)      🍽️ Eating your RAM
-5331  CPUStorm (Express)      ⚡ Spiking your CPU
+5331  CPUStorm (Express)      ⚡ ⚠️ CONFLICT with Napper (+ CPU spikes)
+5331  Napper (Ruby/Rack)      🎵 ⚠️ CONFLICT with CPUStorm
 5332  Waiter.com (Express)    🌤️ Responding... eventually
 5333  HidenSeek (Express)     🎲 Random status roulette
-5334  MySpice (PHP)           🌶️ It's 2005 in here
-5335  Napper (Ruby/Rack)      🎵 Sharing is caring
-4321  BeerFinder (Express)    🍺 Non-standard and proud
 5173  Finder (Svelte)         🔥 Swiping on frameworks
  —    CatTranslator (Static)  🐱 No port needed. Like a cat.
  —    AltaVistaBaby (COBOL)   🔍 CLI + static HTML

@@ -15,7 +15,7 @@ npm run dev
 
 ## Port
 
-- **Server**: 4321 (non-standard, because beer doesn't follow rules)
+- **Server**: 5325 (⚠️ conflicts with Faceplant — intermittent, since Faceplant crashes 50% of the time)
 
 ## Stack
 
@@ -39,7 +39,7 @@ npm run dev
 
 ## Notes
 
-- Port 4321 is intentionally non-standard
+- Port 5325 conflicts with Faceplant (intermittent — Faceplant crashes 50% of the time, so BeerFinder sometimes gets the port)
 - No actual geolocation is used
 - All brewery data is mocked
 - Please drink responsibly

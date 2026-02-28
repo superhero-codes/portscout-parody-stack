@@ -13,18 +13,18 @@ Napster — the original music file-sharing service that changed the internet (a
 bundle install
 
 # Start the server
-rackup -p 5335
+rackup -p 5331
 ```
 
 Or with Rails (if you have it):
 
 ```bash
-rails server -p 5335
+rails server -p 5331
 ```
 
 ## Port
 
-- **Server**: 5335
+- **Server**: 5331 (⚠️ conflicts with CPUStorm — cross-technology: Ruby vs Node.js, plus CPUStorm is spiking CPU)
 
 ## Stack
 

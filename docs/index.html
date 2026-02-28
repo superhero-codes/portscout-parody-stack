@@ -605,8 +605,8 @@
                         <div class="stat-label">Ports Used</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">Port Conflict</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Port Conflicts</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">0</div>
@@ -625,6 +625,7 @@
                 </div>
 
                 <div class="projects-grid">
+
                     <!-- Original 11 -->
                     <div class="project-card fade-in" style="--card-accent: #22c55e">
                         <div class="card-header">
@@ -827,11 +828,12 @@
                                 <div class="card-parody">Parodies Substack</div>
                             </div>
                         </div>
-                        <div class="card-desc">Newsletter platform for snack reviews. Server buried 6 directories deep. README lies about the path.</div>
+                        <div class="card-desc">Newsletter platform for snack reviews. Server buried 6 directories deep. README lies about the path. Now conflicts with MySpice.</div>
                         <div class="card-meta">
                             <span class="tag tag-stack">Node/Express</span>
                             <span class="tag tag-port">:5323</span>
                             <span class="tag tag-warning">📁 Deep Nesting</span>
+                            <span class="tag tag-warning">⚠️ Conflict</span>
                         </div>
                     </div>
 
@@ -858,11 +860,11 @@
                                 <div class="card-parody">Brewery finder</div>
                             </div>
                         </div>
-                        <div class="card-desc">Find craft beer near you. Non-standard port because beer doesn't follow rules.</div>
+                        <div class="card-desc">Find craft beer near you. Now conflicts with Faceplant on port 5325. Intermittent — Faceplant crashes 50%.</div>
                         <div class="card-meta">
                             <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:4321</span>
-                            <span class="tag tag-warning">🔢 Non-standard</span>
+                            <span class="tag tag-port">:5325</span>
+                            <span class="tag tag-warning">⚠️ Conflict</span>
                         </div>
                     </div>
 
@@ -905,11 +907,12 @@
                                 <div class="card-parody">Parodies Facebook</div>
                             </div>
                         </div>
-                        <div class="card-desc">50% crash rate on startup. When it works, it's early Facebook. When it doesn't, it's a faceplant.</div>
+                        <div class="card-desc">50% crash rate on startup. When it works, it's early Facebook. When it doesn't, it's a faceplant. Now conflicts with BeerFinder.</div>
                         <div class="card-meta">
                             <span class="tag tag-stack">Node/Express</span>
                             <span class="tag tag-port">:5325</span>
                             <span class="tag tag-danger">💀 50% Crash</span>
+                            <span class="tag tag-warning">⚠️ Conflict</span>
                         </div>
                     </div>
 
@@ -953,11 +956,12 @@
                                 <div class="card-parody">CPU spike simulator</div>
                             </div>
                         </div>
-                        <div class="card-desc">2-second busy loop every 5 seconds. Your fans will spin up. Your battery will drain. Your cat will worry.</div>
+                        <div class="card-desc">2-second busy loop every 5 seconds. Your fans will spin up. Your battery will drain. Your cat will worry. Now conflicts with Napper.</div>
                         <div class="card-meta">
                             <span class="tag tag-stack">Node/Express</span>
                             <span class="tag tag-port">:5331</span>
                             <span class="tag tag-danger">⚡ CPU Spike</span>
+                            <span class="tag tag-warning">⚠️ Conflict</span>
                         </div>
                     </div>
 
@@ -1001,11 +1005,12 @@
                                 <div class="card-parody">Parodies MySpace</div>
                             </div>
                         </div>
-                        <div class="card-desc">It's 2005 forever. Marquee tags, visitor counters, Top 8 friends. Tom is still your friend.</div>
+                        <div class="card-desc">It's 2005 forever. Marquee tags, visitor counters, Top 8 friends. Tom is still your friend. Now conflicts with SubSnack.</div>
                         <div class="card-meta">
                             <span class="tag tag-stack">PHP</span>
-                            <span class="tag tag-port">:5334</span>
+                            <span class="tag tag-port">:5323</span>
                             <span class="tag tag-special">📜 Retro</span>
+                            <span class="tag tag-warning">⚠️ Conflict</span>
                         </div>
                     </div>
 
@@ -1032,11 +1037,12 @@
                                 <div class="card-parody">Parodies Napster</div>
                             </div>
                         </div>
-                        <div class="card-desc">Fake file sharing. Suspicious .exe files. ∞ lawsuits pending. Download ETA: 47 hours on 56k.</div>
+                        <div class="card-desc">Fake file sharing. Suspicious .exe files. ∞ lawsuits pending. Download ETA: 47 hours on 56k. Now conflicts with CPUStorm.</div>
                         <div class="card-meta">
                             <span class="tag tag-stack">Ruby (Rack)</span>
-                            <span class="tag tag-port">:5335</span>
+                            <span class="tag tag-port">:5331</span>
                             <span class="tag tag-special">💎 Ruby</span>
+                            <span class="tag tag-warning">⚠️ Conflict</span>
                         </div>
                     </div>
                 </div>
@@ -1054,9 +1060,9 @@
                 <div class="scenarios-grid">
                     <div class="scenario-card fade-in">
                         <div class="scenario-icon">⚠️</div>
-                        <div class="scenario-title">Port Conflict</div>
-                        <div class="scenario-projects">Lotion + SpotiPie</div>
-                        <div class="scenario-desc">Both want port 5301. Neither will compromise. It's like a parking dispute, but with TCP.</div>
+                        <div class="scenario-title">Port Conflicts (×4)</div>
+                        <div class="scenario-projects">Lotion + SpotiPie · BeerFinder + Faceplant · MySpice + SubSnack · Napper + CPUStorm</div>
+                        <div class="scenario-desc">4 conflicts: port 5301 (Vue vs SvelteKit), 5325 (intermittent — Faceplant crashes 50%), 5323 (PHP vs Node), 5331 (Ruby vs Node + CPU spikes).</div>
                     </div>
 
                     <div class="scenario-card fade-in">

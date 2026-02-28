@@ -9,14 +9,14 @@ MySpace — the social network that defined a generation. Complete with Top 8 fr
 ## How to Start
 
 ```bash
-php -S localhost:5334
+php -S localhost:5323
 ```
 
 That's it. No npm. No webpack. No build step. Just PHP, the way the internet gods intended.
 
 ## Port
 
-- **Server**: 5334
+- **Server**: 5323 (⚠️ conflicts with SubSnack — cross-technology: PHP vs Node.js)
 
 ## Stack
 
