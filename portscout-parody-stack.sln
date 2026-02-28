@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projects", "projects", "{17245595-230B-9055-A944-863F0DDDA8E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chaos-gremlins", "chaos-gremlins", "{44A18906-4650-9ABF-34C8-71945EC8F0BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "waitercom", "projects\chaos-gremlins\waitercom\waitercom.csproj", "{FE11019B-0064-C913-7F63-91A25AD4FE80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE11019B-0064-C913-7F63-91A25AD4FE80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE11019B-0064-C913-7F63-91A25AD4FE80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE11019B-0064-C913-7F63-91A25AD4FE80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE11019B-0064-C913-7F63-91A25AD4FE80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44A18906-4650-9ABF-34C8-71945EC8F0BE} = {17245595-230B-9055-A944-863F0DDDA8E8}
+		{FE11019B-0064-C913-7F63-91A25AD4FE80} = {44A18906-4650-9ABF-34C8-71945EC8F0BE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {307857D7-3980-4B64-9596-A1E277B3B72F}
+	EndGlobalSection
+EndGlobal

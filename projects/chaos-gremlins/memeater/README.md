@@ -1,37 +1,43 @@
 # MemEater 🍽️
 
-A Node.js app with an intentional memory leak. It eats RAM for breakfast, lunch, and dinner.
+MemEater is now a Rust + Axum service with an **intentional memory leak**. It eats RAM for breakfast, lunch, and dinner.
 
-## How to Start
+## Prerequisites
+
+- Rust toolchain installed (`rustc`, `cargo`)
+
+## Run
 
 ```bash
-npm install
-npm start
+cargo run
 ```
 
 ## Port
 
-- **Server**: 5330
+- **Server**: `5330` (binds to `0.0.0.0:5330`)
 
-## What it Does
+## Intentional Leak Behavior
 
-- Allocates ~1MB of memory every 5 seconds
-- Never frees it
-- Logs heap usage to the console
-- Has a web UI that auto-refreshes to show growing memory
+- Allocates exactly **1,048,576 bytes (~1MB)** every 5 seconds
+- Never frees allocated chunks
+- Tracks leak ticks (one tick per 5-second allocation)
+- Logs total allocated bytes every 5 seconds
 
 ## Endpoints
 
-- `GET /` — Web UI showing memory stats (auto-refreshes)
-- `GET /api/status` — JSON memory usage stats
+- `GET /` — parody UI showing leak growth (auto-refreshes every 5s)
+- `GET /api/status` — JSON status including required fields:
+    - `allocatedBytes`
+    - `leakRateBytesPer5s` (always `1048576`)
+    - `ticks`
+
+## What PortScout Should Detect
+
+- Rust runtime markers (`Cargo.toml`, `src/main.rs`, Axum/Tokio server)
+- Service bound to port `5330`
+- Ongoing leak pattern: +1MB every 5 seconds, never released
+- Status endpoint at `/api/status` exposing leak counters and required fields
 
 ## ⚠️ Warning
 
-This app **intentionally leaks memory**. It will consume increasing amounts of RAM until killed. Do not leave it running unattended unless you enjoy watching your system swap.
-
-## Notes
-
-- The leak is an ever-growing array of 1MB strings
-- Memory usage is logged every 5 seconds
-- The web UI auto-refreshes every 5 seconds
-- Kill it with Ctrl+C before your OS kills it for you
+This service **intentionally leaks memory** and will continue growing until terminated. Stop it with `Ctrl+C` before your OS stops it for you.
