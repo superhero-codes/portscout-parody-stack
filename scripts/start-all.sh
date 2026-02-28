@@ -189,6 +189,30 @@ echo "🍺 Starting BeerFinder (port 5325)..."
 cd "$PROJECTS_DIR/wildcard-drawer/beerfinder" && npm start &
 PIDS+=($!)
 
+# StackBucks (Java/Spring Boot) - Port 8088
+echo "☕ Starting StackBucks (port 8088)..."
+cd "$PROJECTS_DIR/stackbucks" && ./mvnw spring-boot:run &
+PIDS+=($!)
+
+# ============================================================
+# 📺 silicon-valley
+# ============================================================
+
+# NipAlert (Vue 3 + Leaflet) - Port 6060
+echo "🌡️  Starting NipAlert (port 6060)..."
+cd "$PROJECTS_DIR/silicon-valley/nipalert" && npm run dev &
+PIDS+=($!)
+
+# Pied Piper (Vue 3 + Vite) - Port 5050
+echo "📡 Starting Pied Piper (port 5050)..."
+cd "$PROJECTS_DIR/silicon-valley/piedpiper" && npm run dev &
+PIDS+=($!)
+
+# Hooli Nucleus (Vue 3 + Vite) - Port 7070
+echo "🏢 Starting Hooli Nucleus (port 7070)..."
+cd "$PROJECTS_DIR/silicon-valley/hoolinucleus" && npm run dev &
+PIDS+=($!)
+
 echo ""
 echo "================================================"
 echo "✅ All projects starting!"

@@ -27,6 +27,19 @@ install_npm() {
   echo ""
 }
 
+install_mvnw() {
+  local name="$1"
+  local dir="$2"
+  echo "📥 [$name] ./mvnw clean install..."
+  if (cd "$dir" && ./mvnw clean install 2>&1); then
+    echo "✅ [$name] done"
+  else
+    echo "❌ [$name] failed"
+    FAILED+=("$name")
+  fi
+  echo ""
+}
+
 install_pnpm() {
   local name="$1"
   local dir="$2"
@@ -122,6 +135,17 @@ install_npm  "WaiterCom"  "$PROJECTS_DIR/chaos-gremlins/waitercom"
 
 # cattranslator (static HTML) — no install needed
 install_npm  "BeerFinder"  "$PROJECTS_DIR/wildcard-drawer/beerfinder"
+
+# StackBucks (Java/Spring Boot) — root-level under projects/
+install_mvnw "StackBucks"  "$PROJECTS_DIR/stackbucks"
+
+# ============================================================
+# 📺 silicon-valley
+# ============================================================
+
+install_npm  "NipAlert"       "$PROJECTS_DIR/silicon-valley/nipalert"
+install_npm  "PiedPiper"      "$PROJECTS_DIR/silicon-valley/piedpiper"
+install_npm  "Hooli Nucleus"  "$PROJECTS_DIR/silicon-valley/hoolinucleus"
 
 # ============================================================
 
