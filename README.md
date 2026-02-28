@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <strong>26 fake apps. 7 absurd categories. Real frameworks. Zero business models.</strong>
+  <strong>30 fake apps. 9 absurd categories. Real frameworks. Zero business models.</strong>
 </p>
 
 <p align="center">
@@ -15,12 +15,13 @@
   🍺 GitPub &nbsp;·&nbsp; 🐷 DocuSwine &nbsp;·&nbsp; 🌽 CornHub &nbsp;·&nbsp; 📦 DropBlox &nbsp;·&nbsp; 📝 Lotion<br/>
   🌾 OnlyFarms &nbsp;·&nbsp; 🥨 SubSnack &nbsp;·&nbsp; 🔥 Finder &nbsp;·&nbsp; 🍺 BeerFinder &nbsp;·&nbsp; 🐱 CatTranslator<br/>
   🎸 RockNRoll &nbsp;·&nbsp; 💀 Faceplant &nbsp;·&nbsp; 🐳 Locker &nbsp;·&nbsp; 🍽️ MemEater &nbsp;·&nbsp; ⚡ CPUStorm<br/>
-  🌤️ Waiter.com &nbsp;·&nbsp; 🎲 HidenSeek &nbsp;·&nbsp; 🌶️ MySpice &nbsp;·&nbsp; 🔍 AltaVistaBaby &nbsp;·&nbsp; 🎵 Napper
+  🌤️ Waiter.com &nbsp;·&nbsp; 🎲 HidenSeek &nbsp;·&nbsp; 🌶️ MySpice &nbsp;·&nbsp; 🔍 AltaVistaBaby &nbsp;·&nbsp; 🎵 Napper<br/>
+  🌡️ NipAlert &nbsp;·&nbsp; 📡 Pied Piper &nbsp;·&nbsp; 🏢 Hooli Nucleus &nbsp;·&nbsp; ☕ StackBucks
 </p>
 
 ---
 
-Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 26 fake-but-functional web apps that parody the tech giants you know and ~~love~~ tolerate. Each project is a real, runnable application built with real frameworks, real tooling, and absolutely zero real business models.
+Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 30 fake-but-functional web apps that parody the tech giants you know and ~~love~~ tolerate. Each project is a real, runnable application built with real frameworks, real tooling, and absolutely zero real business models.
 
 **Why does this exist?** Because [PortScout](https://portscout.app) needed a playground full of misbehaving dev servers, port conflicts, slow backends, and monorepo madness. Think of it as a petting zoo, but instead of goats, it's full of `node_modules`.
 
@@ -28,7 +29,7 @@ Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 2
 
 ## 📂 Project Categories
 
-_Twenty-six apps walk into a port range... and get sorted into 7 drawers._
+_Thirty apps walk into a port range... and get sorted into 9 drawers._
 
 | Folder                                                                            | Category                                 | Projects                                        |
 | --------------------------------------------------------------------------------- | ---------------------------------------- | ----------------------------------------------- |
@@ -39,6 +40,8 @@ _Twenty-six apps walk into a port range... and get sorted into 7 drawers._
 | [☁️ `cloud-nine/`](#️-cloud-nine--cloud-storage--infrastructure)                   | Cloud, Storage & Infrastructure          | DropBlox, Locker, AirBeanBean                   |
 | [🐛 `chaos-gremlins/`](#-chaos-gremlins--intentional-misbehavior--stress-testing) | Intentional Misbehavior & Stress Testing | MemEater, CPUStorm, HidenSeek, Waiter.com       |
 | [🐱 `wildcard-drawer/`](#-wildcard-drawer--miscellaneous--uncategorizable)        | Miscellaneous & Uncategorizable          | CatTranslator, BeerFinder                       |
+| [📺 `silicon-valley/`](#-silicon-valley--silicon-valley-homages)                  | Silicon Valley Homages                   | NipAlert, Pied Piper, Hooli Nucleus             |
+| [☕ `stackbucks/`](#-stackbucks--caffeine-powered)                                | Caffeine-Powered                         | StackBucks                                      |
 
 ---
 
@@ -103,21 +106,39 @@ _Infrastructure parodies that are barely holding it together._
 
 _Apps that exist solely to ruin your day._
 
-| #   | Project        | Parodies    | Stack        | Port(s) | Dev Command                                         | Personality Traits                            |
-| --- | -------------- | ----------- | ------------ | ------- | --------------------------------------------------- | --------------------------------------------- |
-| 21  | **MemEater**   | —           | Node/Express | 5330    | `cd projects/chaos-gremlins/memeater && npm start`  | 🍽️ Intentional memory leak. ~1MB/5s           |
-| 22  | **CPUStorm**   | —           | Node/Express | 5331    | `cd projects/chaos-gremlins/cpustorm && npm start`  | ⚡ CPU spikes every 5 seconds                 |
-| 23  | **HidenSeek**  | —           | Node/Express | 5333    | `cd projects/chaos-gremlins/hidenseek && npm start` | 🎲 Random HTTP status codes (200/404/500/418) |
-| 24  | **Waiter.com** | Weather.com | Node/Express | 5332    | `cd projects/chaos-gremlins/waitercom && npm start` | 🌤️ 30-second response delay (not documented)  |
+| #   | Project        | Parodies    | Stack                      | Port(s) | Dev Command                                          | Personality Traits                            |
+| --- | -------------- | ----------- | -------------------------- | ------- | ---------------------------------------------------- | --------------------------------------------- |
+| 21  | **MemEater**   | —           | Rust Axum                  | 5330    | `cd projects/chaos-gremlins/memeater && cargo run`   | 🍽️ Intentional memory leak. ~1MB/5s           |
+| 22  | **CPUStorm**   | —           | Go net/http                | 5331    | `cd projects/chaos-gremlins/cpustorm && go run .`    | ⚡ CPU spikes every 5 seconds                 |
+| 23  | **HidenSeek**  | —           | Node/Express               | 5333    | `cd projects/chaos-gremlins/hidenseek && npm start`  | 🎲 Random HTTP status codes (200/404/500/418) |
+| 24  | **Waiter.com** | Weather.com | ASP.NET Minimal API (.NET) | 5332    | `cd projects/chaos-gremlins/waitercom && dotnet run` | 🌤️ 30-second response delay                   |
 
 ### 🐱 wildcard-drawer/ — Miscellaneous & Uncategorizable
 
 _The apps that didn't fit anywhere else. We love them anyway._
 
-| #   | Project           | Parodies  | Stack              | Port(s) | Dev Command                                                    | Personality Traits                             |
-| --- | ----------------- | --------- | ------------------ | ------- | -------------------------------------------------------------- | ---------------------------------------------- |
-| 25  | **CatTranslator** | —         | Static HTML/CSS/JS | None    | `cd projects/wildcard-drawer/cattranslator && open index.html` | 🐱 No build step. No dependencies. Like a cat. |
-| 26  | **BeerFinder**    | Beer apps | Node/Express       | 5325    | `cd projects/wildcard-drawer/beerfinder && npm run dev`        | 🍺 ⚠️ Conflicts with Faceplant                 |
+| #   | Project           | Parodies  | Stack              | Port(s) | Dev Command                                                                                                                                                     | Personality Traits                             |
+| --- | ----------------- | --------- | ------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 25  | **CatTranslator** | —         | Static HTML/CSS/JS | None    | `cd projects/wildcard-drawer/cattranslator && open index.html`                                                                                                  | 🐱 No build step. No dependencies. Like a cat. |
+| 26  | **BeerFinder**    | Beer apps | FastAPI (Python)   | 5325    | `cd projects/wildcard-drawer/beerfinder && python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && uvicorn app:app --port 5325` | 🍺 ⚠️ Conflicts with Faceplant                 |
+
+### 📺 silicon-valley/ — Silicon Valley Homages
+
+_This guy fucks. These apps don't work, but they're disrupting the disruption space._
+
+| #   | Project           | Parodies                    | Stack        | Port(s) | Dev Command                                              | Personality Traits                                  |
+| --- | ----------------- | --------------------------- | ------------ | ------- | -------------------------------------------------------- | --------------------------------------------------- |
+| 27  | **NipAlert**      | Big Head's app (SV S3)      | Vue 3 + Vite | 6060    | `cd projects/silicon-valley/nipalert && npm run dev`     | 🌡️ AI-powered thermodynamic proximity detection     |
+| 28  | **Pied Piper**    | Pied Piper (Silicon Valley) | Vue 3 + Vite | 5050    | `cd projects/silicon-valley/piedpiper && npm run dev`    | 📡 Middle-out compression. Weissman Score 5.2.      |
+| 29  | **Hooli Nucleus** | Hooli (Silicon Valley)      | Vue 3 + Vite | 7070    | `cd projects/silicon-valley/hoolinucleus && npm run dev` | 🏢 Because your life deserves enterprise licensing. |
+
+### ☕ stackbucks/ — Caffeine-Powered
+
+_The first and only enterprise-grade caffeine delivery platform._
+
+| #   | Project        | Parodies  | Stack                 | Port(s) | Dev Command                                        | Personality Traits                                                                                                                                       |
+| --- | -------------- | --------- | --------------------- | ------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 30  | **StackBucks** | Starbucks | Java 21 / Spring Boot | 8088    | `cd projects/stackbucks && ./mvnw spring-boot:run` | ☕ Developer Superpower Beverage Framework. Intentionally noisy: server log spam, client console spam, memory foam toggle. Caffeine overload easter egg. |
 
 ---
 
@@ -125,32 +146,35 @@ _The apps that didn't fit anywhere else. We love them anyway._
 
 _Because well-behaved apps don't test anything interesting._
 
-| Scenario           | Project(s)                                                                       | What Goes Wrong                                                                                                                         |
-| ------------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Port Conflict**  | Lotion + SpotiPie, BeerFinder + Faceplant, MySpice + SubSnack, Napper + CPUStorm | 4 conflicts: 5301 (Vue vs SvelteKit), 5325 (intermittent — Faceplant crashes 50%), 5323 (PHP vs Node), 5331 (Ruby vs Node + CPU spikes) |
-| **WebSocket**      | SpotiPie                                                                         | WS server on 5311. Because HTTP was too mainstream.                                                                                     |
-| **Slow Start**     | CornHub                                                                          | 2.5s startup delay + slow endpoint. Simulates "works on my machine."                                                                    |
-| **Docker**         | DropBlox                                                                         | Includes Dockerfile. For when you want problems in a container.                                                                         |
-| **Monorepos**      | Nestflix, AirBeanBean, GitPub                                                    | pnpm workspaces. Three times the `node_modules`, three times the fun.                                                                   |
-| **Multi-Process**  | OnlyFarms                                                                        | 3 processes on 3 ports. Which one is the main server? Nobody knows.                                                                     |
-| **Deep Nesting**   | SubSnack                                                                         | Server is 6 directories deep. README points to the wrong one.                                                                           |
-| **Random Crash**   | Faceplant                                                                        | 50% chance of crashing on startup. Just run it again.                                                                                   |
-| **Broken Compose** | Locker                                                                           | docker-compose.yml has circular deps and missing services. "Works fine."                                                                |
-| **Memory Leak**    | MemEater                                                                         | Grows heap by ~1MB every 5 seconds. Will eat all your RAM.                                                                              |
-| **CPU Spike**      | CPUStorm                                                                         | 2-second busy loop every 5 seconds. Your fans will thank you.                                                                           |
-| **Slow Response**  | Waiter.com                                                                       | 30-second delay on every response. README doesn't mention it.                                                                           |
-| **Random Status**  | HidenSeek                                                                        | Returns 200, 404, 500, or 418 randomly. Every request is a surprise.                                                                    |
-| **Autoplay**       | RockNRoll                                                                        | Autoplays a certain video. All routes redirect home. No escape.                                                                         |
+| Scenario           | Project(s)                                                                       | What Goes Wrong                                                                                                                                       |
+| ------------------ | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Port Conflict**  | Lotion + SpotiPie, BeerFinder + Faceplant, MySpice + SubSnack, Napper + CPUStorm | 4 conflicts: 5301 (Vue vs SvelteKit), 5325 (Python vs Node, intermittent — Faceplant crashes 50%), 5323 (PHP vs Node), 5331 (Ruby vs Go + CPU spikes) |
+| **WebSocket**      | SpotiPie                                                                         | WS server on 5311. Because HTTP was too mainstream.                                                                                                   |
+| **Slow Start**     | CornHub                                                                          | 2.5s startup delay + slow endpoint. Simulates "works on my machine."                                                                                  |
+| **Docker**         | DropBlox                                                                         | Includes Dockerfile. For when you want problems in a container.                                                                                       |
+| **Monorepos**      | Nestflix, AirBeanBean, GitPub                                                    | pnpm workspaces. Three times the `node_modules`, three times the fun.                                                                                 |
+| **Multi-Process**  | OnlyFarms                                                                        | 3 processes on 3 ports. Which one is the main server? Nobody knows.                                                                                   |
+| **Deep Nesting**   | SubSnack                                                                         | Server is 6 directories deep. README points to the wrong one.                                                                                         |
+| **Random Crash**   | Faceplant                                                                        | 50% chance of crashing on startup. Just run it again.                                                                                                 |
+| **Broken Compose** | Locker                                                                           | docker-compose.yml has circular deps and missing services. "Works fine."                                                                              |
+| **Memory Leak**    | MemEater                                                                         | Grows heap by ~1MB every 5 seconds. Will eat all your RAM.                                                                                            |
+| **CPU Spike**      | CPUStorm                                                                         | 2-second busy loop every 5 seconds. Your fans will thank you.                                                                                         |
+| **Slow Response**  | Waiter.com                                                                       | 30-second delay on every response.                                                                                                                    |
+| **Random Status**  | HidenSeek                                                                        | Returns 200, 404, 500, or 418 randomly. Every request is a surprise.                                                                                  |
+| **Autoplay**       | RockNRoll                                                                        | Autoplays a certain video. All routes redirect home. No escape.                                                                                       |
+| **Log Spam**       | StackBucks                                                                       | 30-60 INFO lines on startup, then 1 every 2s + WARN/ERROR every 20-40s. Browser console also spams 20-40 lines on load.                               |
+| **Memory Toggle**  | StackBucks                                                                       | Memory foam toggle allocates 1-5MB/30s when ON, capped at 256MB. Observable growth in JVM heap.                                                       |
+| **Easter Egg**     | StackBucks                                                                       | Click logo 7x → caffeine overload: 50 server WARN lines + 30+ client console messages burst.                                                          |
 
 ---
 
 ## 🧪 Test Matrix
 
-For a comprehensive test matrix covering all 26 projects — including ports, run commands, intentional behaviors, and what PortScout should detect — see [TESTMATRIX.md](TESTMATRIX.md).
+For a comprehensive test matrix covering all 30 projects — including ports, run commands, intentional behaviors, and what PortScout should detect — see [TESTMATRIX.md](TESTMATRIX.md).
 
 ---
 
-## 🗺️ Port Map (5301–5335+)
+## 🗺️ Port Map (5050–8088)
 
 _A carefully curated range of ports, lovingly assigned and immediately fought over._
 
@@ -178,14 +202,18 @@ _A carefully curated range of ports, lovingly assigned and immediately fought ov
 5323  MySpice (PHP)           🌶️ ⚠️ CONFLICT with SubSnack
 5324  RockNRoll (Express)     🎸 Never gonna give you up
 5325  Faceplant (Express)     💀 ⚠️ CONFLICT with BeerFinder (crashes 50%)
-5325  BeerFinder (Express)    🍺 ⚠️ CONFLICT with Faceplant
+5325  BeerFinder (FastAPI)    🍺 ⚠️ CONFLICT with Faceplant
 5326  Locker Frontend         🐳 Broken but confident
-5330  MemEater (Express)      🍽️ Eating your RAM
-5331  CPUStorm (Express)      ⚡ ⚠️ CONFLICT with Napper (+ CPU spikes)
+5330  MemEater (Rust/Axum)    🍽️ Eating your RAM
+5331  CPUStorm (Go net/http)  ⚡ ⚠️ CONFLICT with Napper (+ CPU spikes)
 5331  Napper (Ruby/Rack)      🎵 ⚠️ CONFLICT with CPUStorm
-5332  Waiter.com (Express)    🌤️ Responding... eventually
+5332  Waiter.com (.NET API)   🌤️ Responding... eventually
 5333  HidenSeek (Express)     🎲 Random status roulette
 5173  Finder (Svelte)         🔥 Swiping on frameworks
+5050  Pied Piper (Vue 3)      📡 Making the world a better place
+6060  NipAlert (Vue 3)        🌡️ Big Head's greatest contribution
+7070  Hooli Nucleus (Vue 3)   🏢 Cognitive optimization ecosystem
+8088  StackBucks (Spring Boot) ☕ Enterprise caffeine delivery platform
  —    CatTranslator (Static)  🐱 No port needed. Like a cat.
  —    AltaVistaBaby (COBOL)   🔍 CLI + static HTML
 ```

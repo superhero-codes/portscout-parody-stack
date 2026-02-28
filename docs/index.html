@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PortScout Parody Stack — 26 Fake Apps, 7 Absurd Categories, Real Frameworks, Zero Business Models</title>
-        <meta name="description" content="A lovingly crafted collection of 26 fake-but-functional web apps organized into 7 absurd categories that parody the tech giants. Built for testing PortScout.">
+        <title>PortScout Parody Stack — 30 Fake Apps, 8 Absurd Categories, Real Frameworks, Zero Business Models</title>
+        <meta name="description" content="A lovingly crafted collection of 30 fake-but-functional web apps organized into 8 absurd categories that parody the tech giants. Built for testing PortScout.">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕵️</text></svg>">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -43,6 +43,7 @@
                 --cat-cloud: #06b6d4;
                 --cat-chaos: #22c55e;
                 --cat-wildcard: #a855f7;
+                --cat-siliconvalley: #10b981;
             }
 
             html {
@@ -493,6 +494,12 @@
                 border: 1px solid rgba(168, 85, 247, 0.15);
             }
 
+            .tag-cat-siliconvalley {
+                background: rgba(16, 185, 129, 0.1);
+                color: var(--cat-siliconvalley);
+                border: 1px solid rgba(16, 185, 129, 0.15);
+            }
+
             /* Port map */
             .port-map {
                 background: var(--bg-card);
@@ -747,8 +754,8 @@
         Parody Stack
       </h1>
                 <p class="tagline">
-                    <em>26 fake apps.</em>
-                    <em>7 absurd categories.</em> Real frameworks. Zero business models.<br>
+                    <em>30 fake apps.</em>
+                    <em>8 absurd categories.</em> Real frameworks. Zero business models.<br>
         We couldn't afford the real apps, so we built knockoffs.
       </p>
                 <div class="hero-actions">
@@ -762,11 +769,11 @@
 
                 <div class="stats">
                     <div class="stat">
-                        <div class="stat-number">26</div>
+                        <div class="stat-number">30</div>
                         <div class="stat-label">Parody Apps</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">7</div>
+                        <div class="stat-number">8</div>
                         <div class="stat-label">Categories</div>
                     </div>
                     <div class="stat">
@@ -794,7 +801,7 @@
             <div class="container">
                 <div class="section-header fade-in">
                     <h2>🎭 The Lineup</h2>
-                    <p>Twenty-six apps in seven absurd categories walk into a port range...</p>
+                    <p>Thirty apps in eight absurd categories walk into a port range...</p>
                 </div>
 
                 <!-- Category Navigation -->
@@ -819,6 +826,9 @@
                     </a>
                     <a href="#cat-wildcard" class="category-nav-btn" style="--btn-accent: var(--cat-wildcard)">
                         <span class="cat-emoji">🐱</span> wildcard-drawer
+                    </a>
+                    <a href="#cat-siliconvalley" class="category-nav-btn" style="--btn-accent: var(--cat-siliconvalley)">
+                        <span class="cat-emoji">📺</span> silicon-valley
                     </a>
                 </div>
 
@@ -1278,10 +1288,10 @@
                                     <div class="card-parody">Memory leak simulator</div>
                                 </div>
                             </div>
-                            <div class="card-desc">Eats ~1MB of RAM every 5 seconds. Never frees it. Will consume all your memory if you let it.</div>
+                            <div class="card-desc">Rust + Axum leak gremlin. Eats ~1MB of RAM every 5 seconds and never frees it. Run with <code>cargo run</code>.</div>
                             <div class="card-meta">
                                 <span class="tag tag-category tag-cat-chaos">🐛 chaos-gremlins</span>
-                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-stack">Rust + Axum</span>
                                 <span class="tag tag-port">:5330</span>
                                 <span class="tag tag-danger">🍽️ Memory Leak</span>
                             </div>
@@ -1295,10 +1305,10 @@
                                     <div class="card-parody">CPU spike simulator</div>
                                 </div>
                             </div>
-                            <div class="card-desc">2-second busy loop every 5 seconds. Your fans will spin up. Your battery will drain. Your cat will worry. Now conflicts with Napper.</div>
+                            <div class="card-desc">Go <code>net/http</code> CPU tantrum: 2-second busy loop every 5 seconds. Run with <code>go run .</code>. Still conflicts with Napper.</div>
                             <div class="card-meta">
                                 <span class="tag tag-category tag-cat-chaos">🐛 chaos-gremlins</span>
-                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-stack">Go net/http</span>
                                 <span class="tag tag-port">:5331</span>
                                 <span class="tag tag-danger">⚡ CPU Spike</span>
                                 <span class="tag tag-warning">⚠️ Conflict</span>
@@ -1330,10 +1340,10 @@
                                     <div class="card-parody">Parodies Weather.com</div>
                                 </div>
                             </div>
-                            <div class="card-desc">Beautiful weather UI. 30-second response delay on every request. The README doesn't mention this.</div>
+                            <div class="card-desc">ASP.NET Minimal API weather UI. Every request still waits ~30 seconds. Run with <code>dotnet run</code>.</div>
                             <div class="card-meta">
                                 <span class="tag tag-category tag-cat-chaos">🐛 chaos-gremlins</span>
-                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-stack">ASP.NET Minimal API</span>
                                 <span class="tag tag-port">:5332</span>
                                 <span class="tag tag-warning">⏳ 30s Delay</span>
                             </div>
@@ -1353,7 +1363,7 @@
                             <h3>wildcard-drawer</h3>
                             <div class="category-desc">Miscellaneous &amp; Uncategorizable</div>
                         </div>
-                        <span class="category-count">2 projects</span>
+                        <span class="category-count">3 projects</span>
                     </div>
 
                     <div class="projects-grid">
@@ -1381,12 +1391,97 @@
                                     <div class="card-parody">Brewery finder</div>
                                 </div>
                             </div>
-                            <div class="card-desc">Find craft beer near you. Now conflicts with Faceplant on port 5325. Intermittent — Faceplant crashes 50%.</div>
+                            <div class="card-desc">FastAPI craft beer finder. Start via Uvicorn on 5325. Still conflicts with Faceplant (intermittent — 50% crash roulette).</div>
                             <div class="card-meta">
                                 <span class="tag tag-category tag-cat-wildcard">🐱 wildcard-drawer</span>
-                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-stack">FastAPI (Python)</span>
                                 <span class="tag tag-port">:5325</span>
                                 <span class="tag tag-warning">⚠️ Conflict</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #f97316">
+                            <div class="card-header">
+                                <span class="card-emoji">☕</span>
+                                <div>
+                                    <div class="card-title">StackBucks</div>
+                                    <div class="card-parody">Developer Superpower Beverage Framework</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Developer Superpower Beverage Framework — Java/Spring Boot caffeine delivery platform with intentionally noisy PortScout test signals</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-wildcard">🐱 wildcard-drawer</span>
+                                <span class="tag tag-stack">Java / Spring Boot</span>
+                                <span class="tag tag-port">:8088</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════ -->
+
+                <!-- 📺 silicon-valley -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <div id="cat-siliconvalley" class="category-section fade-in">
+                    <div class="category-header">
+                        <span class="category-emoji">📺</span>
+                        <div class="category-info">
+                            <h3>silicon-valley</h3>
+                            <div class="category-desc">Silicon Valley Homages</div>
+                        </div>
+                        <span class="category-count">3 projects</span>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card fade-in" style="--card-accent: #10b981">
+                            <div class="card-header">
+                                <span class="card-emoji">🌡️</span>
+                                <div>
+                                    <div class="card-title">NipAlert</div>
+                                    <div class="card-parody">Parodies Big Head's app (Silicon Valley S3)</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">AI-powered thermodynamic proximity detection. Big Head's greatest contribution to technology. Features radar loading screen, dark map with random profile markers, and geolocation.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-siliconvalley">📺 silicon-valley</span>
+                                <span class="tag tag-stack">Vue 3 + Leaflet</span>
+                                <span class="tag tag-port">:6060</span>
+                                <span class="tag tag-special">🌡️ Thermodynamic</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #10b981">
+                            <div class="card-header">
+                                <span class="card-emoji">📡</span>
+                                <div>
+                                    <div class="card-title">Pied Piper</div>
+                                    <div class="card-parody">Parodies Pied Piper (Silicon Valley)</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Middle-out compression. Weissman Score 5.2. Making the world a better place. Features classic SaaS dashboard mode, dark marketing page, compression demo, and Ehrlich Mode easter egg.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-siliconvalley">📺 silicon-valley</span>
+                                <span class="tag tag-stack">Vue 3 + Vite</span>
+                                <span class="tag tag-port">:5050</span>
+                                <span class="tag tag-special">📡 Middle-Out</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #10b981">
+                            <div class="card-header">
+                                <span class="card-emoji">🏢</span>
+                                <div>
+                                    <div class="card-title">Hooli Nucleus</div>
+                                    <div class="card-parody">Parodies Hooli (Silicon Valley)</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Because your life deserves enterprise licensing. The world's first cognitive optimization ecosystem that manages your life, predicts your future, and increases shareholder value. Features corporate loading sequence, 6 fake feature tiles, notification system, Admin Mode, and Gavin Belson Mode easter egg.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-siliconvalley">📺 silicon-valley</span>
+                                <span class="tag tag-stack">Vue 3 + Vite</span>
+                                <span class="tag tag-port">:7070</span>
+                                <span class="tag tag-special">🏢 Corporate</span>
                             </div>
                         </div>
                     </div>
@@ -1408,7 +1503,7 @@
                         <div class="scenario-icon">⚠️</div>
                         <div class="scenario-title">Port Conflicts (×4)</div>
                         <div class="scenario-projects">Lotion + SpotiPie · BeerFinder + Faceplant · MySpice + SubSnack · Napper + CPUStorm</div>
-                        <div class="scenario-desc">4 conflicts: port 5301 (Vue vs SvelteKit), 5325 (intermittent — Faceplant crashes 50%), 5323 (PHP vs Node), 5331 (Ruby vs Node + CPU spikes).</div>
+                        <div class="scenario-desc">4 conflicts: port 5301 (Vue vs SvelteKit), 5325 (Python vs Node, intermittent — Faceplant crashes 50%), 5323 (PHP vs Node), 5331 (Ruby vs Go + CPU spikes).</div>
                     </div>
 
                     <div class="scenario-card fade-in">
@@ -1542,9 +1637,7 @@
                         <br>
                         <span class="command">cd</span>
                         <span class="path">projects/chaos-gremlins/memeater</span><br>
-                        <span class="command">npm install</span>
-                        <span class="comment">&amp;&amp;</span>
-                        <span class="command">npm start</span>
+                        <span class="command">cargo run</span>
                     </div>
                 </div>
             </div>
