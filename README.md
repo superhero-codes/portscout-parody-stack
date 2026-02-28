@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <strong>26 fake apps. Real frameworks. Zero business models.</strong>
+  <strong>26 fake apps. 7 absurd categories. Real frameworks. Zero business models.</strong>
 </p>
 
 <p align="center">
@@ -26,45 +26,98 @@ Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 2
 
 ---
 
+## 📂 Project Categories
+
+_Twenty-six apps walk into a port range... and get sorted into 7 drawers._
+
+| Folder                                                                            | Category                                 | Projects                                        |
+| --------------------------------------------------------------------------------- | ---------------------------------------- | ----------------------------------------------- |
+| [📺 `streaming-and-chill/`](#-streaming-and-chill--media--entertainment)          | Media & Entertainment                    | CornHub, TubeYou, SpotiPie, Nestflix, RockNRoll |
+| [💼 `corporate-cringe/`](#-corporate-cringe--productivity--business-saas)         | Productivity & Business SaaS             | Lotion, Snack, Strife, DocuSwine, SubSnack      |
+| [🏚️ `digital-fossils/`](#️-digital-fossils--legacy--retro)                         | Legacy & Retro                           | MySpice, AltaVistaBaby, Napper                  |
+| [🌐 `social-rejects/`](#-social-rejects--social-networks)                         | Social Networks                          | Faceplant, Finder, OnlyFarms, GitPub            |
+| [☁️ `cloud-nine/`](#️-cloud-nine--cloud-storage--infrastructure)                   | Cloud, Storage & Infrastructure          | DropBlox, Locker, AirBeanBean                   |
+| [🐛 `chaos-gremlins/`](#-chaos-gremlins--intentional-misbehavior--stress-testing) | Intentional Misbehavior & Stress Testing | MemEater, CPUStorm, HidenSeek, Waiter.com       |
+| [🐱 `wildcard-drawer/`](#-wildcard-drawer--miscellaneous--uncategorizable)        | Miscellaneous & Uncategorizable          | CatTranslator, BeerFinder                       |
+
+---
+
 ## 🎭 The Lineup
 
-_Twenty-six apps walk into a port range..._
+### 📺 streaming-and-chill/ — Media & Entertainment
 
-### Original 11
+_Binge-worthy parodies of your favorite streaming and media platforms._
 
-| #   | Project         | Parodies | Stack                       | Port(s)       | Dev Command       | Personality Traits                        |
-| --- | --------------- | -------- | --------------------------- | ------------- | ----------------- | ----------------------------------------- |
-| 1   | **Lotion**      | Notion   | Vue 3 + Vite                | 5301          | `npm run dev`     | ⚠️ Picks fights with SpotiPie over ports  |
-| 2   | **Snack**       | Slack    | React + Vite                | 5302          | `npm run dev`     | 🍕 Less productive than the original      |
-| 3   | **TubeYou**     | YouTube  | Angular CLI                 | 5303          | `npm start`       | 📺 All the boilerplate, none of the ads   |
-| 4   | **SpotiPie**    | Spotify  | SvelteKit + WS              | 5301, WS:5311 | `npm run dev:all` | ⚠️ Also wants port 5301. Drama ensues. 🔌 |
-| 5   | **Strife**      | Stripe   | Next.js                     | 5305          | `npm run dev`     | 💳 Charges nothing, delivers nothing      |
-| 6   | **Nestflix**    | Netflix  | Vue + Express (monorepo)    | 5306, 5312    | `pnpm dev`        | 📦 Monorepo. Still buffering.             |
-| 7   | **AirBeanBean** | Airbnb   | React + Fastify (monorepo)  | 5307, 5313    | `pnpm dev`        | 📦 Monorepo. $200/night cleaning fee.     |
-| 8   | **GitPub**      | GitHub   | Next.js + Prisma (monorepo) | 5308          | `pnpm dev`        | 📦 Monorepo. Where code goes to drink.    |
-| 9   | **DocuSwine**   | DocuSign | SolidJS + Vite              | 5309          | `npm run dev`     | 🐷 Sign here, here, and here. Oink.       |
-| 10  | **CornHub**     | 🌽       | React + Express             | 5310, 5314    | `npm run dev`     | 🐌 Suspiciously slow backend              |
-| 11  | **DropBlox**    | Dropbox  | Node + Docker               | 5315          | `npm start`       | 🐳 Containerized. Fancy.                  |
+| #   | Project       | Parodies  | Stack                    | Port(s)       | Dev Command                                                   | Personality Traits                        |
+| --- | ------------- | --------- | ------------------------ | ------------- | ------------------------------------------------------------- | ----------------------------------------- |
+| 1   | **CornHub**   | 🌽        | React + Express          | 5310, 5314    | `cd projects/streaming-and-chill/cornhub && npm run dev`      | 🐌 Suspiciously slow backend              |
+| 2   | **TubeYou**   | YouTube   | Angular CLI              | 5303          | `cd projects/streaming-and-chill/tubeyou && npm start`        | 📺 All the boilerplate, none of the ads   |
+| 3   | **SpotiPie**  | Spotify   | SvelteKit + WS           | 5301, WS:5311 | `cd projects/streaming-and-chill/spotipie && npm run dev:all` | ⚠️ Also wants port 5301. Drama ensues. 🔌 |
+| 4   | **Nestflix**  | Netflix   | Vue + Express (monorepo) | 5306, 5312    | `cd projects/streaming-and-chill/nestflix && pnpm dev`        | 📦 Monorepo. Still buffering.             |
+| 5   | **RockNRoll** | Rick Roll | Node/Express             | 5324          | `cd projects/streaming-and-chill/rocknroll && npm start`      | 🎸 Never gonna give you uptime            |
 
-### New Additions
+### 💼 corporate-cringe/ — Productivity & Business SaaS
 
-| #   | Project           | Parodies    | Stack                      | Port(s)          | Dev Command             | Personality Traits                             |
-| --- | ----------------- | ----------- | -------------------------- | ---------------- | ----------------------- | ---------------------------------------------- |
-| 12  | **OnlyFarms**     | OnlyFans    | Node/Express (3 processes) | 5320, 5321, 5322 | `npm start`             | 🌾 3 processes, 3 ports, maximum confusion     |
-| 13  | **SubSnack**      | Substack    | Node/Express               | 5323             | `npm run dev`           | 📁 Server buried 6 directories deep            |
-| 14  | **Finder**        | Tinder      | Svelte + Vite              | 5173             | `npm run dev`           | 🔥 Swipe right on frameworks                   |
-| 15  | **BeerFinder**    | Beer apps   | Node/Express               | 5325             | `npm run dev`           | 🍺 ⚠️ Conflicts with Faceplant                 |
-| 16  | **CatTranslator** | —           | Static HTML/CSS/JS         | None             | `open index.html`       | 🐱 No build step. No dependencies. Like a cat. |
-| 17  | **RockNRoll**     | Rick Roll   | Node/Express               | 5324             | `npm start`             | 🎸 Never gonna give you uptime                 |
-| 18  | **Faceplant**     | Facebook    | Node/Express               | 5325             | `npm start`             | 💀 50% crash rate on startup                   |
-| 19  | **Locker**        | Docker      | Docker Compose             | 5326–5329        | `docker compose up`     | 🐳 Broken compose file. Claims it works.       |
-| 20  | **MemEater**      | —           | Node/Express               | 5330             | `npm start`             | 🍽️ Intentional memory leak. ~1MB/5s            |
-| 21  | **CPUStorm**      | —           | Node/Express               | 5331             | `npm start`             | ⚡ CPU spikes every 5 seconds                  |
-| 22  | **Waiter.com**    | Weather.com | Node/Express               | 5332             | `npm start`             | 🌤️ 30-second response delay (not documented)   |
-| 23  | **HidenSeek**     | —           | Node/Express               | 5333             | `npm start`             | 🎲 Random HTTP status codes (200/404/500/418)  |
-| 24  | **MySpice**       | MySpace     | PHP                        | 5323             | `php -S localhost:5323` | 🌶️ ⚠️ Conflicts with SubSnack                  |
-| 25  | **AltaVistaBaby** | AltaVista   | COBOL + HTML               | None             | `open index.html`       | 🔍 COBOL backend. Searching since 1998.        |
-| 26  | **Napper**        | Napster     | Ruby (Rack)                | 5331             | `rackup -p 5331`        | 🎵 ⚠️ Conflicts with CPUStorm                  |
+_The apps your boss makes you use, but worse._
+
+| #   | Project       | Parodies | Stack          | Port(s) | Dev Command                                             | Personality Traits                       |
+| --- | ------------- | -------- | -------------- | ------- | ------------------------------------------------------- | ---------------------------------------- |
+| 6   | **Lotion**    | Notion   | Vue 3 + Vite   | 5301    | `cd projects/corporate-cringe/lotion && npm run dev`    | ⚠️ Picks fights with SpotiPie over ports |
+| 7   | **Snack**     | Slack    | React + Vite   | 5302    | `cd projects/corporate-cringe/snack && npm run dev`     | 🍕 Less productive than the original     |
+| 8   | **Strife**    | Stripe   | Next.js        | 5305    | `cd projects/corporate-cringe/strife && npm run dev`    | 💳 Charges nothing, delivers nothing     |
+| 9   | **DocuSwine** | DocuSign | SolidJS + Vite | 5309    | `cd projects/corporate-cringe/docuswine && npm run dev` | 🐷 Sign here, here, and here. Oink.      |
+| 10  | **SubSnack**  | Substack | Node/Express   | 5323    | `cd projects/corporate-cringe/subsnack && npm run dev`  | 📁 Server buried 6 directories deep      |
+
+### 🏚️ digital-fossils/ — Legacy & Retro
+
+_Relics of the early internet, lovingly exhumed._
+
+| #   | Project           | Parodies  | Stack        | Port(s) | Dev Command                                                    | Personality Traits                      |
+| --- | ----------------- | --------- | ------------ | ------- | -------------------------------------------------------------- | --------------------------------------- |
+| 11  | **MySpice**       | MySpace   | PHP          | 5323    | `cd projects/digital-fossils/myspice && php -S localhost:5323` | 🌶️ ⚠️ Conflicts with SubSnack           |
+| 12  | **AltaVistaBaby** | AltaVista | COBOL + HTML | None    | `cd projects/digital-fossils/altavistababy && open index.html` | 🔍 COBOL backend. Searching since 1998. |
+| 13  | **Napper**        | Napster   | Ruby (Rack)  | 5331    | `cd projects/digital-fossils/napper && rackup -p 5331`         | 🎵 ⚠️ Conflicts with CPUStorm           |
+
+### 🌐 social-rejects/ — Social Networks
+
+_Social media, but with more bugs and fewer friends._
+
+| #   | Project       | Parodies | Stack                       | Port(s)          | Dev Command                                         | Personality Traits                         |
+| --- | ------------- | -------- | --------------------------- | ---------------- | --------------------------------------------------- | ------------------------------------------ |
+| 14  | **Faceplant** | Facebook | Node/Express                | 5325             | `cd projects/social-rejects/faceplant && npm start` | 💀 50% crash rate on startup               |
+| 15  | **Finder**    | Tinder   | Svelte + Vite               | 5173             | `cd projects/social-rejects/finder && npm run dev`  | 🔥 Swipe right on frameworks               |
+| 16  | **OnlyFarms** | OnlyFans | Node/Express (×3)           | 5320, 5321, 5322 | `cd projects/social-rejects/onlyfarms && npm start` | 🌾 3 processes, 3 ports, maximum confusion |
+| 17  | **GitPub**    | GitHub   | Next.js + Prisma (monorepo) | 5308             | `cd projects/social-rejects/gitpub && pnpm dev`     | 📦 Monorepo. Where code goes to drink.     |
+
+### ☁️ cloud-nine/ — Cloud, Storage & Infrastructure
+
+_Infrastructure parodies that are barely holding it together._
+
+| #   | Project         | Parodies | Stack                      | Port(s)    | Dev Command                                          | Personality Traits                       |
+| --- | --------------- | -------- | -------------------------- | ---------- | ---------------------------------------------------- | ---------------------------------------- |
+| 18  | **DropBlox**    | Dropbox  | Node + Docker              | 5315       | `cd projects/cloud-nine/dropblox && npm start`       | 🐳 Containerized. Fancy.                 |
+| 19  | **Locker**      | Docker   | Docker Compose             | 5326–5329  | `cd projects/cloud-nine/locker && docker compose up` | 🐳 Broken compose file. Claims it works. |
+| 20  | **AirBeanBean** | Airbnb   | React + Fastify (monorepo) | 5307, 5313 | `cd projects/cloud-nine/airbeanbean && pnpm dev`     | 📦 Monorepo. $200/night cleaning fee.    |
+
+### 🐛 chaos-gremlins/ — Intentional Misbehavior & Stress Testing
+
+_Apps that exist solely to ruin your day._
+
+| #   | Project        | Parodies    | Stack        | Port(s) | Dev Command                                         | Personality Traits                            |
+| --- | -------------- | ----------- | ------------ | ------- | --------------------------------------------------- | --------------------------------------------- |
+| 21  | **MemEater**   | —           | Node/Express | 5330    | `cd projects/chaos-gremlins/memeater && npm start`  | 🍽️ Intentional memory leak. ~1MB/5s           |
+| 22  | **CPUStorm**   | —           | Node/Express | 5331    | `cd projects/chaos-gremlins/cpustorm && npm start`  | ⚡ CPU spikes every 5 seconds                 |
+| 23  | **HidenSeek**  | —           | Node/Express | 5333    | `cd projects/chaos-gremlins/hidenseek && npm start` | 🎲 Random HTTP status codes (200/404/500/418) |
+| 24  | **Waiter.com** | Weather.com | Node/Express | 5332    | `cd projects/chaos-gremlins/waitercom && npm start` | 🌤️ 30-second response delay (not documented)  |
+
+### 🐱 wildcard-drawer/ — Miscellaneous & Uncategorizable
+
+_The apps that didn't fit anywhere else. We love them anyway._
+
+| #   | Project           | Parodies  | Stack              | Port(s) | Dev Command                                                    | Personality Traits                             |
+| --- | ----------------- | --------- | ------------------ | ------- | -------------------------------------------------------------- | ---------------------------------------------- |
+| 25  | **CatTranslator** | —         | Static HTML/CSS/JS | None    | `cd projects/wildcard-drawer/cattranslator && open index.html` | 🐱 No build step. No dependencies. Like a cat. |
+| 26  | **BeerFinder**    | Beer apps | Node/Express       | 5325    | `cd projects/wildcard-drawer/beerfinder && npm run dev`        | 🍺 ⚠️ Conflicts with Faceplant                 |
 
 ---
 
@@ -144,7 +197,7 @@ _A carefully curated range of ports, lovingly assigned and immediately fought ov
 ### Individual Projects
 
 ```bash
-cd projects/<project-name>
+cd projects/<category>/<project-name>
 npm install   # or pnpm install for monorepos
 npm run dev   # or pnpm dev for monorepos
 ```

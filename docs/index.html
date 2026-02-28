@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PortScout Parody Stack — 26 Fake Apps, Real Frameworks, Zero Business Models</title>
-        <meta name="description" content="A lovingly crafted collection of 26 fake-but-functional web apps that parody the tech giants. Built for testing PortScout.">
+        <title>PortScout Parody Stack — 26 Fake Apps, 7 Absurd Categories, Real Frameworks, Zero Business Models</title>
+        <meta name="description" content="A lovingly crafted collection of 26 fake-but-functional web apps organized into 7 absurd categories that parody the tech giants. Built for testing PortScout.">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕵️</text></svg>">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -33,6 +33,16 @@
                 --orange: #f97316;
                 --cyan: #06b6d4;
                 --pink: #ec4899;
+                --purple: #a855f7;
+
+                /* Category colors */
+                --cat-streaming: #ef4444;
+                --cat-corporate: #f97316;
+                --cat-fossils: #eab308;
+                --cat-social: #ec4899;
+                --cat-cloud: #06b6d4;
+                --cat-chaos: #22c55e;
+                --cat-wildcard: #a855f7;
             }
 
             html {
@@ -226,6 +236,95 @@
                 margin: 0 auto;
             }
 
+            /* Category filter bar */
+            .category-nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 48px;
+                animation: fadeInUp 0.6s ease 0.2s both;
+            }
+
+            .category-nav-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 8px 16px;
+                border-radius: 100px;
+                font-size: 13px;
+                font-weight: 600;
+                font-family: 'JetBrains Mono', monospace;
+                text-decoration: none;
+                background: var(--bg-card);
+                color: var(--text-muted);
+                border: 1px solid var(--border);
+                cursor: pointer;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+            }
+
+            .category-nav-btn.active,
+            .category-nav-btn:hover {
+                color: var(--text);
+                border-color: var(--btn-accent, var(--accent));
+                background: rgba(99, 102, 241, 0.08);
+                transform: translateY(-1px);
+            }
+
+            .category-nav-btn .cat-emoji {
+                font-size: 14px;
+            }
+
+            /* Category sections */
+            .category-section {
+                margin-bottom: 64px;
+                scroll-margin-top: 20px;
+            }
+
+            .category-section:last-child {
+                margin-bottom: 0;
+            }
+
+            .category-header {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                margin-bottom: 24px;
+                padding-bottom: 16px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .category-emoji {
+                font-size: 2rem;
+                line-height: 1;
+            }
+
+            .category-info h3 {
+                font-size: 1.3rem;
+                font-weight: 700;
+                font-family: 'JetBrains Mono', monospace;
+                color: var(--text);
+            }
+
+            .category-info .category-desc {
+                font-size: 14px;
+                color: var(--text-muted);
+                margin-top: 2px;
+            }
+
+            .category-count {
+                margin-left: auto;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 4px 10px;
+                border-radius: 100px;
+                background: rgba(99, 102, 241, 0.1);
+                color: var(--accent-light);
+                border: 1px solid rgba(99, 102, 241, 0.15);
+                white-space: nowrap;
+            }
+
             /* Project cards */
             .projects-grid {
                 display: grid;
@@ -340,6 +439,58 @@
                 background: rgba(239, 68, 68, 0.1);
                 color: var(--red);
                 border: 1px solid rgba(239, 68, 68, 0.15);
+            }
+
+            /* Category badge on cards */
+            .tag-category {
+                font-size: 11px;
+                font-weight: 600;
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-family: 'JetBrains Mono', monospace;
+                letter-spacing: 0.02em;
+            }
+
+            .tag-cat-streaming {
+                background: rgba(239, 68, 68, 0.1);
+                color: var(--cat-streaming);
+                border: 1px solid rgba(239, 68, 68, 0.15);
+            }
+
+            .tag-cat-corporate {
+                background: rgba(249, 115, 22, 0.1);
+                color: var(--cat-corporate);
+                border: 1px solid rgba(249, 115, 22, 0.15);
+            }
+
+            .tag-cat-fossils {
+                background: rgba(234, 179, 8, 0.1);
+                color: var(--cat-fossils);
+                border: 1px solid rgba(234, 179, 8, 0.15);
+            }
+
+            .tag-cat-social {
+                background: rgba(236, 72, 153, 0.1);
+                color: var(--cat-social);
+                border: 1px solid rgba(236, 72, 153, 0.15);
+            }
+
+            .tag-cat-cloud {
+                background: rgba(6, 182, 212, 0.1);
+                color: var(--cat-cloud);
+                border: 1px solid rgba(6, 182, 212, 0.15);
+            }
+
+            .tag-cat-chaos {
+                background: rgba(34, 197, 94, 0.1);
+                color: var(--cat-chaos);
+                border: 1px solid rgba(34, 197, 94, 0.15);
+            }
+
+            .tag-cat-wildcard {
+                background: rgba(168, 85, 247, 0.1);
+                color: var(--cat-wildcard);
+                border: 1px solid rgba(168, 85, 247, 0.15);
             }
 
             /* Port map */
@@ -563,6 +714,23 @@
                 .quickstart {
                     padding: 24px;
                 }
+
+                .category-nav {
+                    gap: 6px;
+                }
+
+                .category-nav-btn {
+                    padding: 6px 12px;
+                    font-size: 12px;
+                }
+
+                .category-header {
+                    flex-wrap: wrap;
+                }
+
+                .category-count {
+                    margin-left: 0;
+                }
             }
         </style>
     </head>
@@ -579,7 +747,8 @@
         Parody Stack
       </h1>
                 <p class="tagline">
-                    <em>26 fake apps.</em> Real frameworks. Zero business models.<br>
+                    <em>26 fake apps.</em>
+                    <em>7 absurd categories.</em> Real frameworks. Zero business models.<br>
         We couldn't afford the real apps, so we built knockoffs.
       </p>
                 <div class="hero-actions">
@@ -595,6 +764,10 @@
                     <div class="stat">
                         <div class="stat-number">26</div>
                         <div class="stat-label">Parody Apps</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Categories</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">12+</div>
@@ -621,431 +794,604 @@
             <div class="container">
                 <div class="section-header fade-in">
                     <h2>🎭 The Lineup</h2>
-                    <p>Twenty-six apps walk into a port range...</p>
+                    <p>Twenty-six apps in seven absurd categories walk into a port range...</p>
                 </div>
 
-                <div class="projects-grid">
+                <!-- Category Navigation -->
+                <div class="category-nav fade-in">
+                    <a href="#cat-streaming" class="category-nav-btn" style="--btn-accent: var(--cat-streaming)">
+                        <span class="cat-emoji">📺</span> streaming-and-chill
+                    </a>
+                    <a href="#cat-corporate" class="category-nav-btn" style="--btn-accent: var(--cat-corporate)">
+                        <span class="cat-emoji">💼</span> corporate-cringe
+                    </a>
+                    <a href="#cat-fossils" class="category-nav-btn" style="--btn-accent: var(--cat-fossils)">
+                        <span class="cat-emoji">🏚️</span> digital-fossils
+                    </a>
+                    <a href="#cat-social" class="category-nav-btn" style="--btn-accent: var(--cat-social)">
+                        <span class="cat-emoji">🌐</span> social-rejects
+                    </a>
+                    <a href="#cat-cloud" class="category-nav-btn" style="--btn-accent: var(--cat-cloud)">
+                        <span class="cat-emoji">☁️</span> cloud-nine
+                    </a>
+                    <a href="#cat-chaos" class="category-nav-btn" style="--btn-accent: var(--cat-chaos)">
+                        <span class="cat-emoji">🐛</span> chaos-gremlins
+                    </a>
+                    <a href="#cat-wildcard" class="category-nav-btn" style="--btn-accent: var(--cat-wildcard)">
+                        <span class="cat-emoji">🐱</span> wildcard-drawer
+                    </a>
+                </div>
 
-                    <!-- Original 11 -->
-                    <div class="project-card fade-in" style="--card-accent: #22c55e">
-                        <div class="card-header">
-                            <span class="card-emoji">📝</span>
-                            <div>
-                                <div class="card-title">Lotion</div>
-                                <div class="card-parody">Parodies Notion</div>
-                            </div>
+                <!-- ═══════════════════════════════════════════ -->
+
+                <!-- 📺 streaming-and-chill -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <div id="cat-streaming" class="category-section fade-in">
+                    <div class="category-header">
+                        <span class="category-emoji">📺</span>
+                        <div class="category-info">
+                            <h3>streaming-and-chill</h3>
+                            <div class="category-desc">Media &amp; Entertainment</div>
                         </div>
-                        <div class="card-desc">Picks fights with SpotiPie over ports. Has strong opinions about workspace organization.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Vue 3 + Vite</span>
-                            <span class="tag tag-port">:5301</span>
-                            <span class="tag tag-warning">⚠️ Conflict</span>
-                        </div>
+                        <span class="category-count">5 projects</span>
                     </div>
 
-                    <div class="project-card fade-in" style="--card-accent: #f97316">
-                        <div class="card-header">
-                            <span class="card-emoji">🍕</span>
-                            <div>
-                                <div class="card-title">Snack</div>
-                                <div class="card-parody">Parodies Slack</div>
+                    <div class="projects-grid">
+                        <div class="project-card fade-in" style="--card-accent: #eab308">
+                            <div class="card-header">
+                                <span class="card-emoji">🌽</span>
+                                <div>
+                                    <div class="card-title">CornHub</div>
+                                    <div class="card-parody">Parodies... corn</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Family friendly, we promise. The backend is suspiciously slow. Don't ask why.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-streaming">📺 streaming-and-chill</span>
+                                <span class="tag tag-stack">React + Express</span>
+                                <span class="tag tag-port">:5310</span>
+                                <span class="tag tag-port">:5314</span>
+                                <span class="tag tag-warning">🐌 Slow</span>
                             </div>
                         </div>
-                        <div class="card-desc">Less productive than the original. Somehow still has 47 unread channels.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">React + Vite</span>
-                            <span class="tag tag-port">:5302</span>
-                        </div>
-                    </div>
 
-                    <div class="project-card fade-in" style="--card-accent: #ef4444">
-                        <div class="card-header">
-                            <span class="card-emoji">📺</span>
-                            <div>
-                                <div class="card-title">TubeYou</div>
-                                <div class="card-parody">Parodies YouTube</div>
+                        <div class="project-card fade-in" style="--card-accent: #ef4444">
+                            <div class="card-header">
+                                <span class="card-emoji">📺</span>
+                                <div>
+                                    <div class="card-title">TubeYou</div>
+                                    <div class="card-parody">Parodies YouTube</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">All the boilerplate, none of the ads. The algorithm recommends nothing.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-streaming">📺 streaming-and-chill</span>
+                                <span class="tag tag-stack">Angular CLI</span>
+                                <span class="tag tag-port">:5303</span>
                             </div>
                         </div>
-                        <div class="card-desc">All the boilerplate, none of the ads. The algorithm recommends nothing.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Angular CLI</span>
-                            <span class="tag tag-port">:5303</span>
-                        </div>
-                    </div>
 
-                    <div class="project-card fade-in" style="--card-accent: #22c55e">
-                        <div class="card-header">
-                            <span class="card-emoji">🎵</span>
-                            <div>
-                                <div class="card-title">SpotiPie</div>
-                                <div class="card-parody">Parodies Spotify</div>
+                        <div class="project-card fade-in" style="--card-accent: #22c55e">
+                            <div class="card-header">
+                                <span class="card-emoji">🎵</span>
+                                <div>
+                                    <div class="card-title">SpotiPie</div>
+                                    <div class="card-parody">Parodies Spotify</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Also wants port 5301. Drama ensues. Comes with a WebSocket server for real-time silence.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-streaming">📺 streaming-and-chill</span>
+                                <span class="tag tag-stack">SvelteKit + WS</span>
+                                <span class="tag tag-port">:5301</span>
+                                <span class="tag tag-port">WS:5311</span>
+                                <span class="tag tag-warning">⚠️ Conflict</span>
                             </div>
                         </div>
-                        <div class="card-desc">Also wants port 5301. Drama ensues. Comes with a WebSocket server for real-time silence.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">SvelteKit + WS</span>
-                            <span class="tag tag-port">:5301</span>
-                            <span class="tag tag-port">WS:5311</span>
-                            <span class="tag tag-warning">⚠️ Conflict</span>
-                        </div>
-                    </div>
 
-                    <div class="project-card fade-in" style="--card-accent: #6366f1">
-                        <div class="card-header">
-                            <span class="card-emoji">💳</span>
-                            <div>
-                                <div class="card-title">Strife</div>
-                                <div class="card-parody">Parodies Stripe</div>
+                        <div class="project-card fade-in" style="--card-accent: #ef4444">
+                            <div class="card-header">
+                                <span class="card-emoji">🎬</span>
+                                <div>
+                                    <div class="card-title">Nestflix</div>
+                                    <div class="card-parody">Parodies Netflix</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Monorepo. Still buffering. "Are you still developing?" Yes. Always.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-streaming">📺 streaming-and-chill</span>
+                                <span class="tag tag-stack">Vue + Express</span>
+                                <span class="tag tag-port">:5306</span>
+                                <span class="tag tag-port">:5312</span>
+                                <span class="tag tag-special">📦 Monorepo</span>
                             </div>
                         </div>
-                        <div class="card-desc">Charges nothing, delivers nothing. The checkout flow is existential.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Next.js</span>
-                            <span class="tag tag-port">:5305</span>
-                        </div>
-                    </div>
 
-                    <div class="project-card fade-in" style="--card-accent: #ef4444">
-                        <div class="card-header">
-                            <span class="card-emoji">🎬</span>
-                            <div>
-                                <div class="card-title">Nestflix</div>
-                                <div class="card-parody">Parodies Netflix</div>
+                        <div class="project-card fade-in" style="--card-accent: #ef4444">
+                            <div class="card-header">
+                                <span class="card-emoji">🎸</span>
+                                <div>
+                                    <div class="card-title">RockNRoll</div>
+                                    <div class="card-parody">Parodies Rick Roll</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-desc">Monorepo. Still buffering. "Are you still developing?" Yes. Always.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Vue + Express</span>
-                            <span class="tag tag-port">:5306</span>
-                            <span class="tag tag-port">:5312</span>
-                            <span class="tag tag-special">📦 Monorepo</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #ec4899">
-                        <div class="card-header">
-                            <span class="card-emoji">🏠</span>
-                            <div>
-                                <div class="card-title">AirBeanBean</div>
-                                <div class="card-parody">Parodies Airbnb</div>
+                            <div class="card-desc">Never gonna give you uptime. Autoplays a certain video. All routes redirect home. No escape.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-streaming">📺 streaming-and-chill</span>
+                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-port">:5324</span>
+                                <span class="tag tag-special">🎵 Autoplay</span>
                             </div>
-                        </div>
-                        <div class="card-desc">Monorepo. $200/night cleaning fee. The host left a passive-aggressive note.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">React + Fastify</span>
-                            <span class="tag tag-port">:5307</span>
-                            <span class="tag tag-port">:5313</span>
-                            <span class="tag tag-special">📦 Monorepo</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #06b6d4">
-                        <div class="card-header">
-                            <span class="card-emoji">🍺</span>
-                            <div>
-                                <div class="card-title">GitPub</div>
-                                <div class="card-parody">Parodies GitHub</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Where code goes to drink. Pull requests are just drink orders.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Next.js + Prisma</span>
-                            <span class="tag tag-port">:5308</span>
-                            <span class="tag tag-special">📦 Monorepo</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #f97316">
-                        <div class="card-header">
-                            <span class="card-emoji">🐷</span>
-                            <div>
-                                <div class="card-title">DocuSwine</div>
-                                <div class="card-parody">Parodies DocuSign</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Sign here, here, and here. Oink. Please initial the trough.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">SolidJS + Vite</span>
-                            <span class="tag tag-port">:5309</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #eab308">
-                        <div class="card-header">
-                            <span class="card-emoji">🌽</span>
-                            <div>
-                                <div class="card-title">CornHub</div>
-                                <div class="card-parody">Parodies... corn</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Family friendly, we promise. The backend is suspiciously slow. Don't ask why.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">React + Express</span>
-                            <span class="tag tag-port">:5310</span>
-                            <span class="tag tag-port">:5314</span>
-                            <span class="tag tag-warning">🐌 Slow</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #06b6d4">
-                        <div class="card-header">
-                            <span class="card-emoji">📦</span>
-                            <div>
-                                <div class="card-title">DropBlox</div>
-                                <div class="card-parody">Parodies Dropbox</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Containerized. Fancy. Stores nothing but runs in Docker, which is basically a personality trait.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node + Docker</span>
-                            <span class="tag tag-port">:5315</span>
-                            <span class="tag tag-special">🐳 Docker</span>
-                        </div>
-                    </div>
-
-                    <!-- New 15 projects -->
-                    <div class="project-card fade-in" style="--card-accent: #06b6d4">
-                        <div class="card-header">
-                            <span class="card-emoji">🌾</span>
-                            <div>
-                                <div class="card-title">OnlyFarms</div>
-                                <div class="card-parody">Parodies OnlyFans</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Premium farm content. 3 processes, 3 ports, maximum confusion. Subscribe for exclusive hay.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express ×3</span>
-                            <span class="tag tag-port">:5320-22</span>
-                            <span class="tag tag-special">🔀 Multi-Process</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #f97316">
-                        <div class="card-header">
-                            <span class="card-emoji">🥨</span>
-                            <div>
-                                <div class="card-title">SubSnack</div>
-                                <div class="card-parody">Parodies Substack</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Newsletter platform for snack reviews. Server buried 6 directories deep. README lies about the path. Now conflicts with MySpice.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:5323</span>
-                            <span class="tag tag-warning">📁 Deep Nesting</span>
-                            <span class="tag tag-warning">⚠️ Conflict</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #ef4444">
-                        <div class="card-header">
-                            <span class="card-emoji">🔥</span>
-                            <div>
-                                <div class="card-title">Finder</div>
-                                <div class="card-parody">Parodies Tinder</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Swipe right on frameworks. React has commitment issues. COBOL is 65 and still running your bank.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Svelte + Vite</span>
-                            <span class="tag tag-port">:5173</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #eab308">
-                        <div class="card-header">
-                            <span class="card-emoji">🍺</span>
-                            <div>
-                                <div class="card-title">BeerFinder</div>
-                                <div class="card-parody">Brewery finder</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Find craft beer near you. Now conflicts with Faceplant on port 5325. Intermittent — Faceplant crashes 50%.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:5325</span>
-                            <span class="tag tag-warning">⚠️ Conflict</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #a855f7">
-                        <div class="card-header">
-                            <span class="card-emoji">🐱</span>
-                            <div>
-                                <div class="card-title">CatTranslator</div>
-                                <div class="card-parody">Cat-to-human translator</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Translate between human and cat. No npm. No build step. No dependencies. Like a cat.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Static HTML/CSS/JS</span>
-                            <span class="tag tag-special">📄 No Build</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #ef4444">
-                        <div class="card-header">
-                            <span class="card-emoji">🎸</span>
-                            <div>
-                                <div class="card-title">RockNRoll</div>
-                                <div class="card-parody">Parodies Rick Roll</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Never gonna give you uptime. Autoplays a certain video. All routes redirect home. No escape.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:5324</span>
-                            <span class="tag tag-special">🎵 Autoplay</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #ef4444">
-                        <div class="card-header">
-                            <span class="card-emoji">💀</span>
-                            <div>
-                                <div class="card-title">Faceplant</div>
-                                <div class="card-parody">Parodies Facebook</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">50% crash rate on startup. When it works, it's early Facebook. When it doesn't, it's a faceplant. Now conflicts with BeerFinder.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:5325</span>
-                            <span class="tag tag-danger">💀 50% Crash</span>
-                            <span class="tag tag-warning">⚠️ Conflict</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #06b6d4">
-                        <div class="card-header">
-                            <span class="card-emoji">🐳</span>
-                            <div>
-                                <div class="card-title">Locker</div>
-                                <div class="card-parody">Parodies Docker</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Broken docker-compose.yml with circular deps and missing services. README claims it works perfectly.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Docker Compose</span>
-                            <span class="tag tag-port">:5326-29</span>
-                            <span class="tag tag-danger">💥 Broken</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #22c55e">
-                        <div class="card-header">
-                            <span class="card-emoji">🍽️</span>
-                            <div>
-                                <div class="card-title">MemEater</div>
-                                <div class="card-parody">Memory leak simulator</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Eats ~1MB of RAM every 5 seconds. Never frees it. Will consume all your memory if you let it.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:5330</span>
-                            <span class="tag tag-danger">🍽️ Memory Leak</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #f97316">
-                        <div class="card-header">
-                            <span class="card-emoji">⚡</span>
-                            <div>
-                                <div class="card-title">CPUStorm</div>
-                                <div class="card-parody">CPU spike simulator</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">2-second busy loop every 5 seconds. Your fans will spin up. Your battery will drain. Your cat will worry. Now conflicts with Napper.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:5331</span>
-                            <span class="tag tag-danger">⚡ CPU Spike</span>
-                            <span class="tag tag-warning">⚠️ Conflict</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #06b6d4">
-                        <div class="card-header">
-                            <span class="card-emoji">🌤️</span>
-                            <div>
-                                <div class="card-title">Waiter.com</div>
-                                <div class="card-parody">Parodies Weather.com</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Beautiful weather UI. 30-second response delay on every request. The README doesn't mention this.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:5332</span>
-                            <span class="tag tag-warning">⏳ 30s Delay</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #a855f7">
-                        <div class="card-header">
-                            <span class="card-emoji">🎲</span>
-                            <div>
-                                <div class="card-title">HidenSeek</div>
-                                <div class="card-parody">HTTP status roulette</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Every request returns a random status code: 200, 404, 500, or 418 (I'm a teapot).</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Node/Express</span>
-                            <span class="tag tag-port">:5333</span>
-                            <span class="tag tag-warning">🎲 Random</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #ef4444">
-                        <div class="card-header">
-                            <span class="card-emoji">🌶️</span>
-                            <div>
-                                <div class="card-title">MySpice</div>
-                                <div class="card-parody">Parodies MySpace</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">It's 2005 forever. Marquee tags, visitor counters, Top 8 friends. Tom is still your friend. Now conflicts with SubSnack.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">PHP</span>
-                            <span class="tag tag-port">:5323</span>
-                            <span class="tag tag-special">📜 Retro</span>
-                            <span class="tag tag-warning">⚠️ Conflict</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #eab308">
-                        <div class="card-header">
-                            <span class="card-emoji">🔍</span>
-                            <div>
-                                <div class="card-title">AltaVistaBaby</div>
-                                <div class="card-parody">Parodies AltaVista</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">COBOL backend + retro HTML frontend. We searched before Google. We just didn't search very well.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">COBOL + HTML</span>
-                            <span class="tag tag-special">🏦 Mainframe</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card fade-in" style="--card-accent: #ec4899">
-                        <div class="card-header">
-                            <span class="card-emoji">🎵</span>
-                            <div>
-                                <div class="card-title">Napper</div>
-                                <div class="card-parody">Parodies Napster</div>
-                            </div>
-                        </div>
-                        <div class="card-desc">Fake file sharing. Suspicious .exe files. ∞ lawsuits pending. Download ETA: 47 hours on 56k. Now conflicts with CPUStorm.</div>
-                        <div class="card-meta">
-                            <span class="tag tag-stack">Ruby (Rack)</span>
-                            <span class="tag tag-port">:5331</span>
-                            <span class="tag tag-special">💎 Ruby</span>
-                            <span class="tag tag-warning">⚠️ Conflict</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- ═══════════════════════════════════════════ -->
+
+                <!-- 💼 corporate-cringe -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <div id="cat-corporate" class="category-section fade-in">
+                    <div class="category-header">
+                        <span class="category-emoji">💼</span>
+                        <div class="category-info">
+                            <h3>corporate-cringe</h3>
+                            <div class="category-desc">Productivity &amp; Business SaaS</div>
+                        </div>
+                        <span class="category-count">5 projects</span>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card fade-in" style="--card-accent: #22c55e">
+                            <div class="card-header">
+                                <span class="card-emoji">📝</span>
+                                <div>
+                                    <div class="card-title">Lotion</div>
+                                    <div class="card-parody">Parodies Notion</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Picks fights with SpotiPie over ports. Has strong opinions about workspace organization.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-corporate">💼 corporate-cringe</span>
+                                <span class="tag tag-stack">Vue 3 + Vite</span>
+                                <span class="tag tag-port">:5301</span>
+                                <span class="tag tag-warning">⚠️ Conflict</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #f97316">
+                            <div class="card-header">
+                                <span class="card-emoji">🍕</span>
+                                <div>
+                                    <div class="card-title">Snack</div>
+                                    <div class="card-parody">Parodies Slack</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Less productive than the original. Somehow still has 47 unread channels.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-corporate">💼 corporate-cringe</span>
+                                <span class="tag tag-stack">React + Vite</span>
+                                <span class="tag tag-port">:5302</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #6366f1">
+                            <div class="card-header">
+                                <span class="card-emoji">💳</span>
+                                <div>
+                                    <div class="card-title">Strife</div>
+                                    <div class="card-parody">Parodies Stripe</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Charges nothing, delivers nothing. The checkout flow is existential.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-corporate">💼 corporate-cringe</span>
+                                <span class="tag tag-stack">Next.js</span>
+                                <span class="tag tag-port">:5305</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #f97316">
+                            <div class="card-header">
+                                <span class="card-emoji">🐷</span>
+                                <div>
+                                    <div class="card-title">DocuSwine</div>
+                                    <div class="card-parody">Parodies DocuSign</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Sign here, here, and here. Oink. Please initial the trough.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-corporate">💼 corporate-cringe</span>
+                                <span class="tag tag-stack">SolidJS + Vite</span>
+                                <span class="tag tag-port">:5309</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #f97316">
+                            <div class="card-header">
+                                <span class="card-emoji">🥨</span>
+                                <div>
+                                    <div class="card-title">SubSnack</div>
+                                    <div class="card-parody">Parodies Substack</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Newsletter platform for snack reviews. Server buried 6 directories deep. README lies about the path. Now conflicts with MySpice.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-corporate">💼 corporate-cringe</span>
+                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-port">:5323</span>
+                                <span class="tag tag-warning">📁 Deep Nesting</span>
+                                <span class="tag tag-warning">⚠️ Conflict</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════ -->
+
+                <!-- 🏚️ digital-fossils -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <div id="cat-fossils" class="category-section fade-in">
+                    <div class="category-header">
+                        <span class="category-emoji">🏚️</span>
+                        <div class="category-info">
+                            <h3>digital-fossils</h3>
+                            <div class="category-desc">Legacy &amp; Retro</div>
+                        </div>
+                        <span class="category-count">3 projects</span>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card fade-in" style="--card-accent: #ef4444">
+                            <div class="card-header">
+                                <span class="card-emoji">🌶️</span>
+                                <div>
+                                    <div class="card-title">MySpice</div>
+                                    <div class="card-parody">Parodies MySpace</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">It's 2005 forever. Marquee tags, visitor counters, Top 8 friends. Tom is still your friend. Now conflicts with SubSnack.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-fossils">🏚️ digital-fossils</span>
+                                <span class="tag tag-stack">PHP</span>
+                                <span class="tag tag-port">:5323</span>
+                                <span class="tag tag-special">📜 Retro</span>
+                                <span class="tag tag-warning">⚠️ Conflict</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #eab308">
+                            <div class="card-header">
+                                <span class="card-emoji">🔍</span>
+                                <div>
+                                    <div class="card-title">AltaVistaBaby</div>
+                                    <div class="card-parody">Parodies AltaVista</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">COBOL backend + retro HTML frontend. We searched before Google. We just didn't search very well.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-fossils">🏚️ digital-fossils</span>
+                                <span class="tag tag-stack">COBOL + HTML</span>
+                                <span class="tag tag-special">🏦 Mainframe</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #ec4899">
+                            <div class="card-header">
+                                <span class="card-emoji">🎵</span>
+                                <div>
+                                    <div class="card-title">Napper</div>
+                                    <div class="card-parody">Parodies Napster</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Fake file sharing. Suspicious .exe files. ∞ lawsuits pending. Download ETA: 47 hours on 56k. Now conflicts with CPUStorm.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-fossils">🏚️ digital-fossils</span>
+                                <span class="tag tag-stack">Ruby (Rack)</span>
+                                <span class="tag tag-port">:5331</span>
+                                <span class="tag tag-special">💎 Ruby</span>
+                                <span class="tag tag-warning">⚠️ Conflict</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════ -->
+
+                <!-- 🌐 social-rejects -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <div id="cat-social" class="category-section fade-in">
+                    <div class="category-header">
+                        <span class="category-emoji">🌐</span>
+                        <div class="category-info">
+                            <h3>social-rejects</h3>
+                            <div class="category-desc">Social Networks</div>
+                        </div>
+                        <span class="category-count">4 projects</span>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card fade-in" style="--card-accent: #ef4444">
+                            <div class="card-header">
+                                <span class="card-emoji">💀</span>
+                                <div>
+                                    <div class="card-title">Faceplant</div>
+                                    <div class="card-parody">Parodies Facebook</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">50% crash rate on startup. When it works, it's early Facebook. When it doesn't, it's a faceplant. Now conflicts with BeerFinder.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-social">🌐 social-rejects</span>
+                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-port">:5325</span>
+                                <span class="tag tag-danger">💀 50% Crash</span>
+                                <span class="tag tag-warning">⚠️ Conflict</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #ef4444">
+                            <div class="card-header">
+                                <span class="card-emoji">🔥</span>
+                                <div>
+                                    <div class="card-title">Finder</div>
+                                    <div class="card-parody">Parodies Tinder</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Swipe right on frameworks. React has commitment issues. COBOL is 65 and still running your bank.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-social">🌐 social-rejects</span>
+                                <span class="tag tag-stack">Svelte + Vite</span>
+                                <span class="tag tag-port">:5173</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #06b6d4">
+                            <div class="card-header">
+                                <span class="card-emoji">🌾</span>
+                                <div>
+                                    <div class="card-title">OnlyFarms</div>
+                                    <div class="card-parody">Parodies OnlyFans</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Premium farm content. 3 processes, 3 ports, maximum confusion. Subscribe for exclusive hay.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-social">🌐 social-rejects</span>
+                                <span class="tag tag-stack">Node/Express ×3</span>
+                                <span class="tag tag-port">:5320-22</span>
+                                <span class="tag tag-special">🔀 Multi-Process</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #06b6d4">
+                            <div class="card-header">
+                                <span class="card-emoji">🍺</span>
+                                <div>
+                                    <div class="card-title">GitPub</div>
+                                    <div class="card-parody">Parodies GitHub</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Where code goes to drink. Pull requests are just drink orders.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-social">🌐 social-rejects</span>
+                                <span class="tag tag-stack">Next.js + Prisma</span>
+                                <span class="tag tag-port">:5308</span>
+                                <span class="tag tag-special">📦 Monorepo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════ -->
+
+                <!-- ☁️ cloud-nine -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <div id="cat-cloud" class="category-section fade-in">
+                    <div class="category-header">
+                        <span class="category-emoji">☁️</span>
+                        <div class="category-info">
+                            <h3>cloud-nine</h3>
+                            <div class="category-desc">Cloud, Storage &amp; Infrastructure</div>
+                        </div>
+                        <span class="category-count">3 projects</span>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card fade-in" style="--card-accent: #06b6d4">
+                            <div class="card-header">
+                                <span class="card-emoji">📦</span>
+                                <div>
+                                    <div class="card-title">DropBlox</div>
+                                    <div class="card-parody">Parodies Dropbox</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Containerized. Fancy. Stores nothing but runs in Docker, which is basically a personality trait.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-cloud">☁️ cloud-nine</span>
+                                <span class="tag tag-stack">Node + Docker</span>
+                                <span class="tag tag-port">:5315</span>
+                                <span class="tag tag-special">🐳 Docker</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #06b6d4">
+                            <div class="card-header">
+                                <span class="card-emoji">🐳</span>
+                                <div>
+                                    <div class="card-title">Locker</div>
+                                    <div class="card-parody">Parodies Docker</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Broken docker-compose.yml with circular deps and missing services. README claims it works perfectly.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-cloud">☁️ cloud-nine</span>
+                                <span class="tag tag-stack">Docker Compose</span>
+                                <span class="tag tag-port">:5326-29</span>
+                                <span class="tag tag-danger">💥 Broken</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #ec4899">
+                            <div class="card-header">
+                                <span class="card-emoji">🏠</span>
+                                <div>
+                                    <div class="card-title">AirBeanBean</div>
+                                    <div class="card-parody">Parodies Airbnb</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Monorepo. $200/night cleaning fee. The host left a passive-aggressive note.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-cloud">☁️ cloud-nine</span>
+                                <span class="tag tag-stack">React + Fastify</span>
+                                <span class="tag tag-port">:5307</span>
+                                <span class="tag tag-port">:5313</span>
+                                <span class="tag tag-special">📦 Monorepo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════ -->
+
+                <!-- 🐛 chaos-gremlins -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <div id="cat-chaos" class="category-section fade-in">
+                    <div class="category-header">
+                        <span class="category-emoji">🐛</span>
+                        <div class="category-info">
+                            <h3>chaos-gremlins</h3>
+                            <div class="category-desc">Intentional Misbehavior &amp; Stress Testing</div>
+                        </div>
+                        <span class="category-count">4 projects</span>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card fade-in" style="--card-accent: #22c55e">
+                            <div class="card-header">
+                                <span class="card-emoji">🍽️</span>
+                                <div>
+                                    <div class="card-title">MemEater</div>
+                                    <div class="card-parody">Memory leak simulator</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Eats ~1MB of RAM every 5 seconds. Never frees it. Will consume all your memory if you let it.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-chaos">🐛 chaos-gremlins</span>
+                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-port">:5330</span>
+                                <span class="tag tag-danger">🍽️ Memory Leak</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #f97316">
+                            <div class="card-header">
+                                <span class="card-emoji">⚡</span>
+                                <div>
+                                    <div class="card-title">CPUStorm</div>
+                                    <div class="card-parody">CPU spike simulator</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">2-second busy loop every 5 seconds. Your fans will spin up. Your battery will drain. Your cat will worry. Now conflicts with Napper.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-chaos">🐛 chaos-gremlins</span>
+                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-port">:5331</span>
+                                <span class="tag tag-danger">⚡ CPU Spike</span>
+                                <span class="tag tag-warning">⚠️ Conflict</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #a855f7">
+                            <div class="card-header">
+                                <span class="card-emoji">🎲</span>
+                                <div>
+                                    <div class="card-title">HidenSeek</div>
+                                    <div class="card-parody">HTTP status roulette</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Every request returns a random status code: 200, 404, 500, or 418 (I'm a teapot).</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-chaos">🐛 chaos-gremlins</span>
+                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-port">:5333</span>
+                                <span class="tag tag-warning">🎲 Random</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #06b6d4">
+                            <div class="card-header">
+                                <span class="card-emoji">🌤️</span>
+                                <div>
+                                    <div class="card-title">Waiter.com</div>
+                                    <div class="card-parody">Parodies Weather.com</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Beautiful weather UI. 30-second response delay on every request. The README doesn't mention this.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-chaos">🐛 chaos-gremlins</span>
+                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-port">:5332</span>
+                                <span class="tag tag-warning">⏳ 30s Delay</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════ -->
+
+                <!-- 🐱 wildcard-drawer -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <div id="cat-wildcard" class="category-section fade-in">
+                    <div class="category-header">
+                        <span class="category-emoji">🐱</span>
+                        <div class="category-info">
+                            <h3>wildcard-drawer</h3>
+                            <div class="category-desc">Miscellaneous &amp; Uncategorizable</div>
+                        </div>
+                        <span class="category-count">2 projects</span>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card fade-in" style="--card-accent: #a855f7">
+                            <div class="card-header">
+                                <span class="card-emoji">🐱</span>
+                                <div>
+                                    <div class="card-title">CatTranslator</div>
+                                    <div class="card-parody">Cat-to-human translator</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Translate between human and cat. No npm. No build step. No dependencies. Like a cat.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-wildcard">🐱 wildcard-drawer</span>
+                                <span class="tag tag-stack">Static HTML/CSS/JS</span>
+                                <span class="tag tag-special">📄 No Build</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card fade-in" style="--card-accent: #eab308">
+                            <div class="card-header">
+                                <span class="card-emoji">🍺</span>
+                                <div>
+                                    <div class="card-title">BeerFinder</div>
+                                    <div class="card-parody">Brewery finder</div>
+                                </div>
+                            </div>
+                            <div class="card-desc">Find craft beer near you. Now conflicts with Faceplant on port 5325. Intermittent — Faceplant crashes 50%.</div>
+                            <div class="card-meta">
+                                <span class="tag tag-category tag-cat-wildcard">🐱 wildcard-drawer</span>
+                                <span class="tag tag-stack">Node/Express</span>
+                                <span class="tag tag-port">:5325</span>
+                                <span class="tag tag-warning">⚠️ Conflict</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1176,6 +1522,30 @@
                         <span class="command">./scripts/stop-all.sh</span>
                         <span class="comment"># When you've seen enough</span>
                     </div>
+
+                    <h3>4. Run a single project</h3>
+                    <div class="code-block">
+                        <span class="comment"># Projects are organized by category:</span><br>
+                        <span class="comment"># projects/&lt;category&gt;/&lt;name&gt;</span><br>
+                        <br>
+                        <span class="command">cd</span>
+                        <span class="path">projects/streaming-and-chill/cornhub</span><br>
+                        <span class="command">npm install</span>
+                        <span class="comment">&amp;&amp;</span>
+                        <span class="command">npm start</span><br>
+                        <br>
+                        <span class="command">cd</span>
+                        <span class="path">projects/corporate-cringe/lotion</span><br>
+                        <span class="command">npm install</span>
+                        <span class="comment">&amp;&amp;</span>
+                        <span class="command">npm run dev</span><br>
+                        <br>
+                        <span class="command">cd</span>
+                        <span class="path">projects/chaos-gremlins/memeater</span><br>
+                        <span class="command">npm install</span>
+                        <span class="comment">&amp;&amp;</span>
+                        <span class="command">npm start</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1211,6 +1581,28 @@
             document
                 .querySelectorAll('.fade-in')
                 .forEach(el => observer.observe(el));
+
+            // Category nav active state on scroll
+            const categorySections = document.querySelectorAll('.category-section');
+            const categoryNavBtns = document.querySelectorAll('.category-nav-btn');
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        categoryNavBtns.forEach(btn => {
+                            btn
+                                .classList
+                                .toggle('active', btn.getAttribute('href') === '#' + id);
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '-100px 0px -50% 0px'
+            });
+
+            categorySections.forEach(section => navObserver.observe(section));
         </script>
     </body>
 </html>
