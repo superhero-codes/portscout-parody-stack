@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AltaVistaBaby — Search the Web!</title>
+        <style>
+            body {
+                font-family: 'Times New Roman', Times, serif;
+                background: #ffffff;
+                color: #000000;
+                margin: 0;
+                padding: 0;
+            }
+            .header {
+                background: linear-gradient(to right, #000066, #0000cc);
+                padding: 20px;
+                text-align: center;
+            }
+            .logo {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #ffcc00;
+                text-shadow: 2px 2px 0 #000000;
+                font-family: Arial, sans-serif;
+            }
+            .logo span {
+                color: #ff0000;
+            }
+            .tagline {
+                color: #ccccff;
+                font-size: 14px;
+                margin-top: 4px;
+            }
+            .search-container {
+                max-width: 600px;
+                margin: 40px auto;
+                text-align: center;
+                padding: 0 20px;
+            }
+            .search-box {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+            .search-box input {
+                flex: 1;
+                padding: 8px 12px;
+                font-size: 16px;
+                border: 2px solid #000066;
+                font-family: 'Times New Roman', serif;
+            }
+            .search-box button {
+                padding: 8px 24px;
+                background: #000066;
+                color: white;
+                border: 2px outset #4444aa;
+                font-size: 14px;
+                cursor: pointer;
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+            }
+            .search-box button:active {
+                border-style: inset;
+            }
+            .categories {
+                margin: 20px 0;
+                font-size: 14px;
+            }
+            .categories a {
+                color: #0000cc;
+                margin: 0 8px;
+            }
+            .results {
+                max-width: 600px;
+                margin: 20px auto;
+                text-align: left;
+                padding: 0 20px;
+            }
+            .result-count {
+                color: #666666;
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+            .result {
+                margin-bottom: 20px;
+            }
+            .result a {
+                color: #0000cc;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .result .url {
+                color: #008000;
+                font-size: 12px;
+            }
+            .result .desc {
+                color: #333333;
+                font-size: 13px;
+                margin-top: 2px;
+            }
+            .footer {
+                text-align: center;
+                padding: 20px;
+                border-top: 2px solid #000066;
+                margin-top: 40px;
+                font-size: 11px;
+                color: #666666;
+            }
+            .footer a {
+                color: #0000cc;
+            }
+            hr {
+                border: 1px solid #000066;
+            }
+            .ad-banner {
+                background: #ffffcc;
+                border: 1px solid #cccc00;
+                padding: 8px;
+                text-align: center;
+                font-size: 12px;
+                margin: 20px auto;
+                max-width: 600px;
+            }
+            .ad-banner b {
+                color: #cc0000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">AltaVista<span>Baby</span> 🔍</div>
+            <div class="tagline">Search the World Wide Web! (circa 1998)</div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search the web..." value="">
+                <button onclick="search()">Search!</button>
+            </div>
+            <div class="categories">
+                <a href="#">Web</a> |
+            <a href="#">Images</a> |
+            <a href="#">Video</a> |
+            <a href="#">News</a> |
+            <a href="#">Shopping</a> |
+            <a href="#">Babel Fish</a>
+            </div>
+        </div>
+
+        <div class="ad-banner">
+            <b>🌟 ADVERTISEMENT 🌟</b> — Get 500 FREE hours of AOL! Click here! (Don't actually click here.)
+    </div>
+
+        <div class="results" id="results" style="display:none;"></div>
+
+        <div class="footer">
+            <hr>
+            <p>AltaVistaBaby &copy; 1998-2026 · Powered by COBOL · 
+        <a href="https://github.com/superhero-codes/portscout-parody-stack">PortScout Parody Stack</a>
+            </p>
+            <p style="margin-top:4px;">We searched before Google. We just didn't search very well.</p>
+        </div>
+
+        <script>
+            const fakeResults = [
+            { title: 'Welcome to GeoCities!', url: 'http://www.geocities.com/~coolpage/', desc: 'Build your own FREE homepage! With animated GIFs and MIDI music!' },
+            { title: 'Netscape Navigator Download', url: 'http://www.netscape.com/download/', desc: 'The best web browser. Internet Explorer who?' },
+            { title: 'Ask Jeeves - The Butler Knows', url: 'http://www.askjeeves.com/', desc: 'Ask a question in plain English! The butler will find the answer.' },
+            { title: 'Yahoo! Directory', url: 'http://dir.yahoo.com/', desc: 'The internet, organized by humans. All 10,000 websites.' },
+            { title: 'Hamster Dance', url: 'http://www.hampsterdance.com/', desc: 'Dee da dee da dee da doh doh. The pinnacle of web content.' },
+            { title: 'Under Construction 🚧', url: 'http://www.mypage.com/~user/', desc: 'This page is under construction! Come back soon! (Last updated: 1997)' },
+            { title: 'FREE Screensavers!!!', url: 'http://www.screensavers.com/', desc: 'Download amazing 3D screensavers! Flying toasters! Pipes! Definitely no viruses!' },
+            { title: 'Webring - Cool Sites', url: 'http://www.webring.org/hub?ring=cool', desc: 'Join our webring! Navigate to the next cool site! Previous | Random | Next' },
+        ];
+
+        function search() {
+            const query = document.getElementById('searchInput').value || 'everything';
+            const resultsDiv = document.getElementById('results');
+            const shuffled = fakeResults.sort(() => Math.random() - 0.5);
+            const count = Math.floor(Math.random() * 900000) + 100000;
+
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <div class="result-count">About ${count.toLocaleString()} results for "<b>${query}</b>" (0.${Math.floor(Math.random() * 99)} seconds)</div>
+                ${shuffled.map(r => `
+                    <div class="result">
+                        <a href="#">${r.title}</a><br>
+                        <span class="url">${r.url}</span>
+                        <div class="desc">${r.desc}</div>
+                    </div>
+                `).join('')}
+            `;
+        }
+    </script>
+</body>
+</html>

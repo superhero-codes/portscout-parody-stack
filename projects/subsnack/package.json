@@ -1,0 +1,12 @@
+{
+    "name": "subsnack",
+    "version": "1.0.0",
+    "description": "SubSnack — A newsletter platform for snack reviews. Deeply nested, barely functional.",
+    "scripts": {
+        "start": "node app/core/platform/runtime/web/server/index.js",
+        "dev": "node app/core/platform/runtime/web/server/index.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}

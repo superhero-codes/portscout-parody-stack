@@ -1,0 +1,12 @@
+{
+    "name": "hidenseek",
+    "version": "1.0.0",
+    "description": "HidenSeek — Every request is a surprise. Random HTTP status codes.",
+    "scripts": {
+        "dev": "node server.js",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}

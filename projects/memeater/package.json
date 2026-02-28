@@ -1,0 +1,12 @@
+{
+    "name": "memeater",
+    "version": "1.0.0",
+    "description": "MemEater — A Node app that eats memory for breakfast. And lunch. And dinner.",
+    "scripts": {
+        "dev": "node server.js",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}

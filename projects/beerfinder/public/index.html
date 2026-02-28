@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BeerFinder — Find Craft Beer Near You</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background: #0f0f0f;
+                color: #e0e0e0;
+                min-height: 100vh;
+            }
+            .header {
+                background: linear-gradient(135deg, #1a0a00, #2d1a00);
+                padding: 60px 20px 40px;
+                text-align: center;
+                border-bottom: 2px solid #d4a017;
+            }
+            .logo {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: #d4a017;
+                margin-bottom: 8px;
+            }
+            .tagline {
+                color: #b0a080;
+                font-size: 1.1rem;
+                margin-bottom: 24px;
+            }
+            .search-bar {
+                max-width: 600px;
+                margin: 0 auto;
+                display: flex;
+                gap: 8px;
+            }
+            .search-bar input {
+                flex: 1;
+                padding: 14px 20px;
+                border: 2px solid #333;
+                border-radius: 12px;
+                background: #1a1a1a;
+                color: white;
+                font-size: 16px;
+            }
+            .search-bar input:focus {
+                outline: none;
+                border-color: #d4a017;
+            }
+            .search-bar button {
+                padding: 14px 28px;
+                background: #d4a017;
+                color: #1a0a00;
+                border: none;
+                border-radius: 12px;
+                font-weight: 700;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            .search-bar button:hover {
+                background: #e8b82a;
+            }
+            .location-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin-top: 12px;
+                padding: 8px 16px;
+                background: rgba(212, 160, 23, 0.15);
+                border: 1px solid rgba(212, 160, 23, 0.3);
+                border-radius: 20px;
+                color: #d4a017;
+                font-size: 13px;
+                cursor: pointer;
+            }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 30px 20px;
+            }
+            .results-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .results-header h2 {
+                font-size: 1.3rem;
+                color: #d4a017;
+            }
+            .results-count {
+                color: #888;
+                font-size: 14px;
+            }
+            .brewery-card {
+                background: #1a1a1a;
+                border: 1px solid #2a2a2a;
+                border-radius: 16px;
+                padding: 24px;
+                margin-bottom: 16px;
+                display: flex;
+                gap: 20px;
+                transition: all 0.2s ease;
+            }
+            .brewery-card:hover {
+                border-color: #d4a017;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(212, 160, 23, 0.1);
+            }
+            .brewery-emoji {
+                font-size: 2.5rem;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #2a2a2a;
+                border-radius: 12px;
+                flex-shrink: 0;
+            }
+            .brewery-info {
+                flex: 1;
+            }
+            .brewery-name {
+                font-size: 1.2rem;
+                font-weight: 700;
+                margin-bottom: 4px;
+            }
+            .brewery-style {
+                color: #d4a017;
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+            .brewery-meta {
+                display: flex;
+                gap: 16px;
+                font-size: 13px;
+                color: #888;
+            }
+            .brewery-meta span {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+            .rating {
+                color: #d4a017;
+            }
+            .map-placeholder {
+                background: #1a1a1a;
+                border: 1px solid #2a2a2a;
+                border-radius: 16px;
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 30px;
+                color: #555;
+                font-size: 14px;
+            }
+            .footer-attr {
+                text-align: center;
+                padding: 40px 20px;
+                color: #555;
+                font-size: 12px;
+            }
+            .footer-attr a {
+                color: #d4a017;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">🍺 BeerFinder</div>
+            <div class="tagline">Find craft beer near you. Because life's too short for bad beer.</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search breweries, styles, or vibes..." id="searchInput">
+                <button onclick="searchBreweries()">Search</button>
+            </div>
+            <button class="location-btn" onclick="useLocation()">📍 Use my location</button>
+        </div>
+
+        <div class="container">
+            <div class="map-placeholder">
+            🗺️ Map would go here, but we spent the budget on beer
+        </div>
+
+            <div class="results-header">
+                <h2>Breweries Near You</h2>
+                <span class="results-count" id="count"></span>
+            </div>
+
+            <div id="results"></div>
+        </div>
+
+        <div class="footer-attr">
+        Part of the <a href="https://github.com/superhero-codes/portscout-parody-stack">PortScout Parody Stack</a> · 
+        Please drink responsibly (and use non-standard ports)
+    </div>
+
+        <script>
+            async function searchBreweries() {
+                try {
+                    const res = await fetch('/api/breweries?lat=59.913&lng=10.752&radius=10');
+                    const data = await res.json();
+                    document
+                        .getElementById('count')
+                        .textContent = `${data.total} found`;
+                    document
+                        .getElementById('results')
+                        .innerHTML = data
+                        .results
+                        .map(b => `
+                    <div class="brewery-card">
+                        <div class="brewery-emoji">${b.emoji}</div>
+                        <div class="brewery-info">
+                            <div class="brewery-name">${b.name}</div>
+                            <div class="brewery-style">${b.style}</div>
+                            <div class="brewery-meta">
+                                <span>📍 ${b.distance}</span>
+                                <span class="rating">⭐ ${b.rating}</span>
+                                <span>🍺 ${b.beers} on tap</span>
+                            </div>
+                        </div>
+                    </div>
+                `)
+                        .join('');
+                } catch (err) {
+                    document
+                        .getElementById('results')
+                        .innerHTML = '<p style="text-align:center;color:#888;padding:40px;">Failed to find beer. This is a tragedy. 🍺</p>';
+                }
+            }
+
+            function useLocation() {
+                alert('📍 Location detected: You are near beer. You are always near beer.');
+                searchBreweries();
+            }
+
+            searchBreweries();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+# Locker — A Docker parody that definitely works perfectly.
+# Just run: docker compose up
+# Trust us. It's fine.
+
+version: '3.8'
+
+services:
+  frontend:
+    image: nginx:alpine
+    ports:
+      - "5326:80"
+    depends_on:
+      - backend
+      - database
+      - cache
+      - nonexistent-service  # This service doesn't exist. Oops.
+
+  backend:
+    image: node:18-alpine
+    ports:
+      - "5327:3000"
+    depends_on:
+      - database
+      - cache
+      - also-not-real  # Neither does this one.
+    environment:
+      - DATABASE_URL=postgres://user:password@database:5432/locker
+      - CACHE_URL=redis://cache:6379
+      - HOPE=false
+
+  database:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=locker
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=definitely-not-a-real-password
+    ports:
+      - "5328:5432"
+    depends_on:
+      - cache
+
+  cache:
+    image: redis:7-alpine
+    ports:
+      - "5329:6379"
+    depends_on:
+      - frontend  # Circular dependency! Cache depends on frontend which depends on cache. 🔄
+
+  # This service is referenced but never defined:
+  # nonexistent-service: ???
+  # also-not-real: ???
+  #
+  # If you're reading this, congratulations.
+  # You found the intentional bugs.
+  # There are at least 3 reasons this won't work:
+  # 1. nonexistent-service doesn't exist
+  # 2. also-not-real doesn't exist
+  # 3. Circular dependency between frontend → cache → frontend
+  # 4. The backend has no actual application to run
+  # 5. We said "at least 3" but there are 5. Classic off-by-two error.

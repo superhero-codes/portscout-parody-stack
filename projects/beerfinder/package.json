@@ -1,0 +1,12 @@
+{
+    "name": "beerfinder",
+    "version": "1.0.0",
+    "description": "BeerFinder — Find craft beer near you. Qwik-inspired, beer-focused.",
+    "scripts": {
+        "dev": "node server.js",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}

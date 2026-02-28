@@ -1,0 +1,12 @@
+{
+    "name": "faceplant",
+    "version": "1.0.0",
+    "description": "Faceplant — Like Facebook, but it falls on its face 50% of the time.",
+    "scripts": {
+        "dev": "node server.js",
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}

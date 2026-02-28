@@ -1,0 +1,15 @@
+{
+    "name": "onlyfarms",
+    "version": "1.0.0",
+    "description": "OnlyFarms — A premium farm content platform. Multiple processes, multiple ports, maximum confusion.",
+    "scripts": {
+        "start": "node start-all.js",
+        "dev": "node start-all.js",
+        "server": "node server.js",
+        "worker": "node worker.js",
+        "analytics": "node analytics.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}

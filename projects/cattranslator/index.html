@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CatTranslator — Understand Your Cat</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                padding: 20px;
+            }
+            .container {
+                max-width: 500px;
+                width: 100%;
+                text-align: center;
+            }
+            .logo {
+                font-size: 4rem;
+                margin-bottom: 8px;
+            }
+            h1 {
+                font-size: 2rem;
+                font-weight: 800;
+                margin-bottom: 8px;
+            }
+            .tagline {
+                font-size: 1.1rem;
+                opacity: 0.8;
+                margin-bottom: 40px;
+            }
+            .translator-box {
+                background: rgba(255,255,255,0.15);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 32px;
+                margin-bottom: 24px;
+            }
+            .input-group {
+                margin-bottom: 20px;
+            }
+            .input-group label {
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 8px;
+                text-align: left;
+            }
+            textarea {
+                width: 100%;
+                padding: 16px;
+                border: 2px solid rgba(255,255,255,0.2);
+                border-radius: 12px;
+                background: rgba(255,255,255,0.1);
+                color: white;
+                font-size: 16px;
+                font-family: inherit;
+                resize: vertical;
+                min-height: 80px;
+            }
+            textarea::placeholder {
+                color: rgba(255,255,255,0.5);
+            }
+            textarea:focus {
+                outline: none;
+                border-color: rgba(255,255,255,0.5);
+            }
+            .btn-translate {
+                width: 100%;
+                padding: 16px;
+                background: white;
+                color: #764ba2;
+                border: none;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            .btn-translate:hover {
+                transform: scale(1.02);
+            }
+            .output-box {
+                background: rgba(255,255,255,0.1);
+                border-radius: 12px;
+                padding: 20px;
+                min-height: 60px;
+                text-align: left;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+            .direction-toggle {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+            .direction-toggle button {
+                flex: 1;
+                padding: 10px;
+                border: 2px solid rgba(255,255,255,0.2);
+                border-radius: 10px;
+                background: transparent;
+                color: white;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            .direction-toggle button.active {
+                background: rgba(255,255,255,0.2);
+                border-color: white;
+            }
+            .fun-facts {
+                margin-top: 30px;
+                font-size: 13px;
+                opacity: 0.7;
+            }
+            .footer-attr {
+                margin-top: 40px;
+                font-size: 12px;
+                opacity: 0.5;
+            }
+            .footer-attr a {
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo">🐱</div>
+            <h1>CatTranslator</h1>
+            <p class="tagline">Finally understand what your cat is saying. (Spoiler: it's always "feed me.")</p>
+
+            <div class="translator-box">
+                <div class="direction-toggle">
+                    <button class="active" onclick="setDirection('human')" id="btn-human">🧑 Human → 🐱 Cat</button>
+                    <button onclick="setDirection('cat')" id="btn-cat">🐱 Cat → 🧑 Human</button>
+                </div>
+
+                <div class="input-group">
+                    <label id="input-label">Type something in human:</label>
+                    <textarea id="input" placeholder="Hello, how are you today?"></textarea>
+                </div>
+
+                <button class="btn-translate" onclick="translate()">🐾 Translate</button>
+
+                <div class="output-box" id="output" style="margin-top: 20px;">
+                Translation will appear here...
+            </div>
+            </div>
+
+            <div class="fun-facts">
+            💡 Fun fact: Cats have over 100 vocalizations. Dogs have about 10. Cats are clearly the superior communicators.
+        </div>
+
+            <div class="footer-attr">
+            Part of the <a href="https://github.com/superhero-codes/portscout-parody-stack">PortScout Parody Stack</a> · 
+            No cats were confused in the making of this translator
+        </div>
+        </div>
+
+        <script>
+            let direction = 'human';
+
+            const catResponses = [
+                'Meow. (Feed me.)',
+                'Mrrrow? (Is that food?)',
+                'Prrrrrr... (I tolerate your existence.)',
+                'MEOW! (The food bowl is 47% empty. This is unacceptable.)',
+                'Mew mew mew. (I knocked your glass off the table. You\'re welcome.)',
+                '*stares* (I am plotting something. You will never know what.)',
+                'Hisssss! (You touched my belly. We had an agreement.)',
+                'Chirp chirp! (There\'s a bird outside and I have OPINIONS.)',
+                'Meow meow meow. (It is 3 AM. Time to run at full speed for no reason.)',
+                'Purrrr... (I\'m sitting on your keyboard because I love you. Also, asdfghjkl.)',
+                '*slow blink* (This is the highest honor I can bestow upon you.)',
+                'MROW! (The door is closed. Open it. Now close it. Now open it again.)'
+            ];
+
+            const humanTranslations = [
+                'I demand food immediately. The bowl situation is critical.',
+                'Why did you move? I was comfortable on your lap.',
+                'I have decided that 4 AM is the perfect time for zoomies.',
+                'This box is mine now. I don\'t care that it\'s too small.',
+                'I brought you a dead mouse. It\'s a gift. Show some gratitude.',
+                'I will now sit in the exact center of your keyboard.',
+                'Pet me. No, not there. Not there either. Actually, don\'t touch me.',
+                'I see you\'re busy. Let me help by lying on your work.',
+                'The red dot... I will catch it this time. I WILL.',
+                'I\'m not stuck in the tree. I\'m choosing to be here.',
+                'Your plant? You mean my salad bar?',
+                'I knocked it off the counter to test gravity. Science.'
+            ];
+
+            function setDirection(dir) {
+                direction = dir;
+                document
+                    .getElementById('btn-human')
+                    .classList
+                    .toggle('active', dir === 'human');
+                document
+                    .getElementById('btn-cat')
+                    .classList
+                    .toggle('active', dir === 'cat');
+                document
+                    .getElementById('input-label')
+                    .textContent = dir === 'human'
+                        ? 'Type something in human:'
+                        : 'Type cat sounds:';
+                document
+                    .getElementById('input')
+                    .placeholder = dir === 'human'
+                        ? 'Hello, how are you today?'
+                        : 'Meow meow mrrrow...';
+            }
+
+            function translate() {
+                const input = document
+                    .getElementById('input')
+                    .value
+                    .trim();
+                if (!input) {
+                    document
+                        .getElementById('output')
+                        .textContent = '🐱 *stares at you silently*';
+                    return;
+                }
+
+                const responses = direction === 'human'
+                    ? catResponses
+                    : humanTranslations;
+                const result = responses[Math.floor(Math.random() * responses.length)];
+                document
+                    .getElementById('output')
+                    .textContent = result;
+            }
+        </script>
+    </body>
+</html>

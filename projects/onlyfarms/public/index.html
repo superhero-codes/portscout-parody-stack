@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OnlyFarms — Premium Farm Content</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background: #1a1a2e;
+                color: #e0e0e0;
+                min-height: 100vh;
+            }
+            .header {
+                background: #0f0f1a;
+                padding: 16px 24px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid #2a2a4a;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+            .logo {
+                font-size: 1.5rem;
+                font-weight: 800;
+                color: #00b4d8;
+            }
+            .logo span {
+                color: #e0e0e0;
+            }
+            .header-actions {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+            }
+            .btn {
+                padding: 8px 20px;
+                border-radius: 20px;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            .btn-subscribe {
+                background: #00b4d8;
+                color: white;
+            }
+            .btn-login {
+                background: transparent;
+                color: #00b4d8;
+                border: 1px solid #00b4d8;
+            }
+            .nav {
+                background: #0f0f1a;
+                padding: 12px 24px;
+                display: flex;
+                gap: 24px;
+                border-bottom: 1px solid #2a2a4a;
+                overflow-x: auto;
+            }
+            .nav a {
+                color: #888;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 500;
+                white-space: nowrap;
+                padding: 4px 0;
+            }
+            .nav a.active {
+                color: #00b4d8;
+                border-bottom: 2px solid #00b4d8;
+            }
+            .container {
+                max-width: 680px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .stories {
+                display: flex;
+                gap: 16px;
+                padding: 16px 0;
+                overflow-x: auto;
+                margin-bottom: 20px;
+            }
+            .story {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                min-width: 72px;
+            }
+            .story-avatar {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #00b4d8, #0077b6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8rem;
+                border: 3px solid #00b4d8;
+                padding: 2px;
+            }
+            .story-name {
+                font-size: 11px;
+                color: #aaa;
+                text-align: center;
+            }
+            .post {
+                background: #12122a;
+                border: 1px solid #2a2a4a;
+                border-radius: 12px;
+                margin-bottom: 20px;
+                overflow: hidden;
+            }
+            .post-header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 16px;
+            }
+            .post-avatar {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: #2a2a4a;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.4rem;
+            }
+            .post-user {
+                font-weight: 600;
+                font-size: 15px;
+            }
+            .post-tier {
+                font-size: 12px;
+                color: #00b4d8;
+            }
+            .post-content {
+                padding: 0 16px 16px;
+            }
+            .post-title {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+            .post-preview {
+                color: #aaa;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            .post-image {
+                width: 100%;
+                height: 300px;
+                background: linear-gradient(135deg, #1a472a, #2d5a27, #4a7c3f);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 4rem;
+                position: relative;
+            }
+            .post-image.locked {
+                filter: blur(8px);
+            }
+            .post-image .lock-overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                filter: none;
+                backdrop-filter: blur(0);
+            }
+            .lock-overlay .lock-icon {
+                font-size: 3rem;
+                margin-bottom: 8px;
+            }
+            .lock-overlay .lock-text {
+                font-size: 14px;
+                color: #ccc;
+            }
+            .lock-overlay .btn-unlock {
+                margin-top: 12px;
+                padding: 8px 24px;
+                background: #00b4d8;
+                color: white;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                font-weight: 600;
+            }
+            .post-actions {
+                display: flex;
+                gap: 20px;
+                padding: 12px 16px;
+                border-top: 1px solid #2a2a4a;
+            }
+            .post-action {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                color: #888;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .post-action:hover {
+                color: #00b4d8;
+            }
+            .post-likes {
+                padding: 4px 16px 12px;
+                font-size: 13px;
+                color: #aaa;
+            }
+            .sidebar-promo {
+                background: linear-gradient(135deg, #0077b6, #00b4d8);
+                border-radius: 12px;
+                padding: 24px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .sidebar-promo h3 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            .sidebar-promo p {
+                font-size: 14px;
+                opacity: 0.9;
+                margin-bottom: 16px;
+            }
+            .footer-attr {
+                text-align: center;
+                padding: 40px 20px;
+                color: #555;
+                font-size: 12px;
+            }
+            .footer-attr a {
+                color: #00b4d8;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">Only<span>Farms</span> 🌾</div>
+            <div class="header-actions">
+                <button class="btn btn-login">Log In</button>
+                <button class="btn btn-subscribe" onclick="subscribe()">Subscribe $9.99/mo</button>
+            </div>
+        </div>
+        <div class="nav">
+            <a href="#" class="active">🏠 Home</a>
+            <a href="#">🔥 Trending</a>
+            <a href="#">🚜 Tractors</a>
+            <a href="#">🐄 Livestock</a>
+            <a href="#">🌽 Crops</a>
+            <a href="#">🥚 Poultry</a>
+            <a href="#">🌾 Hay</a>
+        </div>
+        <div class="container">
+            <div class="stories">
+                <div class="story">
+                    <div class="story-avatar">👨‍🌾</div>
+                    <div class="story-name">MacDonald</div>
+                </div>
+                <div class="story">
+                    <div class="story-avatar">👩‍🌾</div>
+                    <div class="story-name">Jane</div>
+                </div>
+                <div class="story">
+                    <div class="story-avatar">🧑‍🌾</div>
+                    <div class="story-name">Harry</div>
+                </div>
+                <div class="story">
+                    <div class="story-avatar">🐷</div>
+                    <div class="story-name">Wilbur</div>
+                </div>
+                <div class="story">
+                    <div class="story-avatar">🐔</div>
+                    <div class="story-name">Clucky</div>
+                </div>
+                <div class="story">
+                    <div class="story-avatar">🐄</div>
+                    <div class="story-name">Bessie</div>
+                </div>
+            </div>
+
+            <div class="sidebar-promo">
+                <h3>🌾 Go Premium</h3>
+                <p>Unlock exclusive barn content, tractor reveals, and behind-the-fence footage.</p>
+                <button class="btn btn-subscribe" onclick="subscribe()">Subscribe Now</button>
+            </div>
+
+            <div id="feed"></div>
+        </div>
+
+        <div class="footer-attr">
+        Part of the <a href="https://github.com/superhero-codes/portscout-parody-stack">PortScout Parody Stack</a> · 
+        Built with questionable agricultural decisions
+    </div>
+
+        <script>
+            const farmEmojis = [
+                '🚜',
+                '🌾',
+                '🐄',
+                '🐷',
+                '🐔',
+                '🥚',
+                '🌽',
+                '🐴',
+                '🐑',
+                '🌻'
+            ];
+
+            async function loadFeed() {
+                try {
+                    const res = await fetch('/api/feed');
+                    const data = await res.json();
+                    const feed = document.getElementById('feed');
+
+                    feed.innerHTML = data
+                        .content
+                        .map(
+                            post => `
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">${post.avatar}</div>
+                            <div>
+                                <div class="post-user">${post.farmer}</div>
+                                <div class="post-tier">${post.tier}</div>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-title">${post.title}</div>
+                            <div class="post-preview">${post.preview}</div>
+                        </div>
+                        <div class="post-image${post.locked
+                            ? ' locked'
+                            : ''}">
+                            ${farmEmojis[post.id % farmEmojis.length]}
+                            ${post.locked
+                                ? `
+                                <div class="lock-overlay">
+                                    <div class="lock-icon">🔒</div>
+                                    <div class="lock-text">Subscribe to unlock this farm content</div>
+                                    <button class="btn-unlock" onclick="subscribe()">Unlock for $9.99/mo</button>
+                                </div>
+                            `
+                                : ''}
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-action">❤️ Like</div>
+                            <div class="post-action">💬 Comment</div>
+                            <div class="post-action">💰 Tip</div>
+                            <div class="post-action">🔖 Save</div>
+                        </div>
+                        <div class="post-likes">${post.likes.toLocaleString()} likes</div>
+                    </div>
+                `)
+                        .join('');
+                } catch (err) {
+                    document
+                        .getElementById('feed')
+                        .innerHTML = '<p style="text-align:center;color:#888;padding:40px;">Failed to load farm content. The barn door is stuck. 🚪</p>';
+                }
+            }
+
+            async function subscribe() {
+                try {
+                    const res = await fetch('/api/subscribe');
+                    const data = await res.json();
+                    alert(data.message);
+                } catch  {
+                    alert('Subscription failed. The payment goat ate your credit card. 🐐');
+                }
+            }
+
+            loadFeed();
+        </script>
+    </body>
+</html>

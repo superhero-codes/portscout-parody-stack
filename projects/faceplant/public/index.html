@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Faceplant</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Helvetica, Arial, sans-serif;
+                background: #e9ebee;
+                color: #1c1e21;
+                min-height: 100vh;
+            }
+            .header {
+                background: #3b5998;
+                padding: 8px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            }
+            .logo {
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: white;
+                letter-spacing: -0.05em;
+            }
+            .search-bar {
+                padding: 6px 12px;
+                border: 1px solid #bec3c9;
+                border-radius: 4px;
+                font-size: 14px;
+                width: 240px;
+                background: #f5f6f7;
+            }
+            .header-nav {
+                display: flex;
+                gap: 16px;
+            }
+            .header-nav a {
+                color: #c8d1db;
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: 600;
+            }
+            .container {
+                max-width: 680px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .status-box {
+                background: white;
+                border: 1px solid #dddfe2;
+                border-radius: 8px;
+                padding: 16px;
+                margin-bottom: 16px;
+            }
+            .status-input {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+            }
+            .status-avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #e4e6eb;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+            }
+            .status-input input {
+                flex: 1;
+                padding: 10px 16px;
+                border: 1px solid #dddfe2;
+                border-radius: 20px;
+                font-size: 15px;
+                background: #f0f2f5;
+                color: #65676b;
+            }
+            .status-actions {
+                display: flex;
+                gap: 4px;
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid #e4e6eb;
+            }
+            .status-actions button {
+                flex: 1;
+                padding: 8px;
+                border: none;
+                background: transparent;
+                color: #65676b;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            .status-actions button:hover {
+                background: #f0f2f5;
+            }
+            .post {
+                background: white;
+                border: 1px solid #dddfe2;
+                border-radius: 8px;
+                margin-bottom: 16px;
+            }
+            .post-header {
+                display: flex;
+                gap: 10px;
+                padding: 16px;
+                align-items: center;
+            }
+            .post-avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #e4e6eb;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+            }
+            .post-user {
+                font-weight: 600;
+                font-size: 15px;
+            }
+            .post-time {
+                font-size: 12px;
+                color: #65676b;
+            }
+            .post-content {
+                padding: 0 16px 16px;
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            .post-stats {
+                padding: 8px 16px;
+                display: flex;
+                justify-content: space-between;
+                font-size: 13px;
+                color: #65676b;
+                border-top: 1px solid #e4e6eb;
+            }
+            .post-actions {
+                display: flex;
+                padding: 4px 16px 8px;
+                border-top: 1px solid #e4e6eb;
+            }
+            .post-actions button {
+                flex: 1;
+                padding: 8px;
+                border: none;
+                background: transparent;
+                color: #65676b;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            .post-actions button:hover {
+                background: #f0f2f5;
+            }
+            .footer-attr {
+                text-align: center;
+                padding: 40px 20px;
+                color: #999;
+                font-size: 12px;
+            }
+            .footer-attr a {
+                color: #3b5998;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">faceplant</div>
+            <input type="text" class="search-bar" placeholder="Search Faceplant">
+            <div class="header-nav">
+                <a href="#">Home</a>
+                <a href="#">Friends (0)</a>
+                <a href="#">Pokes (847)</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="status-box">
+                <div class="status-input">
+                    <div class="status-avatar">😐</div>
+                    <input type="text" placeholder="What's on your mind? (Besides why this app keeps crashing)">
+                </div>
+                <div class="status-actions">
+                    <button>📷 Photo</button>
+                    <button>😊 Feeling</button>
+                    <button>📍 Check In</button>
+                </div>
+            </div>
+
+            <div id="feed"></div>
+        </div>
+
+        <div class="footer-attr">
+        Part of the <a href="https://github.com/superhero-codes/portscout-parody-stack">PortScout Parody Stack</a> · 
+        50% uptime guaranteed
+    </div>
+
+        <script>
+            function formatNumber(n) {
+                if (n >= 1000000) 
+                    return (n / 1000000).toFixed(1) + 'M';
+                if (n >= 1000) 
+                    return (n / 1000).toFixed(1) + 'K';
+                return n.toString();
+            }
+
+            async function loadFeed() {
+                try {
+                    const res = await fetch('/api/feed');
+                    const posts = await res.json();
+                    document
+                        .getElementById('feed')
+                        .innerHTML = posts
+                        .map(post => `
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">${post.avatar}</div>
+                            <div>
+                                <div class="post-user">${post.user}</div>
+                                <div class="post-time">${post.time}</div>
+                            </div>
+                        </div>
+                        <div class="post-content">${post.content}</div>
+                        <div class="post-stats">
+                            <span>👍 ${formatNumber(post.likes)}</span>
+                            <span>${formatNumber(post.comments)} comments · ${formatNumber(post.shares)} shares</span>
+                        </div>
+                        <div class="post-actions">
+                            <button>👍 Like</button>
+                            <button>💬 Comment</button>
+                            <button>↗️ Share</button>
+                        </div>
+                    </div>
+                `)
+                        .join('');
+                } catch  {
+                    document
+                        .getElementById('feed')
+                        .innerHTML = '<div class="post"><div class="post-content" style="text-align:center;color:#999;padding:40px;">Feed failed to load. The app probably crashed again. 💀</div></div>';
+                }
+            }
+
+            loadFeed();
+        </script>
+    </body>
+</html>
