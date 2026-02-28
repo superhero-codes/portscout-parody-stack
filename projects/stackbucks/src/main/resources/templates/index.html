@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StackBucks™ — Developer Superpower Beverage Framework</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!-- Header -->
+<header class="sb-header">
+    <div class="sb-header-inner">
+        <div class="sb-header-left">
+            <div class="sb-logo-small" id="headerLogo">
+                <div class="sb-logo-circle-sm">
+                    <span class="sb-logo-icon-sm">☕⚡</span>
+                </div>
+                <span class="sb-logo-text-sm">STACKBUCKS</span>
+            </div>
+        </div>
+        <div class="sb-header-right">
+            <button class="sb-memory-toggle" id="memoryToggle">
+                Memory Foam: <span id="memoryStatus">OFF</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="sb-hero">
+    <div class="sb-hero-inner">
+        <div class="sb-logo-large">
+            <div class="sb-logo-circle">
+                <div class="sb-logo-inner-ring">
+                    <span class="sb-logo-icon">☕⚡</span>
+                </div>
+                <div class="sb-logo-ring-text">
+                    <span>★ STACKBUCKS ★ EST. 2024 ★ DEVELOPER FUEL ★</span>
+                </div>
+            </div>
+        </div>
+        <h1 class="sb-hero-title">Unlock Developer Superpowers.</h1>
+        <p class="sb-hero-subtitle">Scientifically unproven. Emotionally confirmed.</p>
+        <a href="#menu" class="sb-cta-btn" id="brewBtn">Brew My Destiny</a>
+    </div>
+</section>
+
+<!-- Menu Section -->
+<section class="sb-menu" id="menu">
+    <h2 class="sb-menu-title">The Menu</h2>
+    <p class="sb-menu-subtitle">Choose your power-up wisely. Side effects may include shipping code.</p>
+
+    <div class="sb-drink-grid">
+        <!-- Drink 1: Quantum Espresso -->
+        <div class="sb-drink-card" data-drink="Quantum Espresso">
+            <div class="sb-drink-icon">☕✨</div>
+            <h3 class="sb-drink-name">Quantum Espresso</h3>
+            <p class="sb-drink-desc">+40 Focus | +12 Compile Speed | -2 Social Skills</p>
+            <div class="sb-caffeine-bar">
+                <div class="sb-caffeine-fill" style="width: 85%;">
+                    <span class="sb-caffeine-label">85%</span>
+                </div>
+            </div>
+            <span class="sb-drink-tag">CAFFEINE LEVEL</span>
+        </div>
+
+        <!-- Drink 2: HyperBrew 3000™ -->
+        <div class="sb-drink-card" data-drink="HyperBrew 3000™">
+            <div class="sb-drink-icon">⚡</div>
+            <h3 class="sb-drink-name">HyperBrew 3000™</h3>
+            <p class="sb-drink-desc">Enables temporary overclocking. May cause spontaneous refactoring.</p>
+            <div class="sb-caffeine-bar">
+                <div class="sb-caffeine-fill" style="width: 95%;">
+                    <span class="sb-caffeine-label">95%</span>
+                </div>
+            </div>
+            <span class="sb-drink-tag">CAFFEINE LEVEL</span>
+        </div>
+
+        <!-- Drink 3: Debug Dark Roast -->
+        <div class="sb-drink-card" data-drink="Debug Dark Roast">
+            <div class="sb-drink-icon">🐛</div>
+            <h3 class="sb-drink-name">Debug Dark Roast</h3>
+            <p class="sb-drink-desc">75% chance to fix bug. 25% chance to introduce new one.</p>
+            <div class="sb-caffeine-bar">
+                <div class="sb-caffeine-fill" style="width: 70%;">
+                    <span class="sb-caffeine-label">70%</span>
+                </div>
+            </div>
+            <span class="sb-drink-tag">CAFFEINE LEVEL</span>
+        </div>
+
+        <!-- Drink 4: Infinite Loop Latte -->
+        <div class="sb-drink-card" data-drink="Infinite Loop Latte">
+            <div class="sb-drink-icon">♾️</div>
+            <h3 class="sb-drink-name">Infinite Loop Latte</h3>
+            <p class="sb-drink-desc">You will not sleep. You will not stop.</p>
+            <div class="sb-caffeine-bar">
+                <div class="sb-caffeine-fill sb-caffeine-pulse" style="width: 100%;">
+                    <span class="sb-caffeine-label">100%</span>
+                </div>
+            </div>
+            <span class="sb-drink-tag">CAFFEINE LEVEL</span>
+        </div>
+
+        <!-- Drink 5: Garbage Collection Frappuccino -->
+        <div class="sb-drink-card" data-drink="Garbage Collection Frappuccino">
+            <div class="sb-drink-icon">🧹</div>
+            <h3 class="sb-drink-name">Garbage Collection Frappuccino</h3>
+            <p class="sb-drink-desc">Clears brain cache. Resets emotional memory.</p>
+            <div class="sb-caffeine-bar">
+                <div class="sb-caffeine-fill" style="width: 60%;">
+                    <span class="sb-caffeine-label">60%</span>
+                </div>
+            </div>
+            <span class="sb-drink-tag">CAFFEINE LEVEL</span>
+        </div>
+
+        <!-- Drink 6: Stack Overflow Shot -->
+        <div class="sb-drink-card" data-drink="Stack Overflow Shot">
+            <div class="sb-drink-icon">📚</div>
+            <h3 class="sb-drink-name">Stack Overflow Shot</h3>
+            <p class="sb-drink-desc">Instantly remembers something you "already knew".</p>
+            <div class="sb-caffeine-bar">
+                <div class="sb-caffeine-fill" style="width: 90%;">
+                    <span class="sb-caffeine-label">90%</span>
+                </div>
+            </div>
+            <span class="sb-drink-tag">CAFFEINE LEVEL</span>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="sb-footer">
+    <p>StackBucks™ — Developer Superpower Beverage Framework</p>
+    <p class="sb-footer-small">Part of the PortScout Parody Stack. Not affiliated with any real coffee company.</p>
+</footer>
+
+<!-- Drink Activation Overlay -->
+<div class="sb-overlay" id="drinkOverlay">
+    <div class="sb-overlay-card">
+        <h2 class="sb-overlay-drink" id="overlayDrinkName"></h2>
+        <p class="sb-overlay-status" id="overlayStatus">Injecting Caffeine…</p>
+        <div class="sb-power-meter">
+            <div class="sb-power-fill" id="powerFill"></div>
+        </div>
+        <p class="sb-power-percent" id="powerPercent">0%</p>
+        <div class="sb-overlay-result" id="overlayResult" style="display: none;">
+            <p class="sb-ability-unlocked">✓ Ability Unlocked:</p>
+            <p class="sb-ability-name" id="abilityName"></p>
+        </div>
+        <button class="sb-overlay-close" id="overlayClose" style="display: none;">Close</button>
+    </div>
+</div>
+
+<!-- Caffeine Overload Easter Egg Overlay -->
+<div class="sb-glitch-overlay" id="glitchOverlay">
+    <div class="sb-glitch-content">
+        <h2 class="sb-glitch-title">☕ CAFFEINE OVERLOAD ☕</h2>
+        <div class="sb-glitch-stats">
+            <div class="sb-glitch-stat">
+                <span class="sb-stat-label">Heart Rate</span>
+                <span class="sb-stat-value sb-stat-danger">148 bpm</span>
+            </div>
+            <div class="sb-glitch-stat">
+                <span class="sb-stat-label">Tabs Open</span>
+                <span class="sb-stat-value">27</span>
+            </div>
+            <div class="sb-glitch-stat">
+                <span class="sb-stat-label">Sleep Debt</span>
+                <span class="sb-stat-value sb-stat-danger">∞</span>
+            </div>
+            <div class="sb-glitch-stat">
+                <span class="sb-stat-label">Deploy Risk</span>
+                <span class="sb-stat-value sb-stat-danger">HIGH</span>
+            </div>
+        </div>
+        <div class="sb-scanlines"></div>
+    </div>
+</div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>
