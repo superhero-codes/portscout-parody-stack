@@ -37,7 +37,7 @@ docker run -p 5315:5315 dropblox
 - `GET /api/storage` - Storage usage
 - `POST /api/upload` - Upload file (mock)
 
-Open API docs at `/swagger`.
+Open API docs at `http://localhost:5315/swagger` (or `/swagger` on whatever host/port you run DropBlox on).
 
 ## Notes
 

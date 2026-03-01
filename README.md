@@ -98,7 +98,7 @@ _Infrastructure parodies that are barely holding it together._
 
 | #   | Project         | Parodies | Stack                      | Port(s)    | Dev Command                                          | Personality Traits                       |
 | --- | --------------- | -------- | -------------------------- | ---------- | ---------------------------------------------------- | ---------------------------------------- |
-| 18  | **DropBlox**    | Dropbox  | Node + Docker              | 5315       | `cd projects/cloud-nine/dropblox && npm start`       | 🐳 Containerized. Fancy.                 |
+| 18  | **DropBlox**    | Dropbox  | Node + Docker              | 5315       | `cd projects/cloud-nine/dropblox && npm start`       | 📦 API-only (no frontend). Swagger demo at `/swagger`. |
 | 19  | **Locker**      | Docker   | Docker Compose             | 5326–5329  | `cd projects/cloud-nine/locker && docker compose up` | 🐳 Broken compose file. Claims it works. |
 | 20  | **AirBeanBean** | Airbnb   | React + Fastify (monorepo) | 5307, 5313 | `cd projects/cloud-nine/airbeanbean && pnpm dev`     | 📦 Monorepo. $200/night cleaning fee.    |
 
@@ -151,7 +151,7 @@ _Because well-behaved apps don't test anything interesting._
 | **Port Conflict**  | Lotion + SpotiPie, BeerFinder + Faceplant, MySpice + SubSnack, Napper + CPUStorm | 4 conflicts: 5301 (Vue vs SvelteKit), 5325 (Python vs Node, intermittent — Faceplant crashes 50%), 5323 (PHP vs Node), 5331 (Ruby vs Go + CPU spikes) |
 | **WebSocket**      | SpotiPie                                                                         | WS server on 5311. Because HTTP was too mainstream.                                                                                                   |
 | **Slow Start**     | CornHub                                                                          | 2.5s startup delay + slow endpoint. Simulates "works on my machine."                                                                                  |
-| **Docker**         | DropBlox                                                                         | Includes Dockerfile. For when you want problems in a container.                                                                                       |
+| **Docker**         | DropBlox                                                                         | API-only service with Docker support and Swagger demo at `http://localhost:5315/swagger`.                                                             |
 | **Monorepos**      | Nestflix, AirBeanBean, GitPub                                                    | pnpm workspaces. Three times the `node_modules`, three times the fun.                                                                                 |
 | **Multi-Process**  | OnlyFarms                                                                        | 3 processes on 3 ports. Which one is the main server? Nobody knows.                                                                                   |
 | **Deep Nesting**   | SubSnack                                                                         | Server is 6 directories deep. README points to the wrong one.                                                                                         |
@@ -194,7 +194,7 @@ _A carefully curated range of ports, lovingly assigned and immediately fought ov
 5312  Nestflix API (Express)   🎬 The backend nobody asked for
 5313  AirBeanBean API         ⚡ Fastify goes brrr
 5314  CornHub Backend         🐌 Taking its sweet time
-5315  DropBlox API (Express)   🐳 Dockerized and dignified
+5315  DropBlox API (Express)   📦 API-only. Swagger demo: http://localhost:5315/swagger
 5320  OnlyFarms Server        🌾 Premium farm content
 5321  OnlyFarms Worker        🐄 Processing subscriptions
 5322  OnlyFarms Analytics     📊 Fake metrics engine
