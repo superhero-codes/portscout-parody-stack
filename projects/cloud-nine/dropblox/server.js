@@ -2,11 +2,90 @@
 // Simple Express server for PortScout demo
 
 import express from 'express';
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 
 const app = express();
 const PORT = 5315;
 
 app.use(express.json());
+
+const swaggerSpec = swaggerJsdoc({
+	definition: {
+		openapi: '3.0.0',
+		info: {
+			title: 'DropBlox API',
+			version: '1.0.0',
+			description: 'DropBlox API-only demo service',
+		},
+		paths: {
+			'/': {
+				get: {
+					summary: 'API information',
+					responses: {
+						200: {
+							description: 'Service metadata',
+						},
+					},
+				},
+			},
+			'/api/files': {
+				get: {
+					summary: 'List files',
+					responses: {
+						200: {
+							description: 'List of mock files',
+						},
+					},
+				},
+			},
+			'/api/files/{id}': {
+				get: {
+					summary: 'Get file by ID',
+					parameters: [
+						{
+							name: 'id',
+							in: 'path',
+							required: true,
+							schema: { type: 'string' },
+						},
+					],
+					responses: {
+						200: {
+							description: 'File found',
+						},
+						404: {
+							description: 'File not found',
+						},
+					},
+				},
+			},
+			'/api/storage': {
+				get: {
+					summary: 'Storage usage information',
+					responses: {
+						200: {
+							description: 'Current mock storage usage',
+						},
+					},
+				},
+			},
+			'/api/upload': {
+				post: {
+					summary: 'Upload file (mock)',
+					responses: {
+						200: {
+							description: 'Mock upload success response',
+						},
+					},
+				},
+			},
+		},
+	},
+	apis: [],
+});
+
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Mock files data
 const files = [
@@ -38,6 +117,9 @@ app.get('/', (req, res) => {
 	res.json({
 		name: 'DropBlox API',
 		version: '1.0.0',
+		intent: 'API-only service',
+		ui: null,
+		docs: '/swagger',
 		message: '☁️ Store your files in the cloud (we promise theyre safe)',
 		endpoints: {
 			files: '/api/files',
@@ -86,5 +168,5 @@ app.post('/api/upload', (req, res) => {
 
 app.listen(PORT, () => {
 	console.log(`☁️  DropBlox API running on http://localhost:${PORT}`);
-	console.log(`   Endpoints: /, /api/files, /api/storage`);
+	console.log(`   Endpoints: /, /api/files, /api/storage, /swagger`);
 });

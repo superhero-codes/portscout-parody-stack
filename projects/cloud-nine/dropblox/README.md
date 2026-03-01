@@ -2,6 +2,8 @@
 
 A Dropbox-style cloud storage API parody for PortScout demo purposes.
 
+This is an API-only service and does not include a frontend UI.
+
 ## What it Parodies
 
 Dropbox - the cloud storage and file synchronization service.
@@ -29,10 +31,13 @@ docker run -p 5315:5315 dropblox
 ## API Endpoints
 
 - `GET /` - API info
+- `GET /swagger` - OpenAPI/Swagger UI docs
 - `GET /api/files` - List files
 - `GET /api/files/:id` - Get file by ID
 - `GET /api/storage` - Storage usage
 - `POST /api/upload` - Upload file (mock)
+
+Open API docs at `/swagger`.
 
 ## Notes
 
