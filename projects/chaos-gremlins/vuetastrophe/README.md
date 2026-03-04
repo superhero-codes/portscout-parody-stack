@@ -21,3 +21,4 @@ npm run dev
 - Bursty busy loops with randomized inner-loop sizes.
 - Intensity slider adjusts loop depth and pacing.
 - Live counters for ticks, bursts, burst runtime, and rough work-unit totals.
+- Simulated PID count that fluctuates over time with bounded jitter.

@@ -10,6 +10,10 @@
 	const estimatedWorkUnits = ref(0);
 	const latestBurstMs = ref(0);
 	const lastDelayMs = ref(0);
+	const pidCount = ref(42);
+
+	const PID_MIN = 8;
+	const PID_MAX = 360;
 
 	let pulseTimer = null;
 
@@ -31,6 +35,27 @@
 			sink += Math.sqrt((i * 17) % 997) * Math.sin(i);
 		}
 		return sink;
+	}
+
+	function clamp(value, min, max) {
+		return Math.min(max, Math.max(min, value));
+	}
+
+	function updatePidCount() {
+		const intensityFactor = intensity.value / 100;
+		const baseSwing = chaosMode.value ? 9 : 4;
+		const randomSwing = Math.round(
+			(Math.random() - 0.5) * (baseSwing + intensityFactor * 12),
+		);
+		const pressureDrift = Math.round(
+			intensityFactor * (chaosMode.value ? 3 : 2),
+		);
+
+		pidCount.value = clamp(
+			pidCount.value + randomSwing + pressureDrift,
+			PID_MIN,
+			PID_MAX,
+		);
 	}
 
 	function runBurst() {
@@ -57,6 +82,7 @@
 		tickCount.value += 1;
 		latestBurstMs.value = Math.round(burstMs * 10) / 10;
 		estimatedWorkUnits.value += Math.round(localWork % 100000);
+		updatePidCount();
 
 		const nextDelay = chaosMode.value
 			? Math.max(30, Math.floor((190 - base) * Math.random()))
@@ -86,6 +112,7 @@
 		estimatedWorkUnits.value = 0;
 		latestBurstMs.value = 0;
 		lastDelayMs.value = 0;
+		pidCount.value = 42;
 	}
 
 	onBeforeUnmount(() => {
@@ -163,6 +190,9 @@
 				<h3>Telemetry</h3>
 				<p>
 					Ticks: <strong>{{ tickCount }}</strong>
+				</p>
+				<p>
+					Simulated PIDs: <strong>{{ pidCount }}</strong>
 				</p>
 				<p>
 					Bursts completed: <strong>{{ burstCount }}</strong>
