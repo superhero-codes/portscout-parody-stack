@@ -1,6 +1,6 @@
 # 🧪 PortScout Parody Stack — Test Matrix
 
-> A comprehensive test matrix for all **30 projects** in the PortScout Parody Stack.
+> A comprehensive test matrix for all **32 projects** in the PortScout Parody Stack.
 > Use this to verify that [PortScout](https://portscout.app) correctly detects, categorizes, and monitors every project — including the ones that misbehave on purpose.
 
 ---
@@ -72,33 +72,35 @@ This subset is intentionally tuned to provide explicit variation across environm
 
 ### 👹 chaos-gremlins
 
-| #   | Category       | Project        | Parodies    | Directory                           | Tech Stack                 | Port(s) | Run Command(s)                                       | Intentional Behavior                                                                                      | Pre-Start Detection         | Post-Start Detection                                                                                     |
-| --- | -------------- | -------------- | ----------- | ----------------------------------- | -------------------------- | ------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------- |
-| 21  | chaos-gremlins | **MemEater**   | —           | `projects/chaos-gremlins/memeater`  | Rust + Axum                | 5330    | `cd projects/chaos-gremlins/memeater && cargo run`   | 🍽️ Intentional memory leak: allocates ~1MB every 5 seconds into array that's never freed, logs heap usage | `Cargo.toml`, `src/main.rs` | HTTP 200 on `:5330`, heap grows continuously (~1MB/5s), visible in `/api/status`                         |
-| 22  | chaos-gremlins | **CPUStorm**   | —           | `projects/chaos-gremlins/cpustorm`  | Go `net/http`              | 5331    | `cd projects/chaos-gremlins/cpustorm && go run .`    | ⚡ CPU spike: 2-second busy loop every 5 seconds, logs spike count                                        | `go.mod`, `main.go`         | HTTP 200 on `:5331`, CPU spikes visible in process monitoring                                            |
-| 23  | chaos-gremlins | **HidenSeek**  | —           | `projects/chaos-gremlins/hidenseek` | Node/Express               | 5333    | `cd projects/chaos-gremlins/hidenseek && npm start`  | 🎲 Returns random HTTP status codes (200, 404, 500, 418) on every request, logs each code                 | `package.json`, `server.js` | Port `:5333` open, but `GET /` returns random status (sometimes 200, sometimes 404/500/418)              |
-| 24  | chaos-gremlins | **Waiter.com** | Weather.com | `projects/chaos-gremlins/waitercom` | ASP.NET Minimal API (.NET) | 5332    | `cd projects/chaos-gremlins/waitercom && dotnet run` | ⏳ 30-second delay on EVERY response, README doesn't mention explicit delay                               | `*.csproj`, `Program.cs`    | Server starts immediately but HTTP responses take 30s, port is open but unresponsive for 30s per request |
+| #   | Category       | Project          | Parodies    | Directory                              | Tech Stack                 | Port(s) | Run Command(s)                                           | Intentional Behavior                                                                                                      | Pre-Start Detection                             | Post-Start Detection                                                                                        |
+| --- | -------------- | ---------------- | ----------- | -------------------------------------- | -------------------------- | ------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 21  | chaos-gremlins | **MemEater**     | —           | `projects/chaos-gremlins/memeater`     | Rust + Axum                | 5330    | `cd projects/chaos-gremlins/memeater && cargo run`       | 🍽️ Intentional memory leak: allocates ~1MB every 5 seconds into array that's never freed, logs heap usage                 | `Cargo.toml`, `src/main.rs`                     | HTTP 200 on `:5330`, heap grows continuously (~1MB/5s), visible in `/api/status`                            |
+| 22  | chaos-gremlins | **CPUStorm**     | —           | `projects/chaos-gremlins/cpustorm`     | Go `net/http`              | 5331    | `cd projects/chaos-gremlins/cpustorm && go run .`        | ⚡ CPU spike: 2-second busy loop every 5 seconds, logs spike count                                                        | `go.mod`, `main.go`                             | HTTP 200 on `:5331`, CPU spikes visible in process monitoring                                               |
+| 23  | chaos-gremlins | **HidenSeek**    | —           | `projects/chaos-gremlins/hidenseek`    | Node/Express               | 5333    | `cd projects/chaos-gremlins/hidenseek && npm start`      | 🎲 Returns random HTTP status codes (200, 404, 500, 418) on every request, logs each code                                 | `package.json`, `server.js`                     | Port `:5333` open, but `GET /` returns random status (sometimes 200, sometimes 404/500/418)                 |
+| 24  | chaos-gremlins | **Waiter.com**   | Weather.com | `projects/chaos-gremlins/waitercom`    | ASP.NET Minimal API (.NET) | 5332    | `cd projects/chaos-gremlins/waitercom && dotnet run`     | ⏳ 30-second delay on EVERY response, README doesn't mention explicit delay                                               | `*.csproj`, `Program.cs`                        | Server starts immediately but HTTP responses take 30s, port is open but unresponsive for 30s per request    |
+| 25  | chaos-gremlins | **Vuetastrophe** | —           | `projects/chaos-gremlins/vuetastrophe` | Vue 3 + Vite               | 5334    | `cd projects/chaos-gremlins/vuetastrophe && npm run dev` | 🌀 Bursty, jitter-heavy browser CPU variance with togglable chaos mode and variable busy-loop intensity                   | `package.json`, `vite.config.js`, `src/App.vue` | HTTP 200 on `:5334`, interactive UI present, CPU usage rises variably under chaos mode and intensity slider |
+| 26  | chaos-gremlins | **Heapocalypse** | —           | `projects/chaos-gremlins/heapocalypse` | Node/Express               | 5335    | `cd projects/chaos-gremlins/heapocalypse && npm start`   | 💥 Intentional heap growth via background leaks and leak endpoints (`/leak`, `/burst`) with retained process-level arrays | `package.json`, `server.js`                     | HTTP 200 on `:5335`, `/stats` shows rising heap/retained chunks over time or after `/leak`/`/burst` calls   |
 
 ### 🃏 wildcard-drawer
 
 | #   | Category        | Project           | Parodies  | Directory                                | Tech Stack         | Port(s) | Run Command(s)                                                                                                                                                  | Intentional Behavior                                                   | Pre-Start Detection                                          | Post-Start Detection                             |
 | --- | --------------- | ----------------- | --------- | ---------------------------------------- | ------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------ |
-| 25  | wildcard-drawer | **CatTranslator** | —         | `projects/wildcard-drawer/cattranslator` | Static HTML/CSS/JS | None    | `cd projects/wildcard-drawer/cattranslator && open index.html`                                                                                                  | 📄 No `package.json`, no build step, no server, no port                | Only `index.html` and `README.md`, no `package.json`         | N/A (static file, no server)                     |
-| 26  | wildcard-drawer | **BeerFinder**    | Beer apps | `projects/wildcard-drawer/beerfinder`    | FastAPI (Python)   | 5325    | `cd projects/wildcard-drawer/beerfinder && python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && uvicorn app:app --port 5325` | ⚠️ Port conflict with Faceplant (intermittent — Faceplant crashes 50%) | `requirements.txt` + `*.py` (or `pyproject.toml` if present) | HTTP 200 on `:5325` (if Faceplant isn't running) |
+| 27  | wildcard-drawer | **CatTranslator** | —         | `projects/wildcard-drawer/cattranslator` | Static HTML/CSS/JS | None    | `cd projects/wildcard-drawer/cattranslator && open index.html`                                                                                                  | 📄 No `package.json`, no build step, no server, no port                | Only `index.html` and `README.md`, no `package.json`         | N/A (static file, no server)                     |
+| 28  | wildcard-drawer | **BeerFinder**    | Beer apps | `projects/wildcard-drawer/beerfinder`    | FastAPI (Python)   | 5325    | `cd projects/wildcard-drawer/beerfinder && python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && uvicorn app:app --port 5325` | ⚠️ Port conflict with Faceplant (intermittent — Faceplant crashes 50%) | `requirements.txt` + `*.py` (or `pyproject.toml` if present) | HTTP 200 on `:5325` (if Faceplant isn't running) |
 
 ### 📺 silicon-valley
 
 | #   | Category       | Project           | Parodies                    | Directory                              | Tech Stack   | Port(s) | Run Command(s)                                           | Intentional Behavior | Pre-Start Detection                            | Post-Start Detection |
 | --- | -------------- | ----------------- | --------------------------- | -------------------------------------- | ------------ | ------- | -------------------------------------------------------- | -------------------- | ---------------------------------------------- | -------------------- |
-| 27  | silicon-valley | **NipAlert**      | Big Head's app (SV S3)      | `projects/silicon-valley/nipalert`     | Vue 3 + Vite | 6060    | `cd projects/silicon-valley/nipalert && npm run dev`     | Normal operation     | `package.json` with vue/vite, `vite.config.js` | HTTP 200 on `:6060`  |
-| 28  | silicon-valley | **Pied Piper**    | Pied Piper (Silicon Valley) | `projects/silicon-valley/piedpiper`    | Vue 3 + Vite | 5050    | `cd projects/silicon-valley/piedpiper && npm run dev`    | Normal operation     | `package.json` with vue/vite, `vite.config.js` | HTTP 200 on `:5050`  |
-| 29  | silicon-valley | **Hooli Nucleus** | Hooli (Silicon Valley)      | `projects/silicon-valley/hoolinucleus` | Vue 3 + Vite | 7070    | `cd projects/silicon-valley/hoolinucleus && npm run dev` | Normal operation     | `package.json` with vue/vite, `vite.config.js` | HTTP 200 on `:7070`  |
+| 29  | silicon-valley | **NipAlert**      | Big Head's app (SV S3)      | `projects/silicon-valley/nipalert`     | Vue 3 + Vite | 6060    | `cd projects/silicon-valley/nipalert && npm run dev`     | Normal operation     | `package.json` with vue/vite, `vite.config.js` | HTTP 200 on `:6060`  |
+| 30  | silicon-valley | **Pied Piper**    | Pied Piper (Silicon Valley) | `projects/silicon-valley/piedpiper`    | Vue 3 + Vite | 5050    | `cd projects/silicon-valley/piedpiper && npm run dev`    | Normal operation     | `package.json` with vue/vite, `vite.config.js` | HTTP 200 on `:5050`  |
+| 31  | silicon-valley | **Hooli Nucleus** | Hooli (Silicon Valley)      | `projects/silicon-valley/hoolinucleus` | Vue 3 + Vite | 7070    | `cd projects/silicon-valley/hoolinucleus && npm run dev` | Normal operation     | `package.json` with vue/vite, `vite.config.js` | HTTP 200 on `:7070`  |
 
 ### ☕ stackbucks
 
 | #   | Category   | Project        | Parodies  | Directory             | Tech Stack    | Port(s) | Run Command(s)                                     | Intentional Behavior                                                                                                                                                                                                                                                                                                                                                                                               | Pre-Start Detection                                                            | Post-Start Detection                                                                                                                                                                       |
 | --- | ---------- | -------------- | --------- | --------------------- | ------------- | ------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 30  | stackbucks | **StackBucks** | Starbucks | `projects/stackbucks` | Java 21 / JVM | 8088    | `cd projects/stackbucks && ./mvnw spring-boot:run` | Startup Delay: Yes (~2.7s calibration). Server Log Hyperactivity: Yes — 30-60 INFO lines on startup, then 1 INFO every 2s, WARN/ERROR every 20-40s. Browser Console Hyperactivity: Yes — 20-40 lines on load, then 1 every 2s. Memory Growth Toggle: Yes — allocates 1-5MB/30s when ON, capped at 256MB. Easter Egg: Yes — click logo 7x → caffeine overload (50 server WARN lines + 30+ client console messages). | `pom.xml`, `mvnw`, `application.properties`, Java source under `src/main/java` | HTTP 200 on `:8088`. PortScout Detection Notes: Should be flagged as high log/console activity. Memory growth observable when foam toggle is ON. JVM process with high startup log volume. |
+| 32  | stackbucks | **StackBucks** | Starbucks | `projects/stackbucks` | Java 21 / JVM | 8088    | `cd projects/stackbucks && ./mvnw spring-boot:run` | Startup Delay: Yes (~2.7s calibration). Server Log Hyperactivity: Yes — 30-60 INFO lines on startup, then 1 INFO every 2s, WARN/ERROR every 20-40s. Browser Console Hyperactivity: Yes — 20-40 lines on load, then 1 every 2s. Memory Growth Toggle: Yes — allocates 1-5MB/30s when ON, capped at 256MB. Easter Egg: Yes — click logo 7x → caffeine overload (50 server WARN lines + 30+ client console messages). | `pom.xml`, `mvnw`, `application.properties`, Java source under `src/main/java` | HTTP 200 on `:8088`. PortScout Detection Notes: Should be flagged as high log/console activity. Memory growth observable when foam toggle is ON. JVM process with high startup log volume. |
 
 ---
 
@@ -129,7 +131,7 @@ The Parody Stack intentionally uses a wide variety of technologies to stress-tes
 
 | Framework              | Projects                                          |
 | ---------------------- | ------------------------------------------------- |
-| **Vue 3**              | Lotion, Nestflix (frontend)                       |
+| **Vue 3**              | Lotion, Nestflix (frontend), Vuetastrophe         |
 | **React**              | Snack, AirBeanBean (frontend), CornHub (frontend) |
 | **Angular**            | TubeYou                                           |
 | **SvelteKit / Svelte** | SpotiPie, Finder                                  |
@@ -140,37 +142,37 @@ The Parody Stack intentionally uses a wide variety of technologies to stress-tes
 
 ### Backend Frameworks / Runtimes
 
-| Runtime / Framework     | Projects                                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------------------- |
-| **Express (Node.js)**   | Nestflix (API), CornHub (backend), DropBlox, OnlyFarms, SubSnack, RockNRoll, Faceplant, HidenSeek |
-| **FastAPI (Python)**    | BeerFinder                                                                                        |
-| **ASP.NET Minimal API** | Waiter.com                                                                                        |
-| **Go `net/http`**       | CPUStorm                                                                                          |
-| **Axum (Rust)**         | MemEater                                                                                          |
-| **Spring Boot (JVM)**   | StackBucks                                                                                        |
-| **Fastify (Node.js)**   | AirBeanBean (API)                                                                                 |
-| **Next.js (Node.js)**   | Strife, GitPub                                                                                    |
-| **Vite Dev Server**     | Lotion, Snack, DocuSwine, Finder                                                                  |
-| **SvelteKit**           | SpotiPie                                                                                          |
-| **Angular CLI**         | TubeYou                                                                                           |
-| **PHP built-in server** | MySpice                                                                                           |
-| **Ruby (Rack)**         | Napper                                                                                            |
-| **COBOL (GnuCOBOL)**    | AltaVistaBaby                                                                                     |
-| **Docker Compose**      | Locker                                                                                            |
+| Runtime / Framework     | Projects                                                                                                        |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Express (Node.js)**   | Nestflix (API), CornHub (backend), DropBlox, OnlyFarms, SubSnack, RockNRoll, Faceplant, HidenSeek, Heapocalypse |
+| **FastAPI (Python)**    | BeerFinder                                                                                                      |
+| **ASP.NET Minimal API** | Waiter.com                                                                                                      |
+| **Go `net/http`**       | CPUStorm                                                                                                        |
+| **Axum (Rust)**         | MemEater                                                                                                        |
+| **Spring Boot (JVM)**   | StackBucks                                                                                                      |
+| **Fastify (Node.js)**   | AirBeanBean (API)                                                                                               |
+| **Next.js (Node.js)**   | Strife, GitPub                                                                                                  |
+| **Vite Dev Server**     | Lotion, Snack, DocuSwine, Finder, Vuetastrophe                                                                  |
+| **SvelteKit**           | SpotiPie                                                                                                        |
+| **Angular CLI**         | TubeYou                                                                                                         |
+| **PHP built-in server** | MySpice                                                                                                         |
+| **Ruby (Rack)**         | Napper                                                                                                          |
+| **COBOL (GnuCOBOL)**    | AltaVistaBaby                                                                                                   |
+| **Docker Compose**      | Locker                                                                                                          |
 
 ### Package Managers
 
-| Manager            | Projects                                                                                                                             |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **npm**            | Lotion, Snack, TubeYou, SpotiPie, Strife, DocuSwine, CornHub, DropBlox, OnlyFarms, SubSnack, Finder, RockNRoll, Faceplant, HidenSeek |
-| **pnpm**           | Nestflix, AirBeanBean, GitPub                                                                                                        |
-| **pip + venv**     | BeerFinder                                                                                                                           |
-| **dotnet CLI**     | Waiter.com                                                                                                                           |
-| **Go toolchain**   | CPUStorm                                                                                                                             |
-| **Cargo**          | MemEater                                                                                                                             |
-| **Maven Wrapper**  | StackBucks                                                                                                                           |
-| **Bundler (Ruby)** | Napper                                                                                                                               |
-| **None**           | CatTranslator, AltaVistaBaby, MySpice, Locker                                                                                        |
+| Manager            | Projects                                                                                                                                                         |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **npm**            | Lotion, Snack, TubeYou, SpotiPie, Strife, DocuSwine, CornHub, DropBlox, OnlyFarms, SubSnack, Finder, RockNRoll, Faceplant, HidenSeek, Vuetastrophe, Heapocalypse |
+| **pnpm**           | Nestflix, AirBeanBean, GitPub                                                                                                                                    |
+| **pip + venv**     | BeerFinder                                                                                                                                                       |
+| **dotnet CLI**     | Waiter.com                                                                                                                                                       |
+| **Go toolchain**   | CPUStorm                                                                                                                                                         |
+| **Cargo**          | MemEater                                                                                                                                                         |
+| **Maven Wrapper**  | StackBucks                                                                                                                                                       |
+| **Bundler (Ruby)** | Napper                                                                                                                                                           |
+| **None**           | CatTranslator, AltaVistaBaby, MySpice, Locker                                                                                                                    |
 
 ### Port Ranges
 
@@ -178,7 +180,7 @@ The Parody Stack intentionally uses a wide variety of technologies to stress-tes
 | -------------------- | ---------------------------- | ------------------------------------------ |
 | **5173**             | Finder                       | Vite default port                          |
 | **5301–5315**        | Core 11 projects             | Main port range, includes conflict on 5301 |
-| **5320–5333**        | Extended 12 projects         | Includes conflicts on 5323, 5325, 5331     |
+| **5320–5335**        | Extended 14 projects         | Includes conflicts on 5323, 5325, 5331     |
 | **5050, 6060, 7070** | Silicon Valley projects      | Off-main-range ports for parody homages    |
 | **8088**             | StackBucks                   | Spring Boot / Embedded Tomcat              |
 | **None**             | CatTranslator, AltaVistaBaby | Static files, no server                    |
@@ -218,10 +220,12 @@ A quick reference for what PortScout should be able to detect for each project c
 - [x] Detect Docker Compose errors (Locker — `projects/cloud-nine/locker`)
 - [x] Retry or report crash without hanging
 
-### Resource Hog Projects (MemEater, CPUStorm)
+### Resource Hog Projects (MemEater, CPUStorm, Vuetastrophe, Heapocalypse)
 
 - [x] Detect abnormal memory growth (MemEater — `projects/chaos-gremlins/memeater`)
 - [x] Detect CPU spikes (CPUStorm — `projects/chaos-gremlins/cpustorm`)
+- [x] Detect jittery frontend CPU variance (Vuetastrophe — `projects/chaos-gremlins/vuetastrophe`)
+- [x] Detect Express heap growth via `/stats` and leak endpoints (Heapocalypse — `projects/chaos-gremlins/heapocalypse`)
 - [x] Optionally warn about resource consumption
 
 ### Non-Node Projects (MySpice, AltaVistaBaby, Napper, CatTranslator)
@@ -240,5 +244,5 @@ A quick reference for what PortScout should be able to detect for each project c
 ---
 
 <p align="center">
-  <i>If all 30 projects pass your tests, your tool is ready for anything. Except maybe production.</i>
+  <i>If all 32 projects pass your tests, your tool is ready for anything. Except maybe production.</i>
 </p>

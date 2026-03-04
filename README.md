@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <strong>30 fake apps. 9 absurd categories. Real frameworks. Zero business models.</strong>
+  <strong>32 fake apps. 9 absurd categories. Real frameworks. Zero business models.</strong>
 </p>
 
 <p align="center">
@@ -15,13 +15,13 @@
   🍺 GitPub &nbsp;·&nbsp; 🐷 DocuSwine &nbsp;·&nbsp; 🌽 CornHub &nbsp;·&nbsp; 📦 DropBlox &nbsp;·&nbsp; 📝 Lotion<br/>
   🌾 OnlyFarms &nbsp;·&nbsp; 🥨 SubSnack &nbsp;·&nbsp; 🔥 Finder &nbsp;·&nbsp; 🍺 BeerFinder &nbsp;·&nbsp; 🐱 CatTranslator<br/>
   🎸 RockNRoll &nbsp;·&nbsp; 💀 Faceplant &nbsp;·&nbsp; 🐳 Locker &nbsp;·&nbsp; 🍽️ MemEater &nbsp;·&nbsp; ⚡ CPUStorm<br/>
-  🌤️ Waiter.com &nbsp;·&nbsp; 🎲 HidenSeek &nbsp;·&nbsp; 🌶️ MySpice &nbsp;·&nbsp; 🔍 AltaVistaBaby &nbsp;·&nbsp; 🎵 Napper<br/>
+  🌤️ Waiter.com &nbsp;·&nbsp; 🎲 HidenSeek &nbsp;·&nbsp; 💥 Heapocalypse &nbsp;·&nbsp; 🌀 Vuetastrophe &nbsp;·&nbsp; 🌶️ MySpice &nbsp;·&nbsp; 🔍 AltaVistaBaby &nbsp;·&nbsp; 🎵 Napper<br/>
   🌡️ NipAlert &nbsp;·&nbsp; 📡 Pied Piper &nbsp;·&nbsp; 🏢 Hooli Nucleus &nbsp;·&nbsp; ☕ StackBucks
 </p>
 
 ---
 
-Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 30 fake-but-functional web apps that parody the tech giants you know and ~~love~~ tolerate. Each project is a real, runnable application built with real frameworks, real tooling, and absolutely zero real business models.
+Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 32 fake-but-functional web apps that parody the tech giants you know and ~~love~~ tolerate. Each project is a real, runnable application built with real frameworks, real tooling, and absolutely zero real business models.
 
 **Why does this exist?** Because [PortScout](https://portscout.app) needed a playground full of misbehaving dev servers, port conflicts, slow backends, and monorepo madness. Think of it as a petting zoo, but instead of goats, it's full of `node_modules`.
 
@@ -29,19 +29,19 @@ Welcome to the **PortScout Parody Stack** — a lovingly crafted collection of 3
 
 ## 📂 Project Categories
 
-_Thirty apps walk into a port range... and get sorted into 9 drawers._
+_Thirty-two apps walk into a port range... and get sorted into 9 drawers._
 
-| Folder                                                                            | Category                                 | Projects                                        |
-| --------------------------------------------------------------------------------- | ---------------------------------------- | ----------------------------------------------- |
-| [📺 `streaming-and-chill/`](#-streaming-and-chill--media--entertainment)          | Media & Entertainment                    | CornHub, TubeYou, SpotiPie, Nestflix, RockNRoll |
-| [💼 `corporate-cringe/`](#-corporate-cringe--productivity--business-saas)         | Productivity & Business SaaS             | Lotion, Snack, Strife, DocuSwine, SubSnack      |
-| [🏚️ `digital-fossils/`](#️-digital-fossils--legacy--retro)                         | Legacy & Retro                           | MySpice, AltaVistaBaby, Napper                  |
-| [🌐 `social-rejects/`](#-social-rejects--social-networks)                         | Social Networks                          | Faceplant, Finder, OnlyFarms, GitPub            |
-| [☁️ `cloud-nine/`](#️-cloud-nine--cloud-storage--infrastructure)                   | Cloud, Storage & Infrastructure          | DropBlox, Locker, AirBeanBean                   |
-| [🐛 `chaos-gremlins/`](#-chaos-gremlins--intentional-misbehavior--stress-testing) | Intentional Misbehavior & Stress Testing | MemEater, CPUStorm, HidenSeek, Waiter.com       |
-| [🐱 `wildcard-drawer/`](#-wildcard-drawer--miscellaneous--uncategorizable)        | Miscellaneous & Uncategorizable          | CatTranslator, BeerFinder                       |
-| [📺 `silicon-valley/`](#-silicon-valley--silicon-valley-homages)                  | Silicon Valley Homages                   | NipAlert, Pied Piper, Hooli Nucleus             |
-| [☕ `stackbucks/`](#-stackbucks--caffeine-powered)                                | Caffeine-Powered                         | StackBucks                                      |
+| Folder                                                                            | Category                                 | Projects                                                              |
+| --------------------------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------- |
+| [📺 `streaming-and-chill/`](#-streaming-and-chill--media--entertainment)          | Media & Entertainment                    | CornHub, TubeYou, SpotiPie, Nestflix, RockNRoll                       |
+| [💼 `corporate-cringe/`](#-corporate-cringe--productivity--business-saas)         | Productivity & Business SaaS             | Lotion, Snack, Strife, DocuSwine, SubSnack                            |
+| [🏚️ `digital-fossils/`](#️-digital-fossils--legacy--retro)                         | Legacy & Retro                           | MySpice, AltaVistaBaby, Napper                                        |
+| [🌐 `social-rejects/`](#-social-rejects--social-networks)                         | Social Networks                          | Faceplant, Finder, OnlyFarms, GitPub                                  |
+| [☁️ `cloud-nine/`](#️-cloud-nine--cloud-storage--infrastructure)                   | Cloud, Storage & Infrastructure          | DropBlox, Locker, AirBeanBean                                         |
+| [🐛 `chaos-gremlins/`](#-chaos-gremlins--intentional-misbehavior--stress-testing) | Intentional Misbehavior & Stress Testing | MemEater, CPUStorm, HidenSeek, Waiter.com, Vuetastrophe, Heapocalypse |
+| [🐱 `wildcard-drawer/`](#-wildcard-drawer--miscellaneous--uncategorizable)        | Miscellaneous & Uncategorizable          | CatTranslator, BeerFinder                                             |
+| [📺 `silicon-valley/`](#-silicon-valley--silicon-valley-homages)                  | Silicon Valley Homages                   | NipAlert, Pied Piper, Hooli Nucleus                                   |
+| [☕ `stackbucks/`](#-stackbucks--caffeine-powered)                                | Caffeine-Powered                         | StackBucks                                                            |
 
 ---
 
@@ -96,22 +96,24 @@ _Social media, but with more bugs and fewer friends._
 
 _Infrastructure parodies that are barely holding it together._
 
-| #   | Project         | Parodies | Stack                      | Port(s)    | Dev Command                                          | Personality Traits                       |
-| --- | --------------- | -------- | -------------------------- | ---------- | ---------------------------------------------------- | ---------------------------------------- |
+| #   | Project         | Parodies | Stack                      | Port(s)    | Dev Command                                          | Personality Traits                                     |
+| --- | --------------- | -------- | -------------------------- | ---------- | ---------------------------------------------------- | ------------------------------------------------------ |
 | 18  | **DropBlox**    | Dropbox  | Node + Docker              | 5315       | `cd projects/cloud-nine/dropblox && npm start`       | 📦 API-only (no frontend). Swagger demo at `/swagger`. |
-| 19  | **Locker**      | Docker   | Docker Compose             | 5326–5329  | `cd projects/cloud-nine/locker && docker compose up` | 🐳 Broken compose file. Claims it works. |
-| 20  | **AirBeanBean** | Airbnb   | React + Fastify (monorepo) | 5307, 5313 | `cd projects/cloud-nine/airbeanbean && pnpm dev`     | 📦 Monorepo. $200/night cleaning fee.    |
+| 19  | **Locker**      | Docker   | Docker Compose             | 5326–5329  | `cd projects/cloud-nine/locker && docker compose up` | 🐳 Broken compose file. Claims it works.               |
+| 20  | **AirBeanBean** | Airbnb   | React + Fastify (monorepo) | 5307, 5313 | `cd projects/cloud-nine/airbeanbean && pnpm dev`     | 📦 Monorepo. $200/night cleaning fee.                  |
 
 ### 🐛 chaos-gremlins/ — Intentional Misbehavior & Stress Testing
 
 _Apps that exist solely to ruin your day._
 
-| #   | Project        | Parodies    | Stack                      | Port(s) | Dev Command                                          | Personality Traits                            |
-| --- | -------------- | ----------- | -------------------------- | ------- | ---------------------------------------------------- | --------------------------------------------- |
-| 21  | **MemEater**   | —           | Rust Axum                  | 5330    | `cd projects/chaos-gremlins/memeater && cargo run`   | 🍽️ Intentional memory leak. ~1MB/5s           |
-| 22  | **CPUStorm**   | —           | Go net/http                | 5331    | `cd projects/chaos-gremlins/cpustorm && go run .`    | ⚡ CPU spikes every 5 seconds                 |
-| 23  | **HidenSeek**  | —           | Node/Express               | 5333    | `cd projects/chaos-gremlins/hidenseek && npm start`  | 🎲 Random HTTP status codes (200/404/500/418) |
-| 24  | **Waiter.com** | Weather.com | ASP.NET Minimal API (.NET) | 5332    | `cd projects/chaos-gremlins/waitercom && dotnet run` | 🌤️ 30-second response delay                   |
+| #   | Project          | Parodies    | Stack                      | Port(s) | Dev Command                                              | Personality Traits                            |
+| --- | ---------------- | ----------- | -------------------------- | ------- | -------------------------------------------------------- | --------------------------------------------- |
+| 21  | **MemEater**     | —           | Rust Axum                  | 5330    | `cd projects/chaos-gremlins/memeater && cargo run`       | 🍽️ Intentional memory leak. ~1MB/5s           |
+| 22  | **CPUStorm**     | —           | Go net/http                | 5331    | `cd projects/chaos-gremlins/cpustorm && go run .`        | ⚡ CPU spikes every 5 seconds                 |
+| 23  | **HidenSeek**    | —           | Node/Express               | 5333    | `cd projects/chaos-gremlins/hidenseek && npm start`      | 🎲 Random HTTP status codes (200/404/500/418) |
+| 24  | **Waiter.com**   | Weather.com | ASP.NET Minimal API (.NET) | 5332    | `cd projects/chaos-gremlins/waitercom && dotnet run`     | 🌤️ 30-second response delay                   |
+| 25  | **Vuetastrophe** | —           | Vue 3 + Vite               | 5334    | `cd projects/chaos-gremlins/vuetastrophe && npm run dev` | 🌀 Bursty jitter-heavy CPU variance test      |
+| 26  | **Heapocalypse** | —           | Node/Express               | 5335    | `cd projects/chaos-gremlins/heapocalypse && npm start`   | 💥 Intentional Express memory leak service    |
 
 ### 🐱 wildcard-drawer/ — Miscellaneous & Uncategorizable
 
@@ -119,8 +121,8 @@ _The apps that didn't fit anywhere else. We love them anyway._
 
 | #   | Project           | Parodies  | Stack              | Port(s) | Dev Command                                                                                                                                                     | Personality Traits                             |
 | --- | ----------------- | --------- | ------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 25  | **CatTranslator** | —         | Static HTML/CSS/JS | None    | `cd projects/wildcard-drawer/cattranslator && open index.html`                                                                                                  | 🐱 No build step. No dependencies. Like a cat. |
-| 26  | **BeerFinder**    | Beer apps | FastAPI (Python)   | 5325    | `cd projects/wildcard-drawer/beerfinder && python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && uvicorn app:app --port 5325` | 🍺 ⚠️ Conflicts with Faceplant                 |
+| 27  | **CatTranslator** | —         | Static HTML/CSS/JS | None    | `cd projects/wildcard-drawer/cattranslator && open index.html`                                                                                                  | 🐱 No build step. No dependencies. Like a cat. |
+| 28  | **BeerFinder**    | Beer apps | FastAPI (Python)   | 5325    | `cd projects/wildcard-drawer/beerfinder && python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && uvicorn app:app --port 5325` | 🍺 ⚠️ Conflicts with Faceplant                 |
 
 ### 📺 silicon-valley/ — Silicon Valley Homages
 
@@ -128,9 +130,9 @@ _This guy fucks. These apps don't work, but they're disrupting the disruption sp
 
 | #   | Project           | Parodies                    | Stack        | Port(s) | Dev Command                                              | Personality Traits                                  |
 | --- | ----------------- | --------------------------- | ------------ | ------- | -------------------------------------------------------- | --------------------------------------------------- |
-| 27  | **NipAlert**      | Big Head's app (SV S3)      | Vue 3 + Vite | 6060    | `cd projects/silicon-valley/nipalert && npm run dev`     | 🌡️ AI-powered thermodynamic proximity detection     |
-| 28  | **Pied Piper**    | Pied Piper (Silicon Valley) | Vue 3 + Vite | 5050    | `cd projects/silicon-valley/piedpiper && npm run dev`    | 📡 Middle-out compression. Weissman Score 5.2.      |
-| 29  | **Hooli Nucleus** | Hooli (Silicon Valley)      | Vue 3 + Vite | 7070    | `cd projects/silicon-valley/hoolinucleus && npm run dev` | 🏢 Because your life deserves enterprise licensing. |
+| 29  | **NipAlert**      | Big Head's app (SV S3)      | Vue 3 + Vite | 6060    | `cd projects/silicon-valley/nipalert && npm run dev`     | 🌡️ AI-powered thermodynamic proximity detection     |
+| 30  | **Pied Piper**    | Pied Piper (Silicon Valley) | Vue 3 + Vite | 5050    | `cd projects/silicon-valley/piedpiper && npm run dev`    | 📡 Middle-out compression. Weissman Score 5.2.      |
+| 31  | **Hooli Nucleus** | Hooli (Silicon Valley)      | Vue 3 + Vite | 7070    | `cd projects/silicon-valley/hoolinucleus && npm run dev` | 🏢 Because your life deserves enterprise licensing. |
 
 ### ☕ stackbucks/ — Caffeine-Powered
 
@@ -138,7 +140,7 @@ _The first and only enterprise-grade caffeine delivery platform._
 
 | #   | Project        | Parodies  | Stack                 | Port(s) | Dev Command                                        | Personality Traits                                                                                                                                       |
 | --- | -------------- | --------- | --------------------- | ------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 30  | **StackBucks** | Starbucks | Java 21 / Spring Boot | 8088    | `cd projects/stackbucks && ./mvnw spring-boot:run` | ☕ Developer Superpower Beverage Framework. Intentionally noisy: server log spam, client console spam, memory foam toggle. Caffeine overload easter egg. |
+| 32  | **StackBucks** | Starbucks | Java 21 / Spring Boot | 8088    | `cd projects/stackbucks && ./mvnw spring-boot:run` | ☕ Developer Superpower Beverage Framework. Intentionally noisy: server log spam, client console spam, memory foam toggle. Caffeine overload easter egg. |
 
 ---
 
@@ -146,17 +148,17 @@ _The first and only enterprise-grade caffeine delivery platform._
 
 _Balanced, explicit variation for env files, markdown docs, and runnable command shapes._
 
-| Project | Env files | Markdown docs | Run commands |
-| --- | --- | --- | --- |
-| **DropBlox** (`projects/cloud-nine/dropblox`) | **one**: `.env.example` | **one**: `README.md` | **one**: `cd projects/cloud-nine/dropblox && npm start` |
-| **HidenSeek** (`projects/chaos-gremlins/hidenseek`) | **one**: `.env.example` | **one**: `README.md` | **one**: `cd projects/chaos-gremlins/hidenseek && npm start` |
-| **MySpice** (`projects/digital-fossils/myspice`) | **one**: `.env.example` | **none** | **one**: `cd projects/digital-fossils/myspice && php -S localhost:5323` |
-| **Locker** (`projects/cloud-nine/locker`) | **none** | **none** | **one**: `cd projects/cloud-nine/locker && docker compose up` |
-| **AltaVistaBaby** (`projects/digital-fossils/altavistababy`) | **none** | **none** | **many**: `cd projects/digital-fossils/altavistababy && open index.html`; `cd projects/digital-fossils/altavistababy && cobc -x search.cob && ./search` |
-| **MemEater** (`projects/chaos-gremlins/memeater`) | **none** | **many**: `README.md`, `RUNBOOK.md` | **one**: `cd projects/chaos-gremlins/memeater && cargo run` |
-| **AirBeanBean** (`projects/cloud-nine/airbeanbean`) | **many**: `.env.example`, `.env.local.example`, `.env.test.example` | **many**: `README.md`, `RUNBOOK.md`, `OPS.md` | **many**: `cd projects/cloud-nine/airbeanbean && pnpm dev`; `cd projects/cloud-nine/airbeanbean && pnpm dev:web`; `cd projects/cloud-nine/airbeanbean && pnpm dev:api` |
-| **Waiter.com** (`projects/chaos-gremlins/waitercom`) | **many**: `.env.example`, `.env.Development.example` | **one**: `README.md` | **one**: `cd projects/chaos-gremlins/waitercom && dotnet run` |
-| **Hooli Nucleus** (`projects/silicon-valley/hoolinucleus`) | **many**: `.env.example`, `.env.local.example` | **many**: `README.md`, `NOTES.md`, `OPS.md` | **many**: `cd projects/silicon-valley/hoolinucleus && npm run dev`; `cd projects/silicon-valley/hoolinucleus && npm run preview` |
+| Project                                                      | Env files                                                           | Markdown docs                                 | Run commands                                                                                                                                                           |
+| ------------------------------------------------------------ | ------------------------------------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **DropBlox** (`projects/cloud-nine/dropblox`)                | **one**: `.env.example`                                             | **one**: `README.md`                          | **one**: `cd projects/cloud-nine/dropblox && npm start`                                                                                                                |
+| **HidenSeek** (`projects/chaos-gremlins/hidenseek`)          | **one**: `.env.example`                                             | **one**: `README.md`                          | **one**: `cd projects/chaos-gremlins/hidenseek && npm start`                                                                                                           |
+| **MySpice** (`projects/digital-fossils/myspice`)             | **one**: `.env.example`                                             | **none**                                      | **one**: `cd projects/digital-fossils/myspice && php -S localhost:5323`                                                                                                |
+| **Locker** (`projects/cloud-nine/locker`)                    | **none**                                                            | **none**                                      | **one**: `cd projects/cloud-nine/locker && docker compose up`                                                                                                          |
+| **AltaVistaBaby** (`projects/digital-fossils/altavistababy`) | **none**                                                            | **none**                                      | **many**: `cd projects/digital-fossils/altavistababy && open index.html`; `cd projects/digital-fossils/altavistababy && cobc -x search.cob && ./search`                |
+| **MemEater** (`projects/chaos-gremlins/memeater`)            | **none**                                                            | **many**: `README.md`, `RUNBOOK.md`           | **one**: `cd projects/chaos-gremlins/memeater && cargo run`                                                                                                            |
+| **AirBeanBean** (`projects/cloud-nine/airbeanbean`)          | **many**: `.env.example`, `.env.local.example`, `.env.test.example` | **many**: `README.md`, `RUNBOOK.md`, `OPS.md` | **many**: `cd projects/cloud-nine/airbeanbean && pnpm dev`; `cd projects/cloud-nine/airbeanbean && pnpm dev:web`; `cd projects/cloud-nine/airbeanbean && pnpm dev:api` |
+| **Waiter.com** (`projects/chaos-gremlins/waitercom`)         | **many**: `.env.example`, `.env.Development.example`                | **one**: `README.md`                          | **one**: `cd projects/chaos-gremlins/waitercom && dotnet run`                                                                                                          |
+| **Hooli Nucleus** (`projects/silicon-valley/hoolinucleus`)   | **many**: `.env.example`, `.env.local.example`                      | **many**: `README.md`, `NOTES.md`, `OPS.md`   | **many**: `cd projects/silicon-valley/hoolinucleus && npm run dev`; `cd projects/silicon-valley/hoolinucleus && npm run preview`                                       |
 
 ---
 
@@ -188,7 +190,7 @@ _Because well-behaved apps don't test anything interesting._
 
 ## 🧪 Test Matrix
 
-For a comprehensive test matrix covering all 30 projects — including ports, run commands, intentional behaviors, and what PortScout should detect — see [TESTMATRIX.md](TESTMATRIX.md).
+For a comprehensive test matrix covering all 32 projects — including ports, run commands, intentional behaviors, and what PortScout should detect — see [TESTMATRIX.md](TESTMATRIX.md).
 
 ---
 
@@ -227,6 +229,8 @@ _A carefully curated range of ports, lovingly assigned and immediately fought ov
 5331  Napper (Ruby/Rack)      🎵 ⚠️ CONFLICT with CPUStorm
 5332  Waiter.com (.NET API)   🌤️ Responding... eventually
 5333  HidenSeek (Express)     🎲 Random status roulette
+5334  Vuetastrophe (Vue/Vite) 🌀 Bursty CPU variance in the browser
+5335  Heapocalypse (Express)  💥 Heap growth by design
 5173  Finder (Svelte)         🔥 Swiping on frameworks
 5050  Pied Piper (Vue 3)      📡 Making the world a better place
 6060  NipAlert (Vue 3)        🌡️ Big Head's greatest contribution
