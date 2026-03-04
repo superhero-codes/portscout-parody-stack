@@ -140,7 +140,7 @@ _The first and only enterprise-grade caffeine delivery platform._
 
 | #   | Project        | Parodies  | Stack                 | Port(s) | Dev Command                                        | Personality Traits                                                                                                                                       |
 | --- | -------------- | --------- | --------------------- | ------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 32  | **StackBucks** | Starbucks | Java 21 / Spring Boot | 8088    | `cd projects/stackbucks && ./mvnw spring-boot:run` | ☕ Developer Superpower Beverage Framework. Intentionally noisy: server log spam, client console spam, memory foam toggle. Caffeine overload easter egg. |
+| 32  | **StackBucks** | Starbucks | Java 21 / Spring Boot | 8088    | `cd projects/wildcard-drawer/stackbucks && ./mvnw spring-boot:run` | ☕ Developer Superpower Beverage Framework. Intentionally noisy: server log spam, client console spam, memory foam toggle. Caffeine overload easter egg. |
 
 ---
 
