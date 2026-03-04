@@ -142,6 +142,24 @@ _The first and only enterprise-grade caffeine delivery platform._
 
 ---
 
+## 🧭 Profile Variation Matrix (Selected Projects)
+
+_Balanced, explicit variation for env files, markdown docs, and runnable command shapes._
+
+| Project | Env files | Markdown docs | Run commands |
+| --- | --- | --- | --- |
+| **DropBlox** (`projects/cloud-nine/dropblox`) | **one**: `.env.example` | **one**: `README.md` | **one**: `cd projects/cloud-nine/dropblox && npm start` |
+| **HidenSeek** (`projects/chaos-gremlins/hidenseek`) | **one**: `.env.example` | **one**: `README.md` | **one**: `cd projects/chaos-gremlins/hidenseek && npm start` |
+| **MySpice** (`projects/digital-fossils/myspice`) | **one**: `.env.example` | **none** | **one**: `cd projects/digital-fossils/myspice && php -S localhost:5323` |
+| **Locker** (`projects/cloud-nine/locker`) | **none** | **none** | **one**: `cd projects/cloud-nine/locker && docker compose up` |
+| **AltaVistaBaby** (`projects/digital-fossils/altavistababy`) | **none** | **none** | **many**: `cd projects/digital-fossils/altavistababy && open index.html`; `cd projects/digital-fossils/altavistababy && cobc -x search.cob && ./search` |
+| **MemEater** (`projects/chaos-gremlins/memeater`) | **none** | **many**: `README.md`, `RUNBOOK.md` | **one**: `cd projects/chaos-gremlins/memeater && cargo run` |
+| **AirBeanBean** (`projects/cloud-nine/airbeanbean`) | **many**: `.env.example`, `.env.local.example`, `.env.test.example` | **many**: `README.md`, `RUNBOOK.md`, `OPS.md` | **many**: `cd projects/cloud-nine/airbeanbean && pnpm dev`; `cd projects/cloud-nine/airbeanbean && pnpm dev:web`; `cd projects/cloud-nine/airbeanbean && pnpm dev:api` |
+| **Waiter.com** (`projects/chaos-gremlins/waitercom`) | **many**: `.env.example`, `.env.Development.example` | **one**: `README.md` | **one**: `cd projects/chaos-gremlins/waitercom && dotnet run` |
+| **Hooli Nucleus** (`projects/silicon-valley/hoolinucleus`) | **many**: `.env.example`, `.env.local.example` | **many**: `README.md`, `NOTES.md`, `OPS.md` | **many**: `cd projects/silicon-valley/hoolinucleus && npm run dev`; `cd projects/silicon-valley/hoolinucleus && npm run preview` |
+
+---
+
 ## 💥 Special Scenarios
 
 _Because well-behaved apps don't test anything interesting._

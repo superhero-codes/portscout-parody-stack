@@ -611,6 +611,74 @@
                 margin-top: 32px;
             }
 
+            /* Profile variation matrix */
+            .profile-matrix {
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 28px;
+                margin-bottom: 36px;
+                overflow-x: auto;
+            }
+
+            .profile-matrix h3 {
+                font-size: 1.05rem;
+                margin-bottom: 8px;
+            }
+
+            .profile-matrix p {
+                color: var(--text-muted);
+                font-size: 14px;
+                margin-bottom: 16px;
+            }
+
+            .profile-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 13px;
+            }
+
+            .profile-table td,
+            .profile-table th {
+                border-bottom: 1px solid rgba(30, 30, 48, 0.8);
+                padding: 10px 8px;
+                text-align: left;
+                vertical-align: top;
+            }
+
+            .profile-table th {
+                color: var(--text-muted);
+                font-weight: 600;
+            }
+
+            .profile-table code {
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 12px;
+                color: var(--accent-light);
+            }
+
+            .profile-table ul {
+                margin: 0;
+                padding-left: 16px;
+            }
+
+            .profile-table li {
+                margin: 0 0 4px;
+            }
+
+            .profile-pill {
+                display: inline-block;
+                padding: 2px 8px;
+                border: 1px solid rgba(99, 102, 241, 0.25);
+                border-radius: 999px;
+                color: var(--accent-light);
+                font-size: 11px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                margin-bottom: 6px;
+            }
+
             .code-block {
                 background: #0d0d14;
                 border: 1px solid var(--border);
@@ -802,6 +870,197 @@
                 <div class="section-header fade-in">
                     <h2>🎭 The Lineup</h2>
                     <p>Thirty apps in eight absurd categories walk into a port range...</p>
+                </div>
+
+                <div class="profile-matrix fade-in">
+                    <h3>🧭 Profile Variation Matrix (Selected Projects)</h3>
+                    <p>Explicit env/docs/run-command variation used for repository and Pages metadata consistency.</p>
+                    <table class="profile-table">
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Env Files</th>
+                                <th>Markdown Docs</th>
+                                <th>Run Commands</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>DropBlox</strong><br>
+                                    <code>projects/cloud-nine/dropblox</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>.env.example</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>README.md</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>cd projects/cloud-nine/dropblox &amp;&amp; npm start</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>HidenSeek</strong><br>
+                                    <code>projects/chaos-gremlins/hidenseek</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>.env.example</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>README.md</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>cd projects/chaos-gremlins/hidenseek &amp;&amp; npm start</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>MySpice</strong><br>
+                                    <code>projects/digital-fossils/myspice</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>.env.example</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">none</span><br>—</td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>cd projects/digital-fossils/myspice &amp;&amp; php -S localhost:5323</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Locker</strong><br>
+                                    <code>projects/cloud-nine/locker</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">none</span><br>—</td>
+                                <td>
+                                    <span class="profile-pill">none</span><br>—</td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>cd projects/cloud-nine/locker &amp;&amp; docker compose up</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>AltaVistaBaby</strong><br>
+                                    <code>projects/digital-fossils/altavistababy</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">none</span><br>—</td>
+                                <td>
+                                    <span class="profile-pill">none</span><br>—</td>
+                                <td>
+                                    <span class="profile-pill">many</span>
+                                    <ul>
+                                        <li>
+                                            <code>cd projects/digital-fossils/altavistababy &amp;&amp; open index.html</code>
+                                        </li>
+                                        <li>
+                                            <code>cd projects/digital-fossils/altavistababy &amp;&amp; cobc -x search.cob &amp;&amp; ./search</code>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>MemEater</strong><br>
+                                    <code>projects/chaos-gremlins/memeater</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">none</span><br>—</td>
+                                <td>
+                                    <span class="profile-pill">many</span><br>
+                                    <code>README.md</code>, <code>RUNBOOK.md</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>cd projects/chaos-gremlins/memeater &amp;&amp; cargo run</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>AirBeanBean</strong><br>
+                                    <code>projects/cloud-nine/airbeanbean</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">many</span><br>
+                                    <code>.env.example</code>, <code>.env.local.example</code>, <code>.env.test.example</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">many</span><br>
+                                    <code>README.md</code>, <code>RUNBOOK.md</code>, <code>OPS.md</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">many</span>
+                                    <ul>
+                                        <li>
+                                            <code>cd projects/cloud-nine/airbeanbean &amp;&amp; pnpm dev</code>
+                                        </li>
+                                        <li>
+                                            <code>cd projects/cloud-nine/airbeanbean &amp;&amp; pnpm dev:web</code>
+                                        </li>
+                                        <li>
+                                            <code>cd projects/cloud-nine/airbeanbean &amp;&amp; pnpm dev:api</code>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Waiter.com</strong><br>
+                                    <code>projects/chaos-gremlins/waitercom</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">many</span><br>
+                                    <code>.env.example</code>, <code>.env.Development.example</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>README.md</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">one</span><br>
+                                    <code>cd projects/chaos-gremlins/waitercom &amp;&amp; dotnet run</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Hooli Nucleus</strong><br>
+                                    <code>projects/silicon-valley/hoolinucleus</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">many</span><br>
+                                    <code>.env.example</code>, <code>.env.local.example</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">many</span><br>
+                                    <code>README.md</code>, <code>NOTES.md</code>, <code>OPS.md</code>
+                                </td>
+                                <td>
+                                    <span class="profile-pill">many</span>
+                                    <ul>
+                                        <li>
+                                            <code>cd projects/silicon-valley/hoolinucleus &amp;&amp; npm run dev</code>
+                                        </li>
+                                        <li>
+                                            <code>cd projects/silicon-valley/hoolinucleus &amp;&amp; npm run preview</code>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- Category Navigation -->
